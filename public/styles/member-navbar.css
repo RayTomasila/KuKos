@@ -1,0 +1,16 @@
+.container .navbar-brand {
+  color: var(--accent-color);
+  font-weight: bolder;
+}
+
+.container span {
+  color: var(--secondary-color);
+}
+
+nav {
+  background-color: var(--primary-color);
+}
+
+.container a {
+  color: var(--accent-color);
+}
