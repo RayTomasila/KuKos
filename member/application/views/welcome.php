@@ -22,7 +22,7 @@
 
     <a class="grid-item text-decoration-none text-dark" 
     href="<?= base_url('fasilitas.php') ?>">
-        <img src="../public/assets/dashboard/fasilitasx.png" alt="">
+        <img src="../public/assets/dashboard/fasilitas.png" alt="">
         <p>Fasilitas</p>
     </a>
     
