@@ -23,16 +23,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/KuKos/member/';
+$config['base_url'] = 'http://localhost/kukos/member/';
 
-$config['assets_dashboard'] = $_SERVER["DOCUMENT_ROOT"]. "/KuKos/publci/assets/dashboard/";
-$config['url_dashboard'] = 'http://localhost/KuKos/public/assets/dashboard/';
-$config['assets_slider'] = $_SERVER["DOCUMENT_ROOT"]. "/KuKos/assets/slider/";
-$config['url_slider'] = 'http://localhost/KuKos/assets/slider/';
-$config['assets_produk'] = $_SERVER["DOCUMENT_ROOT"]. "/KuKos/assets/produk/";
-$config['url_produk'] = 'http://localhost/KuKos/assets/produk/';
-$config['assets_artikel'] = $_SERVER["DOCUMENT_ROOT"]. "/KuKos/assets/artikel/";
-$config['url_artikel'] = 'http://localhost/KuKos/assets/artikel/';
+$config['assets_dashboard'] = $_SERVER["DOCUMENT_ROOT"]. "/kukos/publci/assets/dashboard/";
+$config['url_dashboard'] = 'http://localhost/kukos/public/assets/dashboard/';
+$config['assets_slider'] = $_SERVER["DOCUMENT_ROOT"]. "/kukos/assets/slider/";
+$config['url_slider'] = 'http://localhost/kukos/assets/slider/';
+$config['assets_produk'] = $_SERVER["DOCUMENT_ROOT"]. "/kukos/assets/produk/";
+$config['url_produk'] = 'http://localhost/kukos/assets/produk/';
+$config['assets_artikel'] = $_SERVER["DOCUMENT_ROOT"]. "/kukos/assets/artikel/";
+$config['url_artikel'] = 'http://localhost/kukos/assets/artikel/';
 
 /*
 |--------------------------------------------------------------------------

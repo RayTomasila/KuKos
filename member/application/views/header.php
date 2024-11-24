@@ -8,8 +8,8 @@
     <!-- Styles -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="../public/styles/general.css">
-      <link rel="stylesheet" type="text/css" href="../public/styles/member-navbar.css">
-      <link rel="stylesheet" type="text/css" href="../public/styles/member-dashboard.css">
+      <link rel="stylesheet" type="text/css" href="../public/styles/member/member-navbar.css">
+      <link rel="stylesheet" type="text/css" href="../public/styles/member/member-dashboard.css">
     <!-- Styles -->
   </head>
 

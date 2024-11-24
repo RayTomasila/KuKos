@@ -23,16 +23,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/KuKos/dashboard/';
+$config['base_url'] = 'http://localhost/kukos/dashboard/';
 
-$config['assets_kategori'] = $_SERVER["DOCUMENT_ROOT"]. "/KuKos/assets/kategori/";
-$config['url_kategori'] = 'http://localhost/KuKos/assets/kategori/';
-$config['assets_slider'] = $_SERVER["DOCUMENT_ROOT"]. "/KuKos/assets/slider/";
-$config['url_slider'] = 'http://localhost/KuKos/assets/slider/';
-$config['assets_produk'] = $_SERVER["DOCUMENT_ROOT"]. "/KuKos/assets/produk/";
-$config['url_produk'] = 'http://localhost/KuKos/assets/produk/';
-$config['assets_artikel'] = $_SERVER["DOCUMENT_ROOT"]. "/KuKos/assets/artikel/";
-$config['url_artikel'] = 'http://localhost/KuKos/assets/artikel/';
+$config['assets_slider'] = $_SERVER["DOCUMENT_ROOT"]. "/kukos/assets/dashboard/slider/";
+$config['url_slider'] = 'http://localhost/kukos/assets/dashboard/slider/';
 
 /*
 |--------------------------------------------------------------------------
