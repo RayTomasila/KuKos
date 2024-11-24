@@ -1,0 +1,33 @@
+nav {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+}
+
+nav .container-fluid {
+  margin: 0 7%;
+}
+
+.container-fluid .navbar-brand {
+  color: var(--accent-color);
+  font-weight: bolder;
+}
+
+.container-fluid .navbar-brand span {
+  color: var(--secondary-color);
+}
+
+.container-fluid .navbar-brand:hover { 
+  color: var(--accent-color); 
+}
+
+nav .nav-link {
+  color: var(--accent-color);
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+
+nav .nav-link:hover {
+  color: rgba(38, 38, 38, 0.863);
+}
