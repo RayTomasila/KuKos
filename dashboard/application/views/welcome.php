@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="../public/styles/dashboard/fitur.css">
     <link rel="stylesheet" href="../public/styles/dashboard/footer.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
@@ -157,7 +160,7 @@
       <!-- Fitur 1 -->
       <div class="fitur-content">
         <div class="left-section">
-          <h3>MUDAH MENGLOLA KAMAR</h3>
+          <h3>MUDAH MENGELOLA KAMAR</h3>
           <p>Dengan KuKos, Anda bisa mengelola kamar kos dengan mudah, kapan saja dan di mana saja. Semua pengaturan dapat dilakukan langsung dari perangkat Anda, tanpa repot. Praktis dan efisien!</p>
         </div>
         
@@ -199,44 +202,43 @@
 
   <!-- Footer Start -->
   <footer id="footer" class="footer">
-    <div class="container">
 
-      <div class="footer-top">
+      <section class="article-container">
+        <article>
+          <h2>Bergabung Bersama Kami</h2>
+          <button>
+            <p>Coba Sekarang !</p>
+            <span class="material-symbols-outlined"> trending_flat </span>
+          </button>
+        </article>
+      </section>
+        
+      <section class="top">
 
-        <div class="footer-brand">
-          <a href="#home">Ku<span>Kos</span></a>
-        </a>
+          <li class="left">
+            <a href="#hero" class="footer-text-logo">Ku<span>Kos</span></a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aliasino uta puta consequuntur! Magnam.</p>
+          </li>
+          
+          <li class="mid">
+            <a href="#hero">Fitur</a>
+            <a href="#biaya">Biaya</a>
+            <a href="#contact">Hubungi Kami</a>
+            <a href="#panduan">Panduan</a>
+          </li>
+        
+          <li class="right">
+            <a>Whatsapp</a>
+            <a href="#">081412412782</a>
+          </li>
+      </section>
 
-        </div>
-          <ul class="footer-list">
-            <li>
-              <p class="footer-list-title">Company</p>
-            </li>
-
-            <li>
-              <a href="#home" class="footer-link">Home</a>
-            </li>
-
-            <li>
-              <a href="#order" class="footer-link">About Us</a>
-            </li>
-
-            <li>
-              <a href="#blog" class="footer-link">Our Product</a>
-            </li>
-          </ul>
-
-      </div>
-
-      <div class="footer-bottom">
-
+       <section class="footer-bottom">
         <p class="copyright">
           &copy; 2024 <a href="#">KuKos</a>. All Rights Reserved
         </p>
-
-      </div>
-
-    </div>
+      </section>
+     
   </footer>
   <!-- Footer End -->
 
@@ -244,6 +246,7 @@
 </body>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+
       </script>
 
       <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -262,5 +265,6 @@
 
       <?php if ($this->session->flashdata('pesan_gagal')): ?>
         <script>swal("Gagal!", "<?php echo $this->session->flashdata('pesan_gagal'); ?>", "error");</script>
-      <?php endif ?>    
+      <?php endif ?> 
+
 </html>
