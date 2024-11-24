@@ -1,6 +1,8 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+
 /* Variables */
 :root {
   --primary-color: #93d56b;
@@ -8,6 +10,13 @@
   --accent-color: #FBFBFB;
   --background-color: #f5f5f5;
   --text-color: #333333;
+
+  /* shadow */
+  --shadow-1: 3px 3px 9px hsla(240, 14%, 69%, 0.2);
+  --shadow-2: 3px 3px 9px hsla(204, 92%, 59%, 0.3);
+  /* shadow */
+
+
 }
 
 *, *::before, *::after {
@@ -27,7 +36,6 @@ input {
   font: inherit;
 }
 
-button { cursor: pointer; }
 button:focus{outline: none; }
 
 input { width: 100%; }
