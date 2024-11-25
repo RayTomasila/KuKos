@@ -2,10 +2,11 @@ nav {
   background-color: var(--primary-color);
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
-nav .container-fluid {
-  margin: 0 7%;
+.navbar .container-fluid {
+  margin: 0 12%;
 }
 
 .container-fluid .navbar-brand {

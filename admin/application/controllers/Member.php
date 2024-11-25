@@ -17,9 +17,9 @@
             
             $data["member"] = $this->Mmember->detail($id_member);
 
-            $this->load->model('Mtransaksi');
-            $data['jual'] = $this->Mtransaksi->transaksi_member_jual($id_member);
-            $data['beli'] = $this->Mtransaksi->transaksi_member_beli($id_member);
+            // $this->load->model('Mtransaksi');
+            // $data['jual'] = $this->Mtransaksi->transaksi_member_jual($id_member);
+            // $data['beli'] = $this->Mtransaksi->transaksi_member_beli($id_member);
 
             $this->load->view('header');
             $this->load->view('member_detail', $data);

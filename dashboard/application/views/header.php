@@ -41,63 +41,66 @@
 </head>
 
 <body>
-  <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg py-3">
-    <div class="container-fluid">
-      <a href="#hero" class="navbar-brand d-lg-block">Ku<span>Kos</span></a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#naff">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg py-3">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <!-- Logo Section -->
+    <a href="#hero" class="navbar-brand d-lg-block">Ku<span>Kos</span></a>
 
-      <div class="collapse navbar-collapse" id="naff">
-        <ul class="navbar-nav mx-auto text-white">
+    <!-- Navbar Toggler Button for Mobile View -->
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#naff">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Items (Center Aligned) -->
+    <div class="collapse navbar-collapse" id="naff">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a href="<?php echo base_url("welcome") ?>" class="nav-link">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a href="#fitur" class="nav-link">Fitur</a>
+        </li>
+        <li class="nav-item">
+          <a href="#biaya" class="nav-link">Biaya</a>
+        </li>
+        <li class="nav-item">
+          <a href="#panduan" class="nav-link">Panduan</a>
+        </li>
+        <li class="nav-item">
+          <a href="#kontak" class="nav-link">Kontak</a>
+        </li>
+      </ul>
+
+      <!-- Right-side items: Login/Register or User Profile -->
+      <?php if ($this->session->userdata("id_member")): ?>
+        <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="<?php echo base_url("welcome") ?>" class="nav-link">Beranda</a>
+            <a href="<?php echo base_url("akun") ?>" class="nav-link">
+              <?php 
+                $full_name = $this->session->userdata("nama_lengkap_member");
+                $first_name = explode(" ", $full_name)[0];
+                echo $first_name; 
+              ?>
+            </a>
           </li>
           <li class="nav-item">
-            <a href="#fitur" class="nav-link">Fitur</a>
-          </li>
-          <li class="nav-item">
-            <a href="#biaya" class="nav-link">Biaya</a>
-          </li>
-          <li class="nav-item">
-            <a href="#panduan" class="nav-link">Panduan</a>
-          </li>
-          <li class="nav-item">
-            <a href="#kontak" class="nav-link">Kontak</a>
+            <a href="<?php echo base_url("logout") ?>" class="nav-link">Logout</a>
           </li>
         </ul>
+      <?php endif ?>
 
-        <?php if ($this->session->userdata("id_member")): ?>
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="<?php echo base_url("akun") ?>" class="nav-link">
-                <?php 
-                  $full_name = $this->session->userdata("nama_lengkap_member");
-                  $first_name = explode(" ", $full_name)[0];
-                  echo $first_name; 
-                ?>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?php echo base_url("logout") ?>" class="nav-link">Logout</a>
-            </li>
-          </ul>
-        <?php endif ?>
-
-        <?php if (!$this->session->userdata("id_member")): ?>
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="#" data-bs-toggle="modal" data-bs-target="#login" class="nav-link">Login</a>
-            </li>
-            <li class="nav-item">
-              <a href="<?php echo base_url("register") ?>" class="nav-link">Register</a>
-            </li>
-          </ul>
-        <?php endif ?>
-      </div>
+      <?php if (!$this->session->userdata("id_member")): ?>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#login" class="nav-link">Login</a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url("register") ?>" class="nav-link">Register</a>
+          </li>
+        </ul>
+      <?php endif ?>
     </div>
-  </nav>
-
-  <!-- Navbar End -->
-    
+  </div>
+</nav>
+<!-- Navbar End -->

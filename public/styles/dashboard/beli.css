@@ -4,7 +4,7 @@
     rgba(242, 242, 59, 0.834)
     );
   height: 400px;
-  margin-bottom: 100px;   
+  margin: 100px 0;   
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
