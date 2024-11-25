@@ -1,0 +1,27 @@
+.register-button {
+  display: flex;
+  justify-content: center;
+}
+
+.register-button button {
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  color: rgb(18, 18, 18);
+  font-weight: medium;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 'Poppins';
+}
+
+label {
+  font-weight: 500;
+  font-family: 'Poppins';
+}
+
+h2 {
+  font-family: 'Poppins';
+}
+
+.city-dropdown option:focus {
+  outline: none;
+}
