@@ -1,83 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KuKos</title>
-    
-    <link rel="stylesheet" href="../public/styles/general.css">
-    <link rel="stylesheet" href="../public/styles/dashboard/navbar.css">
-    <link rel="stylesheet" href="../public/styles/dashboard/beli.css">
-    <link rel="stylesheet" href="../public/styles/dashboard/fitur.css">
-    <link rel="stylesheet" href="../public/styles/dashboard/footer.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
-
-</head>
-
-<body>
-  <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg py-3">
-
-    <div class="container-fluid">
-      <a href="#hero" class="navbar-brand d-lg-block">Ku<span>Kos</span></a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#naff">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-    <div class="collapse navbar-collapse" id="naff">
-
-    <ul class="navbar-nav mx-auto text-white">
-        <li class="nav-item">
-            <a href="#hero" class="nav-link">Beranda</a>
-        </li>
-        <li class="nav-item">
-            <a href="#fitur" class="nav-link">Fitur</a>
-        </li>
-        <li class="nav-item">
-            <a href="#biaya" class="nav-link">Biaya</a>
-        </li>
-        <li class="nav-item">
-            <a href="#panduan" class="nav-link">Panduan</a>
-        </li>
-        <li class="nav-item">
-            <a href="#kontak" class="nav-link">Kontak</a>
-        </li>
-      </ul>
-
-    <?php if ($this->session->userdata("id_member")): ?>
-      <ul>
-        <li>
-          <a href="<?php echo base_url("akun") ?>" class="nav-link">
-            <?php echo $this->session->userdata("nama_member") ?>
-          </a>
-        </li>
-            
-        <li class="nav-item">
-          <a href="<?php echo base_url("logout") ?>" class="nav-link">Logout</a>
-        </li>
-      </ul>
-    <?php endif ?>
-
-    <?php if (!$this->session->userdata("id_member")): ?>
-      <ul class="navbar-nav">      
-        <li class="nav-item">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#login" class="nav-link">Login</a>  
-        </li>
-        <li>
-            <a href="<?php echo base_url("register") ?>" class="nav-link">Register</a>  
-        </li>
-
-      </ul>
-    <?php endif ?>
-    
-  </nav>
-  <!-- Navbar End -->
-    
   <!-- Hero Start -->
   <section id="hero">
     <div id="carouselExampleInterval" class="carousel slider" data-bs-ride="carousel" >
@@ -215,22 +136,22 @@
         
       <section class="top">
 
-          <li class="left">
+          <div class="left">
             <a href="#hero" class="footer-text-logo">Ku<span>Kos</span></a>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aliasino uta puta consequuntur! Magnam.</p>
-          </li>
+            <p>SOLUSI MUDAH MENGELOLA KOS</p>
+          </div>
           
-          <li class="mid">
+          <div class="mid">
             <a href="#hero">Fitur</a>
             <a href="#biaya">Biaya</a>
-            <a href="#contact">Hubungi Kami</a>
             <a href="#panduan">Panduan</a>
-          </li>
+            <a href="#contact">Hubungi Kami</a>
+          </div>
         
-          <li class="right">
+          <div class="right">
             <a>Whatsapp</a>
             <a href="#">081412412782</a>
-          </li>
+          </div>
       </section>
 
        <section class="footer-bottom">
@@ -242,29 +163,3 @@
   </footer>
   <!-- Footer End -->
 
-
-</body>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-
-      </script>
-
-      <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-      <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
-      <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
-
-      <script>new DataTable("#tabelku")</script>
-
-      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-      <?php if ($this->session->flashdata('pesan_sukses')): ?>
-        <script>swal("Sukses!", "<?php echo $this->session->flashdata('pesan_sukses'); ?>", "success");</script>
-      <?php endif ?>
-
-      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-      <?php if ($this->session->flashdata('pesan_gagal')): ?>
-        <script>swal("Gagal!", "<?php echo $this->session->flashdata('pesan_gagal'); ?>", "error");</script>
-      <?php endif ?> 
-
-</html>
