@@ -18,9 +18,8 @@ class Welcome extends CI_Controller {
       $output = $this->Mmember->login($inputan);
 
       if ($output) {
-        $this->session->set_userdata('logged_in', $output); 
         $this->session->set_flashdata('pesan_sukses', 'Berhasil Login');
-        redirect('/', 'refresh');
+        redirect('welcome', 'refresh');
 
       } else {
         $this->session->set_flashdata('pesan_gagal', 'Nomor telepon atau password salah.');

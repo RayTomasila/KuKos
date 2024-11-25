@@ -26,12 +26,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $config['base_url'] = 'http://localhost/kukos/admin/';
 
-$config['assets_kategori'] = $_SERVER["DOCUMENT_ROOT"]. "/KuKos/assets/kategori/";
-$config['url_kategori'] = 'http://localhost/KuKos/assets/kategori/';
-$config['assets_produk'] = $_SERVER["DOCUMENT_ROOT"]. "/KuKos/assets/produk/";
-$config['url_produk'] = 'http://localhost/KuKos/assets/produk/';
-$config['assets_artikel'] = $_SERVER["DOCUMENT_ROOT"]. "/KuKos/assets/artikel/";
-$config['url_artikel'] = 'http://localhost/KuKos/assets/artikel/';
+$config['assets_slider'] = $_SERVER["DOCUMENT_ROOT"] . "/kukos/public/assets/slider/";
+$config['url_slider'] = 'http://localhost/kukos/public/assets/slider/';
+
 
 /*
 |--------------------------------------------------------------------------
