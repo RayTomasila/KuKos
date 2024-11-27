@@ -6,7 +6,8 @@
 
           <?php foreach ($slider as $key => $value): ?>
               <div class="carousel-item <?php echo $key == 0 ? "active" : ""; ?>" data-bs-interval="3000">
-                  <img src="<?php echo $this->config->item("url_slider").$value["foto_slider"]; ?>" class="d-flex justify-content-center" style="object-fit:contain; height:95vh;">
+                  <img src="<?php echo $this->config->item("url_slider").$value["foto_slider"]; ?>" 
+                  class="d-flex justify-content-center" style="object-fit:contain; height:95vh;">
                   <div class="carousel-caption d-none d-md-block">
                       <h2><?php echo $value['caption_slider']; ?></h2>
                   </div>
@@ -80,7 +81,11 @@
       <div class="fitur-content">
         <div class="left-section">
           <h3>MUDAH MENGELOLA KAMAR</h3>
-          <p>Dengan KuKos, Anda bisa mengelola kamar kos dengan mudah, kapan saja dan di mana saja. Semua pengaturan dapat dilakukan langsung dari perangkat Anda, tanpa repot. Praktis dan efisien!</p>
+          <p>Dengan KuKos, Anda bisa mengelola kamar kos dengan mudah, 
+            kapan saja dan di mana saja. 
+            Semua pengaturan dapat dilakukan 
+            langsung dari perangkat Anda, tanpa repot.
+             Praktis dan efisien!</p>
         </div>
         
         <div class="right-section">
@@ -97,7 +102,9 @@
         
         <div class="right-section-mid">
           <h3>MUDAH MENGELOLA PENGHUNI KAMAR</h3>
-          <p>KuKos memudahkan Anda mengelola data penyewa kos secara terorganisir. Pantau siapa saja penyewa, kapan mereka membayar, atau waktu kontrak berakhir. Semua ada dalam satu sistem!</p>
+          <p>KuKos memudahkan Anda mengelola data penyewa kos secara terorganisir.
+            Pantau siapa saja penyewa, kapan mereka membayar, atau waktu kontrak berakhir. 
+            Semua ada dalam satu sistem!</p>
         </div>        
       </div>
       <!-- Fitur 2 -->
@@ -106,7 +113,9 @@
       <div class="fitur-content">
         <div class="left-section">
           <h3>MUDAH MENGLOLA FASILITAS KAMAR</h3>
-          <p>Dengan KuKos, pengelolaan fasilitas kos jadi lebih mudah. Catat fasilitas yang tersedia dan pantau kondisinya dengan cepat. Tingkatkan kenyamanan penghuni tanpa ribet!</p>
+          <p>Dengan KuKos, pengelolaan fasilitas kos jadi lebih mudah. 
+            Catat fasilitas yang tersedia dan pantau kondisinya dengan cepat. 
+            Tingkatkan kenyamanan penghuni tanpa ribet!</p>
         </div>
         
         <div class="right-section">

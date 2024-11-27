@@ -1,5 +1,6 @@
 <!-- Login Modal Start -->
-<div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+<div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" 
+tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -31,9 +32,6 @@
   </div>
 </div>
 <!-- Login Modal End -->
-
-
-
 
 </body>
 
