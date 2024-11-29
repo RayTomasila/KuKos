@@ -9,11 +9,11 @@
     }
 
       public function index() {
-
           $data["distrik"] = $this->Mongkir->tampil_distrik();
           
           $this->form_validation->set_rules("nomor_telepon_member","Nomor Telepon Member",
           "required|is_unique[member.nomor_telepon_member]");
+
           $this->form_validation->set_rules("nama_lengkap_member","Nama Lengkap Member","required");
           $this->form_validation->set_rules("alamat_member","Alamat Lengkap Member","required");
           $this->form_validation->set_rules("city_id","city id","required");
@@ -41,8 +41,7 @@
 
           $this->load->view('header');
           $this->load->view('register', $data);
-          $this->load->view('footer');         
-              
+          $this->load->view('footer');                       
       }
   }
         

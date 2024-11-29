@@ -20,7 +20,6 @@
             $data  = $query->result_array();
             
             return $data;
-
         }
 
         function login($inputan) {
@@ -73,7 +72,6 @@
 
 				function register($m) {
 					$this->db->insert('member', $m);
-					
 				}
 
     }

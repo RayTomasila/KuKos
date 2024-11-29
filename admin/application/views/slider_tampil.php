@@ -26,5 +26,6 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    <a href="<?php echo base_url('slider/tambah'); ?>" class="btn btn-sm" style="background-color: #93d56b; border-color: #93d56b; color: white;">Tambah Slider</a>
+    <a href="<?php echo base_url('slider/tambah'); ?>" class="btn btn-sm" 
+    style="background-color: #93d56b; border-color: #93d56b; color: white;">Tambah Slider</a>
 </div>

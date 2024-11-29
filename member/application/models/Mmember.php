@@ -20,38 +20,31 @@
             $data  = $query->result_array();
             
             return $data;
-
         }
 
         function login($inputan) {
-					
-					$email_member = $inputan['email_member'];
-					$password_member = $inputan['password_member'];
-					$password_member = sha1($password_member);
-
-					$sql = "SELECT * FROM `member` WHERE BINARY `email_member` = ? LIMIT 1";
-					$query = $this->db->query($sql, array($email_member));
-					
-					$this->db->where('password_member', $password_member);
-					$q = $this->db->get('member');
-
-					$cekmember = $q->row_array();
-
-					if (!empty($cekmember)) {
-
-						$this->session->set_userdata("id_member", $cekmember["id_member"]);
-						$this->session->set_userdata("email_member", $cekmember["email_member"]);
-						$this->session->set_userdata("nama_member", $cekmember["nama_member"]);
-						$this->session->set_userdata("alamat_member", $cekmember["alamat_member"]);
-						$this->session->set_userdata("wa_member", $cekmember["wa_member"]);
-						$this->session->set_userdata("kode_distrik_member", $cekmember["kode_distrik_member"]);
-						$this->session->set_userdata("nama_distrik_member", $cekmember["nama_distrik_member"]);
-								
-						return "ada";
-					} else {
-						return "gak ada";
-					}
-				}
+          $nomor_telepon_member = $this->db->escape_str($inputan['nomor_telepon_member']);
+          $password_member = sha1($this->db->escape_str($inputan['password_member']));
+      
+          $this->db->where('nomor_telepon_member', $nomor_telepon_member);
+          $this->db->where('password_member', $password_member);
+          $query = $this->db->get('member');
+      
+          if ($query->num_rows() > 0) {
+              $cekmember = $query->row_array();
+      
+              $this->session->set_userdata("id_member", $cekmember["id_member"]);
+              $this->session->set_userdata("nomor_telepon_member", $cekmember["nomor_telepon_member"]);
+              $this->session->set_userdata("nama_lengkap_member", $cekmember["nama_lengkap_member"]);
+              $this->session->set_userdata("alamat_member", $cekmember["alamat_member"]);
+              $this->session->set_userdata("kode_distrik_member", $cekmember["kode_distrik_member"]);
+              $this->session->set_userdata("nama_distrik_member", $cekmember["nama_distrik_member"]);
+      
+              return $cekmember; 
+          } else {
+              return false;
+          }
+      }
 
 				function ubah($inputan, $id_member) {
 
@@ -69,10 +62,9 @@
 					$cekmember = $q->row_array();
 					
 					$this->session->set_userdata("id_member", $cekmember["id_member"]);
-					$this->session->set_userdata("email_member", $cekmember["email_member"]);
-					$this->session->set_userdata("nama_member", $cekmember["nama_member"]);
+					$this->session->set_userdata("nomor_telepon_member", $cekmember["nomor_telepon_member"]);
+					$this->session->set_userdata("nama_lengkap_member", $cekmember["nama_lengkap_member"]);
 					$this->session->set_userdata("alamat_member", $cekmember["alamat_member"]);
-					$this->session->set_userdata("wa_member", $cekmember["wa_member"]);
 					$this->session->set_userdata("kode_distrik_member", $cekmember["kode_distrik_member"]);
 					$this->session->set_userdata("nama_distrik_member", $cekmember["nama_distrik_member"]);
 				}
@@ -80,7 +72,6 @@
 
 				function register($m) {
 					$this->db->insert('member', $m);
-					
 				}
 
     }
