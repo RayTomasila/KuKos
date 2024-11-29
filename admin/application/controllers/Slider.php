@@ -68,9 +68,6 @@
             $this->load->view("header");
             $this->load->view("slider_edit", $data);
             $this->load->view("footer");
-        }
-        
-
+        }   
     }
-
 ?>

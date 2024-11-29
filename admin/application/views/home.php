@@ -56,7 +56,7 @@
               name: 'Jumlah',
               colorByPoint: true,
               data: [
-                <?php foreach ($jumlah_member_distrik as $key => $value): ?>
+                <?php foreach ($jumlah_member_distrik as $key => $value): ?>,
                   {
                     name: '<?php echo $value['nama_distrik_member'] ?>',
                     y: <?php echo $value['jumlah'] ?>,
