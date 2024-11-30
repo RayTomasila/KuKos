@@ -10,6 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../public/styles/general.css">
       <link rel="stylesheet" type="text/css" href="../public/styles/member/member-navbar.css">
       <link rel="stylesheet" type="text/css" href="../public/styles/member/member-dashboard.css">
+      <link rel="stylesheet" type="text/css" href="../public/styles/member/member-footer.css">
     <!-- Styles -->
   </head>
 
@@ -18,7 +19,7 @@
     <nav class="navbar navbar-expand-lg">
 
       <div class="container">
-        <a href="" class="navbar-brand">Ku<span>Kos</span></a>
+        <a href="<?php echo base_url("dashboard") ?>" class="navbar-brand">Ku<span>Kos</span></a>
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#naff">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,33 +27,20 @@
 
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-            <a href="<?php echo base_url("") ?>" class="nav-link">Home</a>
+            <a href="<?php echo base_url("dashboard") ?>" class="nav-link">Home</a>
         </li>
       </ul>
 
       <?php if ($this->session->userdata("id_member")): ?>
         <ul class="navbar-nav ms-auto">      
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Seller
-            </a>
 
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="<?php echo base_url("seller/produk") ?>">Produk</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="<?php echo base_url("seller/transaksi") ?>">Penjualan</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="<?php echo base_url("transaksi") ?>" class="nav-link">Pembelian</a>
-              </li>
-            </ul>
-          </li>   
-
-          <li>
+          <li class="nav-item">
             <a href="<?php echo base_url("akun") ?>" class="nav-link">
-                <?php echo $this->session->userdata("nama_member") ?>
+              <?php 
+                $full_name = $this->session->userdata("nama_lengkap_member");
+                $first_name = explode(" ", $full_name)[0];
+                echo $first_name; 
+              ?>
             </a>
           </li>
             
@@ -65,10 +53,7 @@
       <?php if (!$this->session->userdata("id_member")): ?>
         <ul class="navbar-nav ms-auto">      
           <li class="nav-item">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#login" class="nav-link">Login</a>  
-          </li>
-          <li>
-              <a href="<?php echo base_url("register") ?>"  class="nav-link">Register</a>  
+            <a href="<?php echo base_url("login") ?>" class="nav-link">Login</a>  
           </li>
 
         </ul>

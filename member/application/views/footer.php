@@ -1,60 +1,54 @@
-<!-- Login Modal -->
-<div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="loginLabel">Login</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
 
-      <div class="modal-body">
-        <form method="post">
+<footer class="bg-light text-center py-3 mt-2">
+    <div class="">copyright &copy; 2024. KuKos</div>
+</footer>
 
-          <div class="mb-3">
-            <label>Email</label>
-            <input type="email" name="email_member" class="form-control" value="<?php echo set_value("email_member")?>">
-            <?php echo form_error("email_member") ?>
-          </div>
+  <!-- Bootstrap CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
-          <div class="mb-3">
-            <label>Password</label>
-            <input type="password" name="password_member" class="form-control" value="<?php echo set_value("password_member")?>">
-            <?php echo form_error("password_member") ?>
-          </div>
+  <!-- Include JQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
-          <button class="btn btn-primary">Login</button>
+  <!-- Include select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+  <!-- Include select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 
-        </form>
-      </div>
+  <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+  <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
 
-    </div>
-  </div>
-</div>
 
-<!-- <footer class="bg-light text-center py-3 mt-5">
-    <div class="">copyright &copy; 2024. Amikom</div>
-</footer> -->
+  <script>new DataTable("#tabelku")</script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
-    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
+  <?php if ($this->session->flashdata('pesan_sukses')): ?>
+    <script>swal("Sukses!", "<?php echo $this->session->flashdata('pesan_sukses'); ?>", "success");</script>
+  <?php endif ?>
 
-    <script>new DataTable("#tabelku")</script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <?php if ($this->session->flashdata('pesan_gagal')): ?>
+    <script>swal("Gagal!", "<?php echo $this->session->flashdata('pesan_gagal'); ?>", "error");</script>
+  <?php endif ?> 
 
-    <?php if ($this->session->flashdata('pesan_sukses')): ?>
-      <script>swal("Sukses!", "<?php echo $this->session->flashdata('pesan_sukses'); ?>", "success");</script>
-    <?php endif ?>
+  <!-- Dropdown Search -->
+  <script>
+    var $j = jQuery.noConflict();
+    $('.searchable-dropdown').select2({
+      placeholder: 'Pilih Kota/Kabupaten',
+      allowClear: true,
+      language: {
+        noResults: function() {
+            return 'Kota/Kabupaten tidak ditemukan';
+        },
+        inputTooShort: function() {
+            return 'Cari Kota/Kabupaten'; 
+        }
+      }
+    });
+  </script>
+  <!-- Dropdown Search -->
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-    <?php if ($this->session->flashdata('pesan_gagal')): ?>
-      <script>swal("Gagal!", "<?php echo $this->session->flashdata('pesan_gagal'); ?>", "error");</script>
-    <?php endif ?>
-    
-  </body>
 </html>

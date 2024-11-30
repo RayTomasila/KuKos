@@ -25,9 +25,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = 'http://localhost/kukos/member/';
 
-$config['assets_dashboard'] = $_SERVER["DOCUMENT_ROOT"]. "/kukos/public/assets/dashboard/";
-$config['url_dashboard'] = 'http://localhost/kukos/public/assets/dashboard/';
+$config['assets_dashboard'] = $_SERVER["DOCUMENT_ROOT"]. "/kukos/public/assets/member/dashboard/";
+$config['url_dashboard'] = 'http://localhost/kukos/public/assets/member/dashboard/';
 
+$config['assets_penyewa'] = $_SERVER["DOCUMENT_ROOT"]. "/kukos/public/assets/member/penyewa/";
+$config['url_penyewa'] = 'http://localhost/kukos/public/assets/member/penyewa/';
+
+$config['assets_kamar'] = $_SERVER["DOCUMENT_ROOT"]. "/kukos/public/assets/member/kamar/";
+$config['url_kamar'] = 'http://localhost/kukos/public/assets/member/kamar/';
+
+$config['assets_fasilitas'] = $_SERVER["DOCUMENT_ROOT"]. "/kukos/public/assets/member/fasilitas/";
+$config['url_fasilitas'] = 'http://localhost/kukos/public/assets/member/fasilitas/';
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +47,7 @@ $config['url_dashboard'] = 'http://localhost/kukos/public/assets/dashboard/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
