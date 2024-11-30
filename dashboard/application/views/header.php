@@ -6,35 +6,35 @@
     <title>KuKos</title>
     
     <!-- css styles -->
-    <link rel="stylesheet" href="../public/styles/general.css">
-    <link rel="stylesheet" href="../public/styles/dashboard/navbar.css">
-    <link rel="stylesheet" href="../public/styles/dashboard/beli.css">
-    <link rel="stylesheet" href="../public/styles/dashboard/fitur.css">
-    <link rel="stylesheet" href="../public/styles/dashboard/footer.css">
-    <link rel="stylesheet" href="../public/styles/dashboard/register.css">
+      <link rel="stylesheet" href="../public/styles/general.css">
+      <link rel="stylesheet" href="../public/styles/dashboard/navbar.css">
+      <link rel="stylesheet" href="../public/styles/dashboard/beli.css">
+      <link rel="stylesheet" href="../public/styles/dashboard/fitur.css">
+      <link rel="stylesheet" href="../public/styles/dashboard/footer.css">
+      <link rel="stylesheet" href="../public/styles/dashboard/register.css">
     <!-- css styles -->
     
 
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- fonts -->
 
 
     <!-- Bootstrap & JS -->
-    <link rel="stylesheet" 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" 
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-    
-    <!-- Include select2 CDN -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
-    crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-
+      <link rel="stylesheet" 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" 
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+      
+      <!-- Include select2 CDN -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+        crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+      <!-- Include select2 CDN -->
     <!-- Bootstrap & JS -->
     
 

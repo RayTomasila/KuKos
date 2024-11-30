@@ -3,9 +3,22 @@
 
     function tampil() {
       $q = $this->db->get('penyewa');
-      $d = $q->result_array();
-      return $d;
+      $d = $q->result_array();  
+  
+      $this->db->select('penyewa.*, kamar.nomor_kamar, kontrak.tanggal_mulai');
+      $this->db->from('penyewa');
+      $this->db->join('kontrak', 'penyewa.id_penyewa = kontrak.id_penyewa', 'left');
+      $this->db->join('kamar', 'kontrak.id_kamar = kamar.id_kamar', 'left'); 
+      $query = $this->db->get(); 
+      
+      $penyewa_data = $query->result_array();
+      
+      return [
+        'penyewa' => $d,  
+        'pkk' => $penyewa_data
+      ];
     }
+  
   
     function detail($id_penyewa) {
       $this->db->where('id_penyewa', $id_penyewa);
@@ -32,7 +45,7 @@
       $inputan['id_member'] = $this->session->userdata("id_member");
 
       $this->db->insert('penyewa', $inputan);
-  }
+    }
 
 
     function ubah($inputan, $id) {
@@ -51,14 +64,13 @@
       $this->db->where('id_member', $this->session->userdata("id_member"));
       $this->db->where('id_penyewa', $id);
       $this->db->update('penyewa', $inputan);
-  }
+    }
   
-  function hapus($id_penyewa) {
+    function hapus($id_penyewa) {
       $this->db->where('id_member', $this->session->userdata("id_member"));
       $this->db->where('id_penyewa', $id_penyewa);
       $this->db->delete('penyewa');
-
-  }
+    }
 
   }
 ?>
