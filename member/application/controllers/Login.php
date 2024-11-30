@@ -32,7 +32,7 @@ class Login extends CI_Controller {
             $this->session->set_flashdata('pesan_gagal', 'Nomor telepon atau password salah.');
         }
 
-        redirect('dashboard', 'refresh'); 
+        redirect('login', 'refresh'); 
     }
 
     $this->load->view('header');

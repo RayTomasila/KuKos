@@ -23,6 +23,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
 }
 
 li { list-style: none; }
@@ -58,11 +60,13 @@ h2,
 h3,
 h4,
 h5,
+h6,
 a,
 p,
 li,
 ul{
   margin: 0;
   font-family: 'Poppins';
+  text-decoration: none;
 }
 

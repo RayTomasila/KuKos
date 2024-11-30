@@ -9,7 +9,6 @@
           redirect('/', 'refresh'); 
       }
 
-      // Cek status langganan
       if ($this->session->userdata("status_langganan") !== 'aktif') {
         $this->session->set_flashdata('pesan_gagal', 'Langganan Anda tidak aktif.');
         redirect('/', 'refresh'); 

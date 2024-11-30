@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container container-penyewa">
 
   <div class="container-top">
     <h5>Daftar Penyewa</h5>
@@ -12,22 +12,27 @@
     </div>
 
   </div>
-    
-    <div class="row">        
-        <?php foreach ($penyewa as $key => $value): ?>
-            <div class="col-md-3">
-                <a href="<?php echo base_url("penyewa/detail/".$value["id_penyewa"]) ?>" class="text-decoration-none text-dark">
-                
-                    <div class="card-border-0 shadow">
-                        
-                        <div class="card-body text-center">
-                            <h6><?php echo $value['nama_penyewa'] ?></h6>
-                        </div>   
+  
+  <div class="card-container">
+      <?php foreach ($penyewa['pkk'] as $key => $value): ?>
+   
+        <a href="<?php echo base_url("penyewa/detail/".$value["id_penyewa"]) ?>" class="text-decoration-none text-dark">
+          
+            <div class="card-content">            
+              <p><?php echo $value['nama_penyewa'] ?></p>
 
-                    </div>    
-                </a>
-            </div>                  
-        <?php endforeach ?>
-        
+              <p href="https://wa.me/<?php echo $value['nomor_telepon'] ?>" target="_blank"><?php echo $value['nomor_telepon'] ?></p>
+
+              <p>Kamar <?php echo $value['nomor_kamar'] ?></p>
+              <p>Sejak <?php echo $value['tanggal_mulai'] ?></p>
+
+            </div> 
+        </a>
+               
+      <?php endforeach ?>    
     </div>
+
+    <pre>
+      <?php print_r($penyewa['pkk']); ?>
+    </pre>
 </div>
