@@ -6,11 +6,20 @@
     <title>Member Dashboard</title>
     
     <!-- CSS Styles -->
-      <link rel="stylesheet" type="text/css" href="../public/styles/general.css">
-      <link rel="stylesheet" type="text/css" href="../public/styles/member/member-navbar.css">
-      <link rel="stylesheet" type="text/css" href="../public/styles/member/member-dashboard.css">
-      <link rel="stylesheet" type="text/css" href="../public/styles/member/member-footer.css">
-      <link rel="stylesheet" type="text/css" href="../public/styles/member/member-penyewa.css">
+      <link rel="stylesheet" type="text/css" 
+      href="<?php echo base_url('../public/styles/general.css') ?>">
+      <link rel="stylesheet" type="text/css"      
+      href="<?php echo base_url('../public/styles/member/member-navbar.css') ?>">
+
+      <link rel="stylesheet" type="text/css"
+      href="<?php echo base_url('../public/styles/member/member-penyewa.css') ?>">
+      
+      <link rel="stylesheet" type="text/css"
+      href="<?php echo base_url('../public/styles/member/member-footer.css') ?>">
+      
+      <link rel="stylesheet" type="text/css" 
+      href="<?php echo base_url('../public/styles/member/member-dashboard.css') ?>">
+
     <!-- CSS Styles -->
 
     <!-- fonts -->
@@ -42,7 +51,7 @@
   <body>
 
     <nav class="navbar navbar-expand-lg">
-
+      
       <div class="container">
         <a href="<?php echo base_url("dashboard") ?>" class="navbar-brand">Ku<span>Kos</span></a>
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#naff">

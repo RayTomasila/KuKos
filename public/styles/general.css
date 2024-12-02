@@ -15,9 +15,8 @@
   --shadow-1: 3px 3px 9px hsla(240, 14%, 69%, 0.2);
   --shadow-2: 3px 3px 9px hsla(204, 92%, 59%, 0.3);
   /* shadow */
-
-
 }
+
 
 *, *::before, *::after {
   margin: 0;
@@ -29,7 +28,6 @@
 
 li { list-style: none; }
 
-a { text-decoration: none; }
 
 button,
 input {
@@ -70,3 +68,29 @@ ul{
   text-decoration: none;
 }
 
+.btn-bg-green {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  color: white;
+}
+
+.btn-bg-red {
+  padding: 10px 20px;
+  background-color: rgb(225, 54, 71);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  color: white;
+}
+
+.btn-bg-blue {
+  padding: 10px 20px;
+  background-color: rgb(93, 125, 249);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  color: white;
+}

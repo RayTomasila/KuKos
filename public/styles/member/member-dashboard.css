@@ -1,17 +1,15 @@
-.member-dashboard-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 85vh;
-  width: 100vw;
-}
 
 .dashboard-grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 240px); 
-  gap: 40px;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
 }
+
+
 
 /* Styles for individual grid items */
 .grid-item {
@@ -19,10 +17,12 @@
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 
-  font-size: 17px;
+  font-size: 18px;
   text-align: center;
-  width: 240px;
-  height: 240px;
+  text-decoration: none;
+  color: var(--text-color);
+  width: 300px;
+  height: 300px;
 
   display: flex;
   flex-direction: column;
@@ -32,79 +32,12 @@
   transform: box-shadow 1s ease;
 }
 
-.grid-item:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.140em 0.7em, rgba(255, 255, 255, 0.1) 0px 0px 0px 5px inset;
-}
-
 .grid-item img {
   margin-bottom: 20px;
   width: 50%;
 }
 
-
-
-/* Responsive Query*/
-
-/* Phone */
-@media only screen and (max-width: 600px) {
-  .dashboard-grid-container {
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px;
-  }
-
-  .grid-item {
-    width: 140px;
-    height: 140px;
-    font-size: 14px;
-  }
+.grid-item:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.140em 0.7em, rgba(255, 255, 255, 0.1) 0px 0px 0px 5px inset;
 }
 
-/* Tablet */
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-  .dashboard-grid-container {
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 20px;
-  }
-
-  .grid-item {
-    width: 180px;
-    height: 180px;
-    font-size: 15px;
-  }
-}
-
-/* Tablet Landscape */
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-  .dashboard-grid-container {
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px;
-  }
-
-  .grid-item {
-    width: 250px;
-    height: 250px;
-    font-size: 16px;
-  }
-}
-
-/* PC, Laptopk, etc*/
-@media only screen and (min-width: 992px) {
-  .dashboard-grid-container {
-    grid-template-columns: repeat(3, 240px); 
-    gap: 40px;
-  }
-
-  .grid-item {
-    width: 240px;
-    height: 240px;
-    font-size: 17px;
-  }
-}
-
-/* Large PC, Laptop, etc */
-@media only screen and (min-width: 1200px) {
-  .dashboard-grid-container {
-    grid-template-columns: repeat(4, 240px); 
-    gap: 40px;
-  }
-}

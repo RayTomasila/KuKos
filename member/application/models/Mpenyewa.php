@@ -1,32 +1,27 @@
 <?php 
   class Mpenyewa extends CI_Model {
 
-    function tampil() {
-      $q = $this->db->get('penyewa');
-      $d = $q->result_array();  
-  
-      $this->db->select('penyewa.*, kamar.nomor_kamar, kontrak.tanggal_mulai');
+    private function queryTampilPenyewaJoin($id_penyewa = null) {
+      $this->db->select('penyewa.*, kamar.nomor_kamar, kontrak.tanggal_mulai, kontrak.status_pembayaran');
       $this->db->from('penyewa');
       $this->db->join('kontrak', 'penyewa.id_penyewa = kontrak.id_penyewa', 'left');
-      $this->db->join('kamar', 'kontrak.id_kamar = kamar.id_kamar', 'left'); 
-      $query = $this->db->get(); 
-      
-      $penyewa_data = $query->result_array();
-      
-      return [
-        'penyewa' => $d,  
-        'pkk' => $penyewa_data
-      ];
+      $this->db->join('kamar', 'kontrak.id_kamar = kamar.id_kamar', 'left');
+      $this->db->where('penyewa.id_member', $this->session->userdata("id_member"));
+
+      if ($id_penyewa !== null) {
+        $this->db->where('penyewa.id_penyewa', $id_penyewa);
+      };
+        
+      $query = $this->db->get();
+      return $query->result_array();
+    }
+
+    public function tampil() {
+      return $this->queryTampilPenyewaJoin(null);
     }
   
-  
-    function detail($id_penyewa) {
-      $this->db->where('id_penyewa', $id_penyewa);
-
-      $q = $this->db->get('penyewa');
-      $d = $q->row_array();
-
-      return $d;
+    public function detail($id_penyewa) {
+      return $this->queryTampilPenyewaJoin($id_penyewa); 
     }
     
     function tambah($inputan) {
@@ -35,11 +30,11 @@
 
       $this->load->library('upload', $config);
 
-      $ngupload = $this->upload->do_upload("foto_penyewa");        
+      $ngupload = $this->upload->do_upload("foto_ktp");        
 
       if ($ngupload) {
-          $upload_data = $this->upload->data();
-          $inputan['foto_penyewa'] = $upload_data['file_name'];
+        $upload_data = $this->upload->data();
+        $inputan['foto_ktp'] = $upload_data['file_name'];
       }
 
       $inputan['id_member'] = $this->session->userdata("id_member");
@@ -47,22 +42,21 @@
       $this->db->insert('penyewa', $inputan);
     }
 
-
-    function ubah($inputan, $id) {
+    function ubah($inputan, $id_penyewa) {
       $config['upload_path'] = $this->config->item("assets_penyewa");
       $config['allowed_types'] = 'jpeg|jpg|png';
 
       $this->load->library("upload", $config);
   
-      $ngupload = $this->upload->do_upload("foto_penyewa");
+      $ngupload = $this->upload->do_upload("foto_ktp");
   
       if ($ngupload) {
           $upload_data = $this->upload->data();
-          $inputan['foto_penyewa'] = $upload_data['file_name'];
+          $inputan['foto_ktp'] = $upload_data['file_name'];
       }
   
       $this->db->where('id_member', $this->session->userdata("id_member"));
-      $this->db->where('id_penyewa', $id);
+      $this->db->where('id_penyewa', $id_penyewa);
       $this->db->update('penyewa', $inputan);
     }
   
