@@ -7,7 +7,7 @@
     }
 
     function tambah($inputan) {
-        $config['upload_path'] = $this->config->item("assets_slider");
+      $config['upload_path'] = $this->config->item("assets_slider");
       $config['allowed_types'] = 'gif|jpg|png';
 
       $this->load->library('upload',$config);

@@ -12,35 +12,25 @@
   <section>
     <form method="post" enctype="multipart/form-data">
       <div class="mb-3">
-          <label>Nama</label>
-          <input type="text" name="nama_penyewa" value="<?php echo $value['nama_penyewa'] ?>" class="form-control">
+        <label>Nama</label>
+        <input type="text" name="nama_penyewa" value="<?php echo $value['nama_penyewa'] ?>" class="form-control">
       </div>
 
       <div class="mb-3">
-          <label>Nomor Telepon</label>
-          <input type="text" name="nomor_telepon" value="<?php echo $value['nomor_telepon'] ?>" class="form-control">
+        <label>Nomor Telepon</label>
+        <input type="text" name="nomor_telepon" value="<?php echo $value['nomor_telepon'] ?>" class="form-control">
       </div>
 
-      <div class="mb-3">
-        <label>Kamar</label>
-        <select class="form-control form-select" name="id_kamar">
-          <option value=""><?php echo $value['nomor_kamar'] ?></option>
-
-          <?php foreach ($kamar as $k => $v) : ?>              
-            <option value="<?php echo $v['id_kamar'] ?>"
-              <?php echo $v['id_kamar'] == $kamar['id_kamar'] ? "selected" : "" ?>>
-              <?php echo $v['nomor_kamar'] ?>
-            </option>              
-          <?php endforeach ?>
-            
-        </select>
-      </div>
-      
       <div class="mb-3">
           <label>Berkas</label><br>
           <img src="<?php echo $this->config->item("url_penyewa"). $value['foto_ktp'] ?>" width="500"> 
-      </div>
-      
+        </div>
+        
+        <div class="mb-3">
+          <label>Ganti Foto Berkas</label>
+          <input type="file" name="foto_ktp" class="form-control w-25">
+        </div>
+
       <button type="submit" class="btn-bg-blue mt-3">Ubah Data Penyewa</button>
       
     </form>
@@ -54,9 +44,12 @@
 <section>
   <div class="container-top">
     <p class="page-title">Riwayat Pembayaran</p>
-  </div>
+  </div >
+      
+    <div class="table-riwayat">
 
-  </div>
+    </div>
+
   
 </section>
 <!-- Section Riwayat Pembayaran Penyewa END -->
@@ -65,6 +58,4 @@
 
 
   </div>
-
-
 </div>
