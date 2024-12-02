@@ -29,7 +29,7 @@
 
     public function detail($id_penyewa) {
       $data['penyewa'] = $this->Mpenyewa->detail($id_penyewa);
-
+      
       $data['kamar'] = $this->Mkamar->tampil();
 
       $inputan = $this->input->post();
@@ -37,7 +37,7 @@
       if ($inputan) {
         $this->Mpenyewa->ubah($inputan, $id_penyewa);
         $this->session->set_flashdata('pesan_sukses', 'Penyewa Berhasil Diubah!');
-        redirect('penyewa_detail', 'refresh');     
+        redirect('penyewa/detail/' . $id_penyewa, 'refresh');
       }
       
       $this->load->view('header');
