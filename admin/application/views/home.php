@@ -1,7 +1,7 @@
     <!-- Content -->
     <div class="content">
       <div class="container">
-        <h5>HOME ADMIN</h5>
+        <h5>Dashboard Admin</h5>
         <p class="lead">
           Mari Kelola Membermu
         </p>
@@ -27,6 +27,7 @@
             text:
               'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
           },
+          
           plotOptions: {
             series: {
               allowPointSelect: true,
@@ -56,8 +57,7 @@
               name: 'Jumlah',
               colorByPoint: true,
               data: [
-                <?php foreach ($jumlah_member_distrik as $key => $value): ?>,
-                  {
+                <?php foreach ($jumlah_member_distrik as $key => $value): ?> { 
                     name: '<?php echo $value['nama_distrik_member'] ?>',
                     y: <?php echo $value['jumlah'] ?>,
                   },

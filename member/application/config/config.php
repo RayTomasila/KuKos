@@ -37,6 +37,9 @@ $config['url_kamar'] = 'http://localhost/kukos/public/assets/member/kamar/';
 $config['assets_fasilitas'] = $_SERVER["DOCUMENT_ROOT"]. "/kukos/public/assets/member/fasilitas/";
 $config['url_fasilitas'] = 'http://localhost/kukos/public/assets/member/fasilitas/';
 
+$config['styles_member'] = $_SERVER["DOCUMENT_ROOT"]. "/kukos/public/styles/member/";
+$config['url_member'] = 'http://localhost/kukos/public/styles/member/';
+
 /*
 |--------------------------------------------------------------------------
 | Index File

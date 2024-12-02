@@ -19,11 +19,11 @@ class Welcome extends CI_Controller {
 
       if ($output) {
         $this->session->set_flashdata('pesan_sukses', 'Berhasil Login');
-        redirect('welcome', 'refresh');
+        redirect('', 'refresh');
 
       } else {
         $this->session->set_flashdata('pesan_gagal', 'Nomor telepon atau password salah.');
-        redirect('/', 'refresh');
+        redirect('', 'refresh');
       }
     }
 

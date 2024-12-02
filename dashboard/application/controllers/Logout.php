@@ -11,7 +11,7 @@
 			$this->session->unset_userdata("kode_distrik_member");
 			$this->session->unset_userdata("nama_distrik_member");
 
-			redirect('/','refresh');
+			redirect('','refresh');
 		}
 
 	}

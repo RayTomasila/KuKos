@@ -53,7 +53,7 @@
 
 
 
-        <button class="btn btn-success">Ubah Akun</button>
+        <button class="btn-primary-bg">Ubah Akun</button>
         
       </form>
       </div>

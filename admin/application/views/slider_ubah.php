@@ -1,10 +1,11 @@
 <div class="container">
-    <h5>Edit Slider</h5>
+    <h5>Slider Ubah</h5>
 
     <form method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label>caption slider</label>
-            <textarea name="caption_slider" class="form-control" id="textedit"><?php echo $slider['caption_slider'] ?></textarea>
+            <textarea name="caption_slider" class="form-control" id="textedit">
+              <?php echo $slider['caption_slider'] ?></textarea>
             
             <span class="small text-danger">
                 <?php echo form_error("caption_slider") ?>

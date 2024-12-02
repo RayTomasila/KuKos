@@ -3,6 +3,10 @@
   font-weight: bolder;
 }
 
+.container .navbar-brand:hover {
+  color: var(--accent-color);
+}
+
 .container span {
   color: var(--secondary-color);
 }
@@ -11,6 +15,16 @@ nav {
   background-color: var(--primary-color);
 }
 
-.container a {
+.navbar .nav-link {
+  font-size: 19px;
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+  color: rgb(243, 243, 243);
+}
+
+.container .nav-link:after {
   color: var(--accent-color);
 }
