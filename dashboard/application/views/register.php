@@ -24,7 +24,7 @@
 
                   <div class="mb-3">
                     <label>Password</label>
-                    <input type="text" name="password_member" class="form-control" 
+                    <input type="password" name="password_member" class="form-control" 
                     value="<?php echo set_value("password_member") ?>">
                     <span class="text-muted"><?php echo form_error("password_member") ?></span>
                   </div>

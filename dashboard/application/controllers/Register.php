@@ -36,7 +36,7 @@
             $this->Mmember->register($m);
             $this->session->set_flashdata('pesan_sukses', 'Registrasi Berhasil, Silahkan login.');
 
-            redirect('welcome', 'refresh');
+            redirect('/', 'refresh');
           }
 
           $this->load->view('header');

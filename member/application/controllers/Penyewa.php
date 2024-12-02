@@ -16,7 +16,7 @@
       }
       $this->load->model('Mpenyewa'); 
       $this->load->model('Mmember'); 
-      $this->load->model('Mkamar');
+      $this->load->model('Mkamar`');
     }
 
     public function index() {      

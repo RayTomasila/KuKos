@@ -38,7 +38,7 @@ $config['url_slider'] = 'http://localhost/kukos/public/assets/slider/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
