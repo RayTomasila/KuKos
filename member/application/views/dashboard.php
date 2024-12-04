@@ -22,7 +22,7 @@
     </a>
 
     <a class="grid-item" 
-    href="<?= base_url('pembayaran') ?>">
+    href="<?= base_url('kontrak') ?>">
       <img src="<?php echo base_url('../public/assets/member/dashboard/pembayaran.png')?>" alt="">
         <p>Kontrak & Pembayaran</p>
     </a>

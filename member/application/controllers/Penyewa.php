@@ -16,7 +16,7 @@
       }
       $this->load->model('Mpenyewa'); 
       $this->load->model('Mmember'); 
-      $this->load->model('Mkamar`');
+      $this->load->model('Mkamar');
     }
 
     public function index() {      
@@ -30,7 +30,7 @@
     public function detail($id_penyewa) {
       $data['penyewa'] = $this->Mpenyewa->detail($id_penyewa);
       
-      $data['kamar'] = $this->Mkamar->tampil();
+      $data['kamar'] = $this->Mkamar->tampil($id_penyewa);
 
       $inputan = $this->input->post();
 
