@@ -21,7 +21,7 @@
             if ($this->form_validation->run() == TRUE) {
 
                 $this->load->model('Mslider');
-                $this->Mslider->simpan($inputan); 
+                $this->Mslider->tambah($inputan); 
         
                 $this->session->set_flashdata('pesan_sukses', 'Data slider tersimpan');
             

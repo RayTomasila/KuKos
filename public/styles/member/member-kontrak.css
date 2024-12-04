@@ -1,0 +1,73 @@
+table {
+	width: 100%;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  text-align: center;
+  border-radius: 30px;
+  font-family: 'Poppins';
+}
+
+th,
+td {
+  width: auto;
+	padding: 12px 17px;
+  border-bottom: 2px solid black;
+}
+
+th {
+	text-align: left;
+  color: white;
+  font-weight: 500;
+}
+
+thead {
+	th {
+  color: black;
+
+		/* background-color: #939393; */
+	background-color: var(--secondary-color);
+
+	}
+}
+
+.table-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.js-card-status-pembayaran {
+  align-content: center;
+  justify-self: center;
+  text-align: center;
+  min-height: 35px;
+  min-width: 80px;
+  margin: 0;
+  padding: 0;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}

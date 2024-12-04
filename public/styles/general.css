@@ -78,7 +78,7 @@ ul{
 }
 
 .btn-bg-red {
-  padding: 10px 20px;
+  padding: 10px 30px;
   background-color: rgb(225, 54, 71);
   text-decoration: none;
   border-radius: 5px;
@@ -87,10 +87,15 @@ ul{
 }
 
 .btn-bg-blue {
-  padding: 10px 20px;
+  padding: 10px 30px;
   background-color: rgb(93, 125, 249);
   text-decoration: none;
   border-radius: 5px;
   font-weight: 500;
   color: white;
+}
+
+.btn-primary,
+.btn-danger {
+  width: 80px;
 }

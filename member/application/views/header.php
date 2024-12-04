@@ -6,6 +6,7 @@
     <title>Member Dashboard</title>
     
     <!-- CSS Styles -->
+
       <link rel="stylesheet" type="text/css" 
       href="<?php echo base_url('../public/styles/general.css') ?>">
       <link rel="stylesheet" type="text/css"      
@@ -20,6 +21,12 @@
       <link rel="stylesheet" type="text/css" 
       href="<?php echo base_url('../public/styles/member/member-dashboard.css') ?>">
 
+      <link rel="stylesheet" type="text/css" 
+      href="<?php echo base_url('../public/styles/member/member-kontrak.css') ?>">
+      
+      <link rel="stylesheet" type="text/css" 
+      href="<?php echo base_url('../public/styles/member/member-kamar.css') ?>">
+      
     <!-- CSS Styles -->
 
     <!-- fonts -->
@@ -59,13 +66,14 @@
         </button>
       <div class="collapse navbar-collapse" id="naff">
 
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-            <a href="<?php echo base_url("dashboard") ?>" class="nav-link">Home</a>
-        </li>
-      </ul>
 
       <?php if ($this->session->userdata("id_member")): ?>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+              <a href="<?php echo base_url("dashboard") ?>" class="nav-link">Home</a>
+          </li>
+        </ul>
+
         <ul class="navbar-nav ms-auto">      
 
           <li class="nav-item">
