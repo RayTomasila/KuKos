@@ -10,7 +10,6 @@
 }
 
 
-
 /* Styles for individual grid items */
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
@@ -21,8 +20,8 @@
   text-align: center;
   text-decoration: none;
   color: var(--text-color);
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
 
   display: flex;
   flex-direction: column;

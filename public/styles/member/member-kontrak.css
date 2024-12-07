@@ -1,23 +1,37 @@
+.kontrak-container {
+	min-height: auto;
+}
+
 table {
-	width: 100%;
+	min-width: 100%;
 	overflow: hidden;
 	box-shadow: 0 0 20px rgba(0,0,0,0.1);
   text-align: center;
   border-radius: 30px;
   font-family: 'Poppins';
+	margin: 18px 0;
+}
+
+#tabelku span {
+	text-align: left;
+  color: black;
+  font-weight: 500;
 }
 
 th,
 td {
+
   width: auto;
-	padding: 12px 17px;
+	padding: 6px;
   border-bottom: 2px solid black;
+	margin-bottom: 14px;
 }
 
 th {
 	text-align: left;
-  color: white;
+  color: black;
   font-weight: 500;
+	height: 70px;
 }
 
 thead {

@@ -7,6 +7,7 @@
       $this->db->join('kontrak', 'penyewa.id_penyewa = kontrak.id_penyewa', 'left');
       $this->db->join('kamar', 'kontrak.id_kamar = kamar.id_kamar', 'left');
       $this->db->where('kontrak.id_member', $this->session->userdata("id_member"));
+      $this->db->order_by('kontrak.id_kontrak', 'desc');
   
       if ($id_penyewa !== null) {
         $this->db->where('penyewa.id_penyewa', $id_penyewa);

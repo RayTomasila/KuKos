@@ -1,3 +1,7 @@
+.wrapper-penyewa {
+  height: 100vh;
+}
+
 .container-top {
   display: flex;
   flex-direction: row;
@@ -40,16 +44,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 32px;
+  gap: 24px;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 50px;
+  gap: 15px;
   
-  width: 300px;
+  width: 261px;
   max-width: 100%;
   height: auto;
   padding: 20px;
