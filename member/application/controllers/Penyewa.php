@@ -46,7 +46,6 @@
     }
 
     public function tambah() {
-      $this->load->model('Mpenyewa');
 
       $inputan = $this->input->post();
 
@@ -61,29 +60,6 @@
       $this->load->view('footer');
   }
 
-
-    public function ubah($id_penyewa) {
-
-      $this->load->model('Mpenyewa');
-      $data['penyewa'] = $this->Mpenyewa->detail($id_penyewa);
-
-      $this->load->model('Mkamar');
-      $data['kamar'] = $this->Mkamar->tampil();
-
-      $inputan = $this->input->post();
-
-      if ($inputan) {
-          $this->Mpenyewa->edit($inputan, $id_penyewa);
-          $this->session->set_flashdata('pesan_sukses', 'Penyewa Berhasil Diubah!');
-          redirect('penyewa_detail', 'refresh');     
-      }
-
-      $this->load->view('header');
-      $this->load->view('seller/penyewa_edit', $data);
-      $this->load->view('footer');
-   }
-
-
     public function hapus($id_penyewa) {
       $this->Mpenyewa->hapus($id_penyewa);
       
@@ -91,8 +67,11 @@
       redirect('penyewa', 'refresh');
     }
 
-
-
+    public function get_penyewa($id_penyewa) {
+      $this->db->where('id_penyewa', $id_penyewa);
+      $this->db->where('id_member', $this->session->userdata("id_member"));
+      return $this->db->get('penyewa')->row_array();
+  }
 
   }
 

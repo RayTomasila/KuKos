@@ -29,6 +29,31 @@
       $this->load->view('footer');
     }
 
+    public function tambah() {      
+      $data['penyewa'] = $this->Mpenyewa->tampil();
+      $data['kamar'] = $this->Mkamar->tampil($this->session->userdata("id_member"));
+    
+      $inputan = $this->input->post();
+
+      if ($inputan) {
+  
+          $this->Mkontrak->tambah($inputan);
+          $this->session->set_flashdata('pesan_sukses', 'Kontrak Berhasil Ditambah!');
+          redirect('kontrak', 'refresh');
+      }
+  
+      $this->load->view('header');
+      $this->load->view('kontrak_tambah', $data);
+      $this->load->view('footer');
+   }
+  
+
+   public function hapus($id_kontrak) {
+    $this->Mkontrak->hapus($id_kontrak);
+    
+    $this->session->set_flashdata('pesan_sukses', 'Kontrak Berhasil dihapus');
+    redirect('kontrak', 'refresh');
+  }
 
     
   }
