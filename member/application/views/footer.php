@@ -23,8 +23,19 @@
   <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
   <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
 
+  <script>
+  $(document).ready(function() {
+    new DataTable("#tabelku", {
+      "order": [[-1, 'desc']],
+      "paging": true,
+      "searching": true,
+      "pageLength": 5,
+      "lengthMenu": [5, 10, 25],
+    });
+  });
+</script>
 
-  <script>new DataTable("#tabelku")</script>
+
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 

@@ -73,16 +73,18 @@
       $this->db->update('penyewa', $inputan);
 
     }  
-
-
     
-  
-  
     function hapus($id_penyewa) {
       $this->db->where('id_member', $this->session->userdata("id_member"));
       $this->db->where('id_penyewa', $id_penyewa);
       $this->db->delete('penyewa');
     }
+
+    public function get_penyewa($id_penyewa) {
+      $this->db->where('id_penyewa', $id_penyewa);
+      $this->db->where('id_member', $this->session->userdata("id_member"));
+      return $this->db->get('penyewa')->row_array();
+  }  
 
   }
 ?>
