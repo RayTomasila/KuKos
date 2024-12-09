@@ -17,6 +17,7 @@
       $this->load->model('Mpenyewa'); 
       $this->load->model('Mmember'); 
       $this->load->model('Mkamar');
+      $this->load->library('form_validation');
     }
 
     public function index() {      
@@ -47,17 +48,38 @@
 
     public function tambah() {
 
-      $inputan = $this->input->post();
+      $this->form_validation->set_rules('nama_penyewa', 'Nama Penyewa', 'required', [
+        'required' => '%s wajib diisi.'
+      ]);
 
-      if ($inputan) {
+      $this->form_validation->set_rules('nomor_telepon', 'Nomor Telepon', 'required|numeric|min_length[10]|max_length[15]', [
+          'required' => '%s wajib diisi.',
+          'numeric' => '%s harus berupa angka.',
+          'min_length' => '%s minimal 10 karakter.',
+          'max_length' => '%s maksimal 15 karakter.'
+      ]);
+
+      if ($this->form_validation->run() == FALSE) {
+        $this->load->view('header');
+        $this->load->view('penyewa_tambah');
+        $this->load->view('footer');
+      } else {
+        $inputan = $this->input->post();
+
+        $config['upload_path'] = $this->config->item("assets_penyewa");
+        $config['allowed_types'] = 'jpg|jpeg|png';
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('foto_ktp')) {
+            $upload_data = $this->upload->data();
+            $inputan['foto_ktp'] = $upload_data['file_name'];
+        }
+
         $this->Mpenyewa->tambah($inputan);
-        $this->session->set_flashdata('pesan_sukses', 'Penyewa Berhasil Ditambah!');
-        redirect('penyewa', 'refresh');     
+        $this->session->set_flashdata('pesan_sukses', 'Penyewa berhasil ditambahkan.');
+        redirect('penyewa', 'refresh');
       }
 
-      $this->load->view('header');
-      $this->load->view('penyewa_tambah');
-      $this->load->view('footer');
   }
 
     public function hapus($id_penyewa) {
