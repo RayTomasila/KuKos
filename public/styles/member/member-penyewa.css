@@ -43,7 +43,7 @@
 .card-container {
   display: grid; 
   grid-template-columns: repeat(4, 1fr); 
-  gap: 40px; 
+  gap: 32px; 
   max-width: 100%;
   margin: 0 auto; 
   padding: 0;
@@ -80,7 +80,7 @@
 }
 
 .card-top .penyewa-nama {
-  font-size: 25px;
+  font-size: 22px;
   margin: 0;
 }
 
@@ -95,17 +95,6 @@
   border-radius: 5px;
 }
 
-.js-card-status-lunas {
-  background-color: var(--primary-color);
-}
-
-.js-card-status-dekat {
-  background-color: rgb(255, 217, 0);
-}
-
-.js-card-status-lewat {
-  background-color: rgb(221, 44, 44);
-}
 
 .card-item-container {
   display: flex;

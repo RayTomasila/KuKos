@@ -6,9 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   statusPembayaranElements.forEach((statusPembayaran) => {
     if (statusPembayaran.innerText === 'lunas') {
       statusPembayaran.classList.add('js-card-status-lunas');
-    } else if (statusPembayaran.innerText === 'dekat') {
-      statusPembayaran.classList.add('js-card-status-dekat');
-    } else if (statusPembayaran.innerText === 'lewat') {
+    } else if (statusPembayaran.innerText === 'belum bayar') {
       statusPembayaran.classList.add('js-card-status-lewat');
     }
   });

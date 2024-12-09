@@ -99,3 +99,16 @@ ul{
 .btn-danger {
   width: 80px;
 }
+
+.js-card-status-lunas {
+  background-color: var(--primary-color);
+}
+
+.js-card-status-dekat {
+  background-color: rgb(255, 217, 0);
+}
+
+.js-card-status-lewat {
+  background-color: rgb(221, 44, 44);
+  width: 120px;
+}
