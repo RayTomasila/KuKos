@@ -70,7 +70,7 @@
     <div class="container">
     <div class="header-container">
         <h2>Daftar Fasilitas</h2>
-        <a href="<?php echo base_url('member/fasilitas/add'); ?>">+ Tambah Fasilitas</a>
+        <a href="<?php echo base_url('fasilitas/add'); ?>">+ Tambah Fasilitas</a>
         </div>
         <?php if (!empty($fasilitas)) : ?>
             <?php foreach ($fasilitas as $item) : ?>
