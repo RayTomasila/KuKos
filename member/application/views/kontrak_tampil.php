@@ -14,10 +14,11 @@
         <thead>
           <tr>
             <th>Penyewa</th>
-            <th>Kamar</th>
+            <th>Nomor Kamar</th>
             <th>Tanggal Masuk</th>
             <th>Tanggal Keluar</th>
-            <th>Jumlah Bayar</th>
+            <th>Lama Kontrak</th>
+            <th>Total Bayar</th>
             <th>Status Bayar</th>
             <th>Aksi</th>
           </tr>
@@ -27,18 +28,34 @@
             <tr>
               <?php $value['id_kontrak'] ?>
               <td ><?php echo $value['nama_penyewa'] ?></td>
-              <td >Kamar <?php echo $value['nomor_kamar'] ?></td>
+              <td ><?php echo $value['nomor_kamar'] ?></td>
 
-              <td >
+              <td>
                 <?php echo date("d F Y", strtotime($value['tanggal_mulai'])) ?>
               </td>
 
-              <td >
+              <td>
                 <?php echo date("d F Y", strtotime($value['tanggal_selesai'])) ?>
+              </td>
+              <td>
+                <?php 
+                    $tanggal_mulai = new DateTime($value['tanggal_mulai']);
+                    $tanggal_selesai = new DateTime($value['tanggal_selesai']);
+
+                    $interval = $tanggal_mulai->diff($tanggal_selesai);
+
+                    $lama_kontrak = $interval->y * 12 + $interval->m + ($interval->d > 0 ? 1 : 0);
+
+                    echo $lama_kontrak . " bulan";
+                ?>
               </td>
 
               <td >
-                <?php echo number_format($value['jumlah_pembayaran'], 0, ',', '.') ?>
+                <?php 
+
+                $value['jumlah_pembayaran'] = $value['harga_kamar']*$lama_kontrak;
+
+                echo number_format($value['jumlah_pembayaran'], 0, ',', '.') ?>
               </td>
 
               <td >

@@ -36,11 +36,6 @@
         </select>
       </div>
 
-      <div class="mb-3" style="color:black">
-        <label>Total Bayar</label>
-        <input type="text" name="jumlah_pembayaran" id="jumlah_pembayaran" class="form-control">
-      </div>
-
       <div class="mb-3">
         <label>Tanggal Masuk</label>
         <input type="date" name="tanggal_mulai" class="form-control">

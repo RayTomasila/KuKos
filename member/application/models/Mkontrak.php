@@ -2,7 +2,7 @@
   class Mkontrak extends CI_Model {
 
     private function queryTampilKontrakJoin($id_penyewa = null) {
-      $this->db->select('penyewa.nama_penyewa, kontrak.id_kontrak, kontrak.*, kamar.nomor_kamar, kamar.id_kamar');
+      $this->db->select('penyewa.nama_penyewa, kontrak.id_kontrak, kontrak.*, kamar.*');
       $this->db->from('penyewa');
       $this->db->join('kontrak', 'penyewa.id_penyewa = kontrak.id_penyewa', 'left');
       $this->db->join('kamar', 'kontrak.id_kamar = kamar.id_kamar', 'left');

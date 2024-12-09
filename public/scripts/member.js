@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   // Handle the statusPembayaran logic
   let statusPembayaranElements = document.querySelectorAll('.js-card-status-pembayaran');
 
@@ -35,4 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  document.getElementById("jumlah_pembayaran").addEventListener("input", function (e) {
+    const input = e.target;
+    let value = input.value.replace(/[^\d]/g, ""); // Remove non-numeric characters
+    if (value) {
+      value = new Intl.NumberFormat('id-ID').format(value); // Format the number
+    }
+    input.value = value; // Set the formatted value back to the input
+  });
 });

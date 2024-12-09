@@ -43,7 +43,7 @@
 
           <div class="card-items">
             <img src="../public/assets/member/penyewa/penyewa-tanggal-masuk.png" alt="date logo">
-            <p>Sejak <?php echo $value['tanggal_mulai'] ?></p>
+            <p>Sejak <?php echo  date("d F Y", strtotime($value['tanggal_mulai'])) ?></p>
           </div>
         </div>       
 

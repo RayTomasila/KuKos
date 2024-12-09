@@ -1,9 +1,10 @@
 .kontrak-container {
 	min-height: 100%;
+  margin-bottom: 100px;
 }
 
 .table-container {
-  overflow-x: auto;
+  overflow-x: scroll;
   padding: 14px;
 }
 
@@ -14,7 +15,7 @@ table {
   text-align: left;
   border-radius: 30px;
   font-family: 'Poppins';
-	margin: 18px 0;
+	margin: 18px 4px;
 }
 
 #tabelku span {
@@ -28,15 +29,9 @@ td {
   width: fit-content;
   white-space: nowrap;
   text-wrap: nowrap;
-  padding: 25px; 
+  padding: 25px 0 25px 30px; 
   margin: 0; 
   border-bottom: 2px solid black;
-}
-
-td {
-  width: fit-content;
-  white-space: nowrap;
-  text-wrap: nowrap;
 }
 
 th {
@@ -63,9 +58,9 @@ tr {
 
 .table-buttons {
   width: fit-content;
-  display: flex; /* Ensures proper alignment for buttons */
-  justify-content: left; /* Centers buttons horizontally */
-  gap: 8px; /* Adds spacing between buttons */
+  display: flex;
+  justify-content: left; 
+  gap: 8px;
 }
 
 .table-buttons img {
