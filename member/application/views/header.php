@@ -72,6 +72,18 @@
         <li class="nav-item">
             <a href="<?php echo base_url("dashboard") ?>" class="nav-link">Home</a>
         </li>
+        <li class="nav-item">
+            <a href="<?php echo base_url("penyewa") ?>" class="nav-link">Penyewa</a>
+        </li>
+        <li class="nav-item">
+            <a href="<?php echo base_url("kamar") ?>" class="nav-link">Kamar</a>
+        </li>
+        <li class="nav-item">
+            <a href="<?php echo base_url("fasilitas") ?>" class="nav-link">Fasilitas</a>
+        </li>
+        <li class="nav-item">
+            <a href="<?php echo base_url("kontrak") ?>" class="nav-link">Kontrak</a>
+        </li>
       </ul>
 
       <ul class="navbar-nav ms-auto">      
