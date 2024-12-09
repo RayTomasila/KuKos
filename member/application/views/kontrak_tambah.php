@@ -46,6 +46,15 @@
         <input type="date" name="tanggal_selesai" class="form-control">
       </div>
 
+      <div class="mb-3">
+      <label>Status Pembayaran</label>
+      <select class="form-control form-select" name="status_pembayaran">
+          <?php foreach ($statusOptions as $option): ?>
+              <option value="<?php echo $option; ?>"><?php echo ucfirst($option); ?></option>
+          <?php endforeach; ?>
+      </select>
+    </div>
+
       <button type="submit" class="btn-bg-green mt-3">Tambah Kontrak</button>
     </form>
 </div>

@@ -14,7 +14,7 @@
         <thead>
           <tr>
             <th>Penyewa</th>
-            <th>Nomor Kamar</th>
+            <th>Kamar</th>
             <th>Tanggal Masuk</th>
             <th>Tanggal Keluar</th>
             <th>Lama Kontrak</th>
@@ -31,12 +31,12 @@
               <td ><?php echo $value['nomor_kamar'] ?></td>
 
               <td>
-                <?php echo date("d F Y", strtotime($value['tanggal_mulai'])) ?>
+                <?php echo formatDateIndonesian($value['tanggal_mulai']); ?>
+              </td>
+              <td>
+                <?php echo formatDateIndonesian($value['tanggal_selesai']); ?>
               </td>
 
-              <td>
-                <?php echo date("d F Y", strtotime($value['tanggal_selesai'])) ?>
-              </td>
               <td>
                 <?php 
                     $tanggal_mulai = new DateTime($value['tanggal_mulai']);
@@ -50,12 +50,11 @@
                 ?>
               </td>
 
-              <td >
+              <td >   
                 <?php 
-
-                $value['jumlah_pembayaran'] = $value['harga_kamar']*$lama_kontrak;
-
-                echo number_format($value['jumlah_pembayaran'], 0, ',', '.') ?>
+                  $value['jumlah_pembayaran'] = $value['harga_kamar']*$lama_kontrak;                
+                  echo number_format($value['jumlah_pembayaran'], 0, ',', '.')                   
+                ?>                
               </td>
 
               <td >

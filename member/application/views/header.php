@@ -29,6 +29,7 @@
       
     <!-- CSS Styles -->
 
+    
     <!-- fonts -->
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -70,7 +71,7 @@
     <?php if ($this->session->userdata("id_member")): ?>
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-            <a href="<?php echo base_url("dashboard") ?>" class="nav-link">Home</a>
+            <a href="<?php echo base_url("dashboard") ?>" class="nav-link">Beranda</a>
         </li>
         <li class="nav-item">
             <a href="<?php echo base_url("penyewa") ?>" class="nav-link">Penyewa</a>

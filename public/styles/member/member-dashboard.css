@@ -1,6 +1,6 @@
 
 .dashboard-grid-container {
-  height: 80vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -20,15 +20,15 @@
   text-align: center;
   text-decoration: none;
   color: var(--text-color);
-  width: 250px;
-  height: 250px;
+  width: 290px;
+  height: 290px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  transform: box-shadow 1s ease;
+  transition: box-shadow 0.1s ease-out;
 }
 
 .grid-item img {
@@ -37,6 +37,8 @@
 }
 
 .grid-item:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.140em 0.7em, rgba(255, 255, 255, 0.1) 0px 0px 0px 5px inset;
+  transform: scale(1.01);
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.08em, rgba(0, 0, 0, 0.25) 0px 0.140em 0.7em, rgba(255, 255, 255, 0.1) 0px 0px 0px 6px inset;
 }
 

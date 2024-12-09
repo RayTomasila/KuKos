@@ -4,18 +4,19 @@
 }
 
 .table-container {
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 14px;
 }
 
 table {
   max-width: 100%;
-	overflow: hidden;
 	box-shadow: 0 0 20px rgba(0,0,0,0.1);
   text-align: left;
-  border-radius: 30px;
   font-family: 'Poppins';
 	margin: 18px 4px;
+  border-collapse: collapse; 
+  border-radius: 30px;
+  overflow: hidden;
 }
 
 #tabelku span {
