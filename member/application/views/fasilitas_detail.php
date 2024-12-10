@@ -1,9 +1,5 @@
 <div class="container">
 
-  <pre>
-    <?php print_r($fasilitas); ?>
-  </pre>
-
   <div class="container-top">
     <p class="page-title">Informasi Fasilitas</p>
 
@@ -27,7 +23,7 @@
 
       <div class="mb-3">
         <label>Foto Fasilitas</label><br>
-        <img src="<?php echo $this->config->item('url_fasilitas').$value['foto_fasilitas']; ?>" width="500"> 
+        <img src="<?php echo $this->config->item('url_fasilitas').$value['foto_fasilitas']; ?>" width="300"> 
       </div>
 
       <div class="mb-3">
