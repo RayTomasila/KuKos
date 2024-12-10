@@ -17,6 +17,14 @@ class Fasilitas extends CI_Controller {
     }
 
     public function add() {
+        // Load form view
+        $this->load->view('header');
+        $this->load->view('form_add_fasilitas');
+        $this->load->view('footer');
+    }
+
+    public function save() {
+        // Konfigurasi upload
         $config['upload_path'] = './uploads/fasilitas/';
         $config['allowed_types'] = 'jpg|jpeg|png';
         $config['max_size'] = 2048;
@@ -37,8 +45,11 @@ class Fasilitas extends CI_Controller {
             $this->fasilitas_model->addFasilitas($data);
             redirect('fasilitas');
         } else {
-            $error = ['error' => $this->upload->display_errors()];
-            $this->load->view('fasilitas', $error);
+            $error = $this->upload->display_errors();
+            $data['error'] = $error;
+            $this->load->view('header');
+            $this->load->view('form_add_fasilitas', $data);
+            $this->load->view('footer');
         }
     }
 }
