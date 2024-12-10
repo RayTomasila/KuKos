@@ -9,13 +9,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       return $this->db->get('kamar')->row_array();
   }  
 
-    public function tampil($id_member) {
-        
-      $this->db->where('kamar.id_member', $id_member);
-      $q = $this->db->get('kamar');
+  public function tampil($id_member) {
+    $this->db->select('kamar.*, fasilitas.nama_fasilitas');
+    $this->db->from('kamar');
+    $this->db->join('fasilitas', 'kamar.id_fasilitas = fasilitas.id_fasilitas', 'left');
+    $this->db->where('kamar.id_member', $id_member);
+    $q = $this->db->get();
 
-      return $q->result_array();
-    }
+    return $q->result_array();
+}
+
     public function tambah_kamar($data) {
       return $this->db->insert('kamar', $data);
   }
