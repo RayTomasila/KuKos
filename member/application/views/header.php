@@ -26,6 +26,9 @@
       
       <link rel="stylesheet" type="text/css" 
       href="<?php echo base_url('../public/styles/member/member-kamar.css') ?>">
+
+      <link rel="stylesheet" type="text/css" 
+      href="<?php echo base_url('../public/styles/member/member-fasilitas.css') ?>">
       
     <!-- CSS Styles -->
 
