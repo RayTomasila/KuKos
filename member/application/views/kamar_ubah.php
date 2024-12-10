@@ -35,5 +35,12 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+
+    <!-- Tambahkan Tombol Hapus -->
+    <a href="<?php echo site_url('kamar/hapus/' . $kamar->id_kamar); ?>" 
+       class="btn btn-danger mt-3" 
+       onclick="return confirm('Apakah Anda yakin ingin menghapus kamar ini?');">
+       Hapus Kamar
+    </a>
     <?php echo form_close(); ?>
 </div>
