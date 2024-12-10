@@ -1,7 +1,11 @@
 <div class="container my-4">
-  <div class="header-container">
-      <h2>Daftar Kamar</h2>
-      <a href="<?php echo base_url('kamar/tambah'); ?>" class="btn btn-success">Tambah Kamar</a>
+  <div class="container-top">
+    <p class="page-title">Daftar Kamar</p>
+
+    <div>
+      <a href="<?php echo base_url("kamar/tambah")?>" class="btn-bg-green">Tambah Kamar</a>
+    </div>
+
   </div>
   
   <div class="kamar-container mt-4">
@@ -10,10 +14,10 @@
         <img src="<?php echo $this->config->item("url_kamar") . $item['foto_kamar']; ?>" alt="foto_kamar" class="mb-4">
 
         <h4>Kamar - <?php echo $item['nomor_kamar']; ?></h4>
-        <p>Harga: Rp <?php echo number_format($item['harga_kamar'], 0, ',', '.'); ?></p>
-        <p>ID Fasilitas: <?php echo $item['id_fasilitas']; ?></p>
-        <p>ID Member: <?php echo $item['id_member'] ?? '-'; ?></p>
-        <p>Status: 
+        <p><?php echo number_format($item['harga_kamar'], 0, ',', '.'); ?></p>
+        <p><?php echo $item['id_fasilitas']; ?></p>
+
+        <p>
             <span class="<?php 
                 echo ($item['status_kamar'] == 'digunakan') ? 'status-digunakan' : 
                       ($item['status_kamar'] == 'siap huni' ? 'status-siap-huni' : 

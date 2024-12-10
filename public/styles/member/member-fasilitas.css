@@ -7,15 +7,27 @@
   border: 1px solid #ddd;
   border-radius: 20px;
   margin-bottom: 10px;
-  box-shadow: 4px 5px 7px #ddd;
+  box-shadow: 4px 5px 7px #ddddddaa;
   margin-bottom: 26px;
 }
 
-.facility-card img {
-  height: 140px;
-  object-fit: contain;
-  border-radius: 5px;
+.facility-card:hover {
+  transform: scale(1.01);
+  box-shadow: 4px 5px 7px #ddddddc6;
+
+}
+
+.fasilitas-img-container {
+  max-width: 140px;
+  padding: 5px;
   margin-right: 35px;
+}
+
+
+.facility-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .nama-fasilitas {
