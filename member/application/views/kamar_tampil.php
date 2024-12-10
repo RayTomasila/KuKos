@@ -10,12 +10,28 @@
   
   <div class="kamar-container mt-4">
     <?php foreach ($kamar as $item): ?>
-      <div class="kamar-card">
-        <img src="<?php echo $this->config->item("url_kamar") . $item['foto_kamar']; ?>" alt="foto_kamar" class="mb-4">
+
+      <div class="kamar-card" 
+           onclick="window.location.href='<?php echo site_url('kamar/ubah/' . $item['id_kamar']); ?>'">
+           
+
+        <div class="container-foto-kamar">
+          <img src="<?php echo $this->config->item("url_kamar") . $item['foto_kamar']; ?>" alt="foto_kamar" class="mb-4">
+        </div>
 
         <h4>Kamar - <?php echo $item['nomor_kamar']; ?></h4>
-        <p><?php echo number_format($item['harga_kamar'], 0, ',', '.'); ?></p>
-        <p><?php echo $item['id_fasilitas']; ?></p>
+
+        <div class="kamar-card-items">
+          <img src="../public/assets/member/kamar/logo-penyewa-kamar.png" alt="">
+          <p><?php echo $item['nama_penyewa'] ?? 'Tidak ada penyewa'; ?></p>
+        </div>
+
+        <div class="kamar-card-items">
+          <img src="../public/assets/member/kamar/logo-fasilitas-kamar.png" alt="">
+          <p><?php echo $item['nama_fasilitas'] ?? 'Tidak ada fasilitas'; ?></p>
+        </div>
+
+        <p class="mb-3"><?php echo number_format($item['harga_kamar'], 0, ',', '.'); ?></p>
 
         <p>
             <span class="<?php 
@@ -26,16 +42,6 @@
             </span>
         </p>
         
-        <!-- Tambahkan Tombol Edit -->
-        <div class="mt-3">
-          <a href="<?php echo site_url('kamar/ubah/' . $item['id_kamar']); ?>" class="btn btn-warning btn-sm">Edit</a>
-          <!-- Opsional: Tombol Hapus -->
-          <a href="<?php echo site_url('kamar/hapus/' . $item['id_kamar']); ?>" 
-             class="btn btn-danger btn-sm" 
-             onclick="return confirm('Apakah Anda yakin ingin menghapus kamar ini?');">
-             Hapus
-          </a>
-        </div>
       </div>
     <?php endforeach; ?>
   </div>
