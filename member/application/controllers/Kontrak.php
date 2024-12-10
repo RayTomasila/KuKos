@@ -1,7 +1,5 @@
 <?php 
-
   class Kontrak extends CI_Controller {
-
     
     public function __construct() {
       parent::__construct();
@@ -24,7 +22,6 @@
     }
 
     public function index() {      
-
       $data['kontrak'] = $this->Mkontrak->tampil();
 
       $this->load->view('header');
@@ -51,8 +48,7 @@
       $this->load->view('footer');
    }
   
-   public function ubah($id_kontrak) {
-    
+   public function ubah($id_kontrak) {    
      $data['kontrak'] = $this->Mkontrak->getKontrakById($id_kontrak);
      $data['penyewa'] = $this->Mkontrak->getPenyewa();
      $data['kamar'] = $this->Mkontrak->getKamar();
@@ -70,8 +66,6 @@
     $this->load->view('kontrak_ubah', $data);
     $this->load->view('footer');
   }
-
-
 
    public function hapus($id_kontrak) {
     $this->Mkontrak->hapus($id_kontrak);

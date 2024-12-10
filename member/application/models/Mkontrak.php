@@ -1,15 +1,5 @@
 <?php
   class Mkontrak extends CI_Model {
-
-
-    public function getEnumValues($table, $column) {
-      $query = $this->db->query("SHOW COLUMNS FROM $table WHERE Field = '$column'");
-      $row = $query->row();
-      // Extract the enum values from the query result
-      preg_match("/^enum\((.*)\)$/", $row->Type, $matches);
-      $enumValues = str_getcsv($matches[1], ',', "'");
-      return $enumValues;
-  }
     
     private function queryTampilKontrakJoin($id_penyewa = null) {
       $this->db->select('penyewa.*, kontrak.*, kamar.*');
@@ -34,36 +24,6 @@
       $this->db->order_by('kontrak.id_kontrak', 'desc'); 
       return $result;
   }
-
-    public function getKontrakById($id_kontrak) {
-      $this->db->select('kontrak.*, penyewa.nama_penyewa, kamar.nomor_kamar, kamar.harga_kamar');
-      $this->db->from('kontrak');
-      $this->db->join('penyewa', 'penyewa.id_penyewa = kontrak.id_penyewa');
-      $this->db->join('kamar', 'kamar.id_kamar = kontrak.id_kamar');
-      $this->db->where('kontrak.id_kontrak', $id_kontrak);
-      $this->db->where('kontrak.id_member', $this->session->userdata("id_member"));
-      $query = $this->db->get();
-      return $query->row_array(); // Return a single row as we're fetching by ID
-  }
-
-      // Fetch all penyewa data
-      public function getPenyewa() {
-        $this->db->select('id_penyewa, nama_penyewa');
-        $this->db->from('penyewa');
-        $this->db->where('id_member', $this->session->userdata("id_member"));
-        $query = $this->db->get();
-        return $query->result_array(); // Return all penyewa data
-    }
-
-    // Fetch all kamar data
-    public function getKamar() {
-        $this->db->select('id_kamar, nomor_kamar, harga_kamar');
-        $this->db->from('kamar');
-        $this->db->where('id_member', $this->session->userdata("id_member"));
-        $query = $this->db->get();
-        return $query->result_array(); // Return all kamar data
-    }
-
   
     function detail($id_penyewa) {
       $result = $this->queryTampilKontrakJoin($id_penyewa);
@@ -86,6 +46,41 @@
       $this->db->where('id_member', $this->session->userdata("id_member"));
       $this->db->where('id_kontrak', $id_kontrak);
       $this->db->delete('kontrak');
+    }
+
+    public function getKontrakById($id_kontrak) {
+      $this->db->select('kontrak.*, penyewa.nama_penyewa, kamar.nomor_kamar, kamar.harga_kamar');
+      $this->db->from('kontrak');
+      $this->db->join('penyewa', 'penyewa.id_penyewa = kontrak.id_penyewa');
+      $this->db->join('kamar', 'kamar.id_kamar = kontrak.id_kamar');
+      $this->db->where('kontrak.id_kontrak', $id_kontrak);
+      $this->db->where('kontrak.id_member', $this->session->userdata("id_member"));
+      $query = $this->db->get();
+      return $query->row_array(); 
+  }
+
+    public function getEnumValues($table, $column) {
+      $query = $this->db->query("SHOW COLUMNS FROM $table WHERE Field = '$column'");
+      $row = $query->row();
+      preg_match("/^enum\((.*)\)$/", $row->Type, $matches);
+      $enumValues = str_getcsv($matches[1], ',', "'");
+      return $enumValues;
+    }
+
+    public function getPenyewa() {
+        $this->db->select('id_penyewa, nama_penyewa');
+        $this->db->from('penyewa');
+        $this->db->where('id_member', $this->session->userdata("id_member"));
+        $query = $this->db->get();
+        return $query->result_array(); 
+    }
+
+    public function getKamar() {
+        $this->db->select('id_kamar, nomor_kamar, harga_kamar');
+        $this->db->from('kamar');
+        $this->db->where('id_member', $this->session->userdata("id_member"));
+        $query = $this->db->get();
+        return $query->result_array(); 
     }
 
   }
