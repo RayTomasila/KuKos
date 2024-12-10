@@ -35,10 +35,22 @@
       $inputan = $this->input->post();
 
       if ($inputan) {
+        if ($_FILES['foto_ktp']['name']) {
+          $config['upload_path'] = $this->config->item("assets_penyewa");
+          $config['allowed_types'] = 'jpg|jpeg|png';
+          $this->load->library('upload', $config);
+    
+          if ($this->upload->do_upload('foto_ktp')) {
+            $upload_data = $this->upload->data();
+            $inputan['foto_ktp'] = $upload_data['file_name'];
+          }
+        }
+        
         $this->Mpenyewa->ubah($inputan, $id_penyewa);
         $this->session->set_flashdata('pesan_sukses', 'Penyewa Berhasil Diubah!');
         redirect('penyewa/detail/' . $id_penyewa, 'refresh');
-      }      
+      }
+    
       $this->load->view('header');
       $this->load->view('penyewa_detail', $data);
       $this->load->view('footer');
