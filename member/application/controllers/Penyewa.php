@@ -31,30 +31,34 @@
     public function detail($id_penyewa) {
       $data['penyewa'] = $this->Mpenyewa->detail($id_penyewa);      
       $data['kamar'] = $this->Mkamar->tampil($id_penyewa);
-
+  
       $inputan = $this->input->post();
-
+  
       if ($inputan) {
-        if ($_FILES['foto_ktp']['name']) {
-          $config['upload_path'] = $this->config->item("assets_penyewa");
-          $config['allowed_types'] = 'jpg|jpeg|png';
-          $this->load->library('upload', $config);
-    
-          if ($this->upload->do_upload('foto_ktp')) {
-            $upload_data = $this->upload->data();
-            $inputan['foto_ktp'] = $upload_data['file_name'];
+          if (!empty($_FILES['foto_ktp']['name'])) {
+              $config['upload_path'] = $this->config->item("assets_penyewa");
+              $config['allowed_types'] = 'jpg|jpeg|png';
+              $this->load->library('upload', $config);
+  
+              if ($this->upload->do_upload('foto_ktp')) {
+                  $upload_data = $this->upload->data();
+                  $inputan['foto_ktp'] = $upload_data['file_name'];
+              } else {
+                  $this->session->set_flashdata('pesan_gagal', 'Upload foto KTP gagal.');
+                  redirect('penyewa/detail/' . $id_penyewa, 'refresh');
+              }
           }
-        }
-        
-        $this->Mpenyewa->ubah($inputan, $id_penyewa);
-        $this->session->set_flashdata('pesan_sukses', 'Penyewa Berhasil Diubah!');
-        redirect('penyewa/detail/' . $id_penyewa, 'refresh');
+  
+          $this->Mpenyewa->ubah($inputan, $id_penyewa);
+          $this->session->set_flashdata('pesan_sukses', 'Penyewa berhasil diubah!');
+          redirect('penyewa/detail/' . $id_penyewa, 'refresh');
       }
-    
+  
       $this->load->view('header');
       $this->load->view('penyewa_detail', $data);
       $this->load->view('footer');
-    }
+  }
+  
 
     public function tambah() {
       $this->form_validation->set_rules('nama_penyewa', 'Nama Penyewa', 'required', [

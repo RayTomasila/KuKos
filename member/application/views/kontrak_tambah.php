@@ -2,7 +2,7 @@
   <div class="container-top">
     <p class="page-title">Tambah Kontrak</p>
   </div>
-
+  
   <form method="post" enctype="multipart/form-data">
       
       <div class="mb-3">

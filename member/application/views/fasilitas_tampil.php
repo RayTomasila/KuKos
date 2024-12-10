@@ -11,8 +11,10 @@
     <?php if (!empty($fasilitas)) : ?>
       <?php foreach ($fasilitas as $item) : ?>
         <div class="facility-card" onclick="window.location.href='<?php echo base_url('fasilitas/detail/'.$item['id_fasilitas']); ?>'">
-          <img src="<?php echo ($this->config->item("url_fasilitas") . $item['foto_fasilitas']); ?>" alt="foto fasilitas">
-
+          <div class="fasilitas-img-container">
+            <img src="<?php echo ($this->config->item("url_fasilitas") . $item['foto_fasilitas']); ?>" alt="foto fasilitas">
+          </div>
+            
           <div>
             <p class="nama-fasilitas"><?php echo $item['nama_fasilitas']; ?> - <?php echo $item['deskripsi']; ?></p>
           </div>
