@@ -22,9 +22,15 @@
       $inputan['id_member'] = $this->session->userdata("id_member"); 
       $this->db->where('id_fasilitas', $id_fasilitas);
       $this->db->where('id_member', $this->session->userdata("id_member")); 
-      $this->db->update('fasilitas', $inputan); 
+    
+      if (isset($inputan['foto_fasilitas']) && $inputan['foto_fasilitas'] != '') {
+        $this->db->update('fasilitas', $inputan); 
+      } else {
+        unset($inputan['foto_fasilitas']);
+        $this->db->update('fasilitas', $inputan); 
+      }
     }
-
+    
     function hapus($id_fasilitas) {
       $this->db->where('id_member', $this->session->userdata("id_member"));
       $this->db->where('id_fasilitas', $id_fasilitas);

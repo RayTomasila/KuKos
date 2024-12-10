@@ -1,7 +1,7 @@
 .facility-card {
   display: flex;
   flex-direction: row;
-  align-items: top;
+  align-items: center;
   justify-content: left;
   padding: 10px;
   border: 1px solid #ddd;
@@ -15,11 +15,16 @@
   height: 140px;
   object-fit: contain;
   border-radius: 5px;
-  margin-right: 25px;
+  margin-right: 35px;
 }
 
 .nama-fasilitas {
-  font-size: 20px;
+  font-size: 25px;
+}
+
+.foto-fasilitas img {
+  max-height: 250px;
+  margin: 10px 0;
 }
 
 .text-area-fasilitas {
@@ -28,7 +33,7 @@
 }
 
 .text-area-fasilitas textarea {
-  padding-left: 4px;
+  padding-left: 5px;
 }
 
 .error {

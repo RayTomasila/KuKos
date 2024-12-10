@@ -1,10 +1,6 @@
-<div class="container">
+<div class="container mb-5">
 <div class="container-top">
     <p class="page-title">Tambah Fasilitas</p>
-
-    <div>
-      <a href="<?php echo base_url("fasilitas/tambah")?>" class="btn-bg-green">Tambah Fasilitas</a>
-    </div>
   </div>
 
   <div>

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-5">
 
   <div class="container-top">
     <p class="page-title">Informasi Fasilitas</p>
@@ -21,9 +21,9 @@
         <textarea name="deskripsi" class="form-control"><?php echo $value['deskripsi']; ?></textarea>
       </div>
 
-      <div class="mb-3">
+      <div class="mb-3 foto-fasilitas">
         <label>Foto Fasilitas</label><br>
-        <img src="<?php echo $this->config->item('url_fasilitas').$value['foto_fasilitas']; ?>" width="300"> 
+        <img src="<?php echo $this->config->item('url_fasilitas').$value['foto_fasilitas']; ?>"> 
       </div>
 
       <div class="mb-3">

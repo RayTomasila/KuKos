@@ -34,6 +34,13 @@
       $this->db->where('id_penyewa', $id_penyewa);
       $this->db->where('id_member', $this->session->userdata("id_member")); 
       $this->db->update('penyewa', $inputan); 
+
+      if (isset($inputan['foto_ktp']) && $inputan['foto_ktp'] != '') {
+        $this->db->update('penyewa', $inputan); 
+      } else {
+        unset($inputan['foto_ktp']);
+        $this->db->update('penyewa', $inputan); 
+      }
     }
       
     function hapus($id_penyewa) {
