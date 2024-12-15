@@ -1,66 +1,42 @@
-.kontrak-container {
-	min-height: 100%;
-  margin-bottom: 100px;
-}
-
-.table-container {
-  overflow-x: auto;
-  padding: 14px;
-}
-
-table {
-  max-width: 100%;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  text-align: left;
-  font-family: 'Poppins';
-	margin: 18px 4px;
-  border-collapse: collapse; 
-  border-radius: 30px;
+#tabelku.dataTable {
+  width: 100%;
+  min-width: 800px;
+  max-width: fit-content;
+  table-layout: auto;
   overflow: hidden;
+  font-family: 'Poppins';
+  border-radius: 20px;
+  /* box-shadow: 3px 4px 8px rgba(23, 23, 23, 0.189); */
 }
+
+#tabelku th, #tabelku td {
+  padding: 20px;
+  text-align: left;
+  text-wrap: nowrap;
+  vertical-align: middle;
+  color: black;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  font-weight: 500;
+}
+
 
 #tabelku span {
-	text-align: center;
   color: black;
-  font-weight: 500;
 }
 
-th,
-td {
-  width: fit-content;
-  white-space: nowrap;
-  text-wrap: nowrap;
-  padding: 25px 0 25px 30px; 
-  margin: 0; 
-  border-bottom: 2px solid black;
+
+#tabelku th {
+  background-color: var(--secondary-color);
 }
 
-th {
-	text-align: left;
-  color: black;
-  font-weight: 500;
-	height: 70px;
-}
-
-thead {
-	th {
-  color: black;
-
-		/* background-color: #939393; */
-	background-color: var(--secondary-color);
-
-	}
-}
-
-tr {
-  display: table-row; 
-  padding: 0;
-}
 
 .table-buttons {
   width: fit-content;
+  height: 100%;
   display: flex;
-  justify-content: left; 
+  justify-content: left;
   gap: 8px;
 }
 
@@ -71,34 +47,10 @@ tr {
 }
 
 .js-card-status-pembayaran {
-  align-content: center;
-  justify-self: left;
   text-align: center;
   min-height: 35px;
   min-width: 80px;
-  margin: 0;
-  padding: 0;
   color: white;
   border-radius: 5px;
   font-weight: 600;
-}
-
-tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-tbody td {
-  position: relative;
-  &:hover {
-    &:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: -9999px;
-      bottom: -9999px;
-      background-color: rgba(255,255,255,0.2);
-      z-index: -1;
-    }
-  }
 }

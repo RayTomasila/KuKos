@@ -1,35 +1,18 @@
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-container a {
-  background-color: #93d56b;
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.header-container a:hover {
-  background-color: #218838;
-}
-
-
 .kamar-container {
   display: grid; 
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 20px; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   max-width: 100%;
   margin: 0 auto; 
   padding: 0;
 }
 
 .kamar-card {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: fit-content;
+
   border: 1px solid #ccc;
   border-radius: 26px;
   padding: 20px 20px 29px;
