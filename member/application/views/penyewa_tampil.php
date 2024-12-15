@@ -1,5 +1,4 @@
-<div class="container wrapper-penyewa">
-
+<div class="container">
   <div class="container-top">
     <p class="page-title">Daftar Penyewa</p>
 
@@ -9,16 +8,15 @@
     </div>
 
     <div>
-      <a href="<?php echo base_url("penyewa/tambah")?>" class="btn-bg-green">Tambah Penyewa</a>
+      <a href="<?php echo base_url("penyewa/tambah") ?>" class="btn-bg-green">Tambah Penyewa</a>
     </div>
-
   </div>
-  
+
   <div class="card-container">
     <?php foreach ($penyewa as $key => $value): ?>
-      <div 
-        class="card-content" 
-        onclick="window.location.href='<?php echo base_url('penyewa/detail/'.$value['id_penyewa']); ?>'">
+      <div
+        class="card-content"
+        onclick="window.location.href='<?php echo base_url('penyewa/detail/' . $value['id_penyewa']); ?>'">
 
         <div class="card-top">
           <p class="penyewa-nama"><?php echo $value['nama_penyewa'] ?></p>
@@ -30,10 +28,10 @@
               <img src="../public/assets/member/penyewa/penyewa-wa.png" alt="wa logo">
             </div>
 
-            <p 
-              class="penyewa-link-wa" 
+            <p
+              class="penyewa-link-wa"
               onclick="event.stopPropagation(); window.open('https://wa.me/<?php echo $value['nomor_telepon'] ?>', '_blank');">
-            <?php echo $value['nomor_telepon'] ?? 'Belum Ada' ?>
+              <?php echo $value['nomor_telepon'] ?? 'Belum Ada' ?>
             </p>
           </div>
 
@@ -58,7 +56,7 @@
           </div>
 
 
-        </div>       
+        </div>
 
       </div>
     <?php endforeach ?>

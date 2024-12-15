@@ -1,4 +1,4 @@
-<div class="container my-4">
+<div class="container">
   <div class="container-top">
     <p class="page-title">Daftar Kamar</p>
 
