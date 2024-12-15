@@ -34,13 +34,13 @@
   cursor: default;
   transition: box-shadow 0.1s ease-out;
 
-  padding: 20px; /* Add padding for better spacing */
-  aspect-ratio: 1 / 1; /* Optional: Makes grid items square */
+  padding: 20px; 
+  aspect-ratio: 1 / 1; 
 }
 
 .grid-item img {
   margin-bottom: 20px;
-  width: 60%; /* Responsive image width */
+  width: 60%; 
 }
 
 .grid-item:hover {
@@ -50,17 +50,17 @@
               rgba(255, 255, 255, 0.1) 0px 0px 0px 6px inset;
 }
 
-/* Optional: Media Queries for Extra Control */
+
+/*  Media Queries */
 @media (max-width: 768px) {
 
   .dashboard-grid-container {
-    grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Smaller columns */
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
     gap: 15px; 
-
   }
 
   .grid-item img {
-    width: 70%; /* Slightly larger images on smaller screens */
+    width: 70%; 
   }
 }
 
@@ -70,11 +70,11 @@
   }
 
   .dashboard-grid-container {
-    grid-template-columns: 1fr; /* Single column layout for very small screens */
+    grid-template-columns: 1fr; 
     gap: 30px;
   }
 
   .grid-item {
-    font-size: 16px; /* Adjust font size */
+    font-size: 16px; 
   }
 }
