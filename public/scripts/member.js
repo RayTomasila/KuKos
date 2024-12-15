@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Handle the statusPembayaran logic
+  const searchInput = document.querySelector('.search-form input');
+  const cards = document.querySelectorAll('.card-content');
+
+
   let statusPembayaranElements = document.querySelectorAll('.js-card-status-pembayaran');
 
   statusPembayaranElements.forEach((statusPembayaran) => {
@@ -11,36 +14,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle the nomor_kamar change event to update Total Bayar
   const nomorKamarSelect = document.getElementById('nomor_kamar');
 
   if (nomorKamarSelect) {
-    nomorKamarSelect.addEventListener('change', function() {
-      const selectedOption = this.options[this.selectedIndex]; // Get the selected option
-      const harga = selectedOption.getAttribute('data-harga'); // Get the 'data-harga' attribute value
+    nomorKamarSelect.addEventListener('change', function () {
+      const selectedOption = this.options[this.selectedIndex];
+      const harga = selectedOption.getAttribute('data-harga');
 
-      // Check if a valid room was selected and convert 'harga' to a number
       if (harga) {
-        const hargaNumber = parseFloat(harga); // Convert to a number
+        const hargaNumber = parseFloat(harga);
 
-        // Check if the conversion was successful
+
         if (!isNaN(hargaNumber)) {
-          // Format the price to make it readable (add commas)
           const formattedHarga = new Intl.NumberFormat('id-ID').format(hargaNumber);
-
-          // Set the 'jumlah_pembayaran' input field value with formatted price
           document.getElementById('jumlah_pembayaran').value = formattedHarga;
         }
       }
     });
   }
 
-  document.getElementById("jumlah_pembayaran").addEventListener("input", function (e) {
-    const input = e.target;
-    let value = input.value.replace(/[^\d]/g, ""); // Remove non-numeric characters
-    if (value) {
-      value = new Intl.NumberFormat('id-ID').format(value); // Format the number
-    }
-    input.value = value; // Set the formatted value back to the input
+
+  searchInput.addEventListener('input', function () {
+    const query = searchInput.value.toLowerCase();
+    console.log("Search Query:", query);
+
+    cards.forEach(function (card) {
+      const name = card.querySelector('.penyewa-nama').textContent.toLowerCase();
+      console.log("Card Name:", name);
+
+      if (name.includes(query)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
   });
+
 });
