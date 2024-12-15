@@ -46,7 +46,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   gap: 20px;
   max-width: 100%;
-  justify-items: center; /* Center the single card when it takes the whole space */
+  justify-items: center; 
 }
 
 .card-content {
@@ -56,7 +56,7 @@
   gap: 24px;
   
   width: 100%;
-  max-width: 300px; /* This ensures the card doesn't exceed 300px */
+  max-width: 100%;
   height: auto;
   max-height: fit-content;
   padding: 15px;

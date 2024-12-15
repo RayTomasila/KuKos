@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const searchInput = document.querySelector('.search-form input');
-  const cards = document.querySelectorAll('.card-content');
-
-
   let statusPembayaranElements = document.querySelectorAll('.js-card-status-pembayaran');
 
   statusPembayaranElements.forEach((statusPembayaran) => {
@@ -33,21 +29,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Cari Penyewa
+  const searchInput = document.querySelector('.search-form input');
+  const cards = document.querySelectorAll('.card-content');
+  const container = document.querySelector('.card-container'); 
+  
+  const noResultsMessage = document.createElement('h4');
+  noResultsMessage.textContent = 'Penyewa tidak ditemukan...';
+  noResultsMessage.style.display = 'none';
+  container.appendChild(noResultsMessage); 
 
-  searchInput.addEventListener('input', function () {
+  searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase();
-    console.log("Search Query:", query);
-
-    cards.forEach(function (card) {
+    let anyVisible = false;
+  
+    cards.forEach(card => {
       const name = card.querySelector('.penyewa-nama').textContent.toLowerCase();
-      console.log("Card Name:", name);
-
-      if (name.includes(query)) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
+      card.style.display = name.includes(query) ? 'block' : 'none';
+      if (name.includes(query)) anyVisible = true;
     });
+  
+    noResultsMessage.style.display = anyVisible ? 'none' : 'block';
   });
 
 });
