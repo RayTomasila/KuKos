@@ -21,18 +21,24 @@
         <input type="text" name="nomor_telepon" value="<?php echo $value['nomor_telepon'] ?>" class="form-control">
       </div>
 
+      <div class="dropdown mb-3">
+        <label class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Berkas
+        </label>
+        <div class="dropdown-menu static-dropdown mb-5" aria-labelledby="dropdownMenuButton">
+          <img src="<?php echo $this->config->item('url_penyewa') . $value['foto_ktp']; ?>" width="300" class="img-fluid">
+        </div>
+      </div>
+
+
       <div class="mb-3">
-          <label>Berkas</label><br>
-          <img src="<?php echo $this->config->item("url_penyewa"). $value['foto_ktp'] ?>" width="500"> 
-        </div>
-        
-        <div class="mb-3">
-          <label>Ganti Foto Berkas</label>
-          <input type="file" name="foto_ktp" class="form-control w-25">
-        </div>
+        <label>Ganti Foto Berkas</label>
+        <input type="file" name="foto_ktp" class="form-control custom-input">
+      </div>
 
       <button type="submit" class="btn-bg-blue mt-3">Ubah Data Penyewa</button>
-      
+
+            
     </form>
     <?php endforeach;?>
   </section>
