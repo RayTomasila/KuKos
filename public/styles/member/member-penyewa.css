@@ -1,5 +1,11 @@
 .wrapper-penyewa {
-  height: 100vh;
+  min-height: 100%;
+  margin-bottom: 5%;
+}
+
+.wrapper-penyewa p {
+  margin: 0;
+  padding: 0;
 }
 
 .container-top {
@@ -85,32 +91,30 @@
   margin: 0;
 }
 
-.card-top .js-card-status-pembayaran {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-height: 40px;
-  min-width: 60px;
-  margin: 0;
-  color: white;
-  border-radius: 5px;
-}
-
 
 .card-item-container {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  gap: 15px;
 }
 
 .card-items {
   display: flex;
   flex-direction: row;
   align-items: top;
+  letter-spacing: 0.2px;
+}
+
+.card-img-container {
+  height: 25px;
+  width: 25px;
+  margin-right: 15px;
 }
 
 .card-items img {
-  height: 25px;
-  margin-right: 15px;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .penyewa-link-wa {
@@ -121,8 +125,47 @@
   letter-spacing: 0.3px;
 }
 
-.table-riwayat {
-  height: 80vh;
+.js-card-status-pembayaran {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 40px;
+  min-width: auto;
+  margin: 0;
+  color: white;
+  border-radius: 5px;
+}
+
+.dropdown-toggle {
+  text-decoration: underline;
+  cursor: default;
+
 }
 
 
+.static-dropdown {
+  position: relative !important; 
+  transform: translate3d(0px, 10px, 0px) ; 
+  transition: transform 0.3s ease, height 0.4s ease
+}
+
+.dropdown.show .static-dropdown {
+  transform: translate3d(0px, 10px, 0px) !important; 
+  transition: transform 0.3s ease, opacity 0.3s ease, 
+}
+
+
+.dropdown-menu {
+  width: fit-content;
+  padding: 10px; 
+  border: 1px solid #ddd; 
+  box-shadow: none; 
+}
+
+.form-control.custom-input {
+  width: 300px;
+}
+
+.table-riwayat {
+  height: 80vh;
+}

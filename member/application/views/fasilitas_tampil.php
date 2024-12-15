@@ -24,6 +24,4 @@
       <p>Tidak ada fasilitas yang tersedia.</p>
     <?php endif; ?>
   </div>
-
-
 </div>
