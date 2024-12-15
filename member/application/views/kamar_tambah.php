@@ -26,9 +26,20 @@
   </div>
 
   <div class="form-group">
-    <label for="id_fasilitas">ID Fasilitas</label>
-    <input type="text" class="form-control mb-3" name="id_fasilitas" value="<?php echo set_value('id_fasilitas'); ?>">
-  </div>
+    <label for="id_fasilitas">Fasilitas</label><br>
+    <?php if (!empty($fasilitas)): ?>
+        <?php foreach ($fasilitas as $f): ?>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="id_fasilitas[]" value="<?php echo $f['id_fasilitas']; ?>" 
+                <?php echo set_checkbox('id_fasilitas[]', $f['id_fasilitas']); ?>>
+                <label class="form-check-label"><?php echo $f['nama_fasilitas']; ?></label>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>Tidak ada fasilitas yang tersedia. Silakan tambahkan fasilitas terlebih dahulu.</p>
+    <?php endif; ?>
+</div>
+
 
   <div class="form-group">
     <label for="foto_kamar">Foto Kamar</label>

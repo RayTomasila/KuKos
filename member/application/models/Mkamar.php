@@ -30,6 +30,11 @@ public function update_kamar($id_kamar, $data) {
     $this->db->where('id_kamar', $id_kamar);
     return $this->db->update('kamar', $data);
 }
+public function get_fasilitas_by_member($id_member) {
+  $this->db->where('id_member', $id_member);
+  return $this->db->get('fasilitas')->result_array();
+}
+
 
   
   }
