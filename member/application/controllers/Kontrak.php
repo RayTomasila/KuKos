@@ -31,7 +31,7 @@
 
     public function tambah() {      
       $data['penyewa'] = $this->Mpenyewa->tampil();
-      $data['kamar'] = $this->Mkamar->tampil($this->session->userdata("id_member"));
+      $data['kamar'] = $this->Mkamar->tampil();
       $data['statusOptions'] = $this->Mkontrak->getEnumValues('kontrak', 'status_pembayaran');
     
       $inputan = $this->input->post();
@@ -49,9 +49,9 @@
    }
   
    public function ubah($id_kontrak) {    
-     $data['kontrak'] = $this->Mkontrak->getKontrakById($id_kontrak);
-     $data['penyewa'] = $this->Mkontrak->getPenyewa();
-     $data['kamar'] = $this->Mkontrak->getKamar();
+     $data['kontrak'] = $this->Mkontrak->detail($id_kontrak);
+     $data['penyewa'] = $this->Mpenyewa->tampil();
+     $data['kamar'] = $this->Mkamar->tampil();
      $data['statusOptions'] = $this->Mkontrak->getEnumValues('kontrak', 'status_pembayaran');
 
     $inputan = $this->input->post();

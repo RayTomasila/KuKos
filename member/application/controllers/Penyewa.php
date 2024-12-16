@@ -1,5 +1,4 @@
 <?php 
-
   class Penyewa extends CI_Controller {
 
     public function __construct() {
@@ -18,6 +17,7 @@
       $this->load->model('Mmember'); 
       $this->load->model('Mkamar');
       $this->load->library('form_validation');
+      $this->load->helper('custom');
     }
 
     public function index() {      
@@ -30,7 +30,7 @@
 
     public function detail($id_penyewa) {
       $data['penyewa'] = $this->Mpenyewa->detail($id_penyewa);      
-      $data['kamar'] = $this->Mkamar->tampil($id_penyewa);
+      $data['kamar'] = $this->Mkamar->tampil();
   
       $inputan = $this->input->post();
   
@@ -57,7 +57,7 @@
       $this->load->view('header');
       $this->load->view('penyewa_detail', $data);
       $this->load->view('footer');
-  }
+    }
   
 
     public function tambah() {
@@ -93,12 +93,6 @@
       $this->session->set_flashdata('pesan_sukses', 'Penyewa Berhasil dihapus');
       redirect('penyewa', 'refresh');
     }
-
-    public function get_penyewa($id_penyewa) {
-      $this->db->where('id_penyewa', $id_penyewa);
-      $this->db->where('id_member', $this->session->userdata("id_member"));
-      return $this->db->get('penyewa')->row_array();
-  }
 
   }
 

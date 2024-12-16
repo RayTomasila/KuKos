@@ -54,7 +54,6 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
   min-height: fit-content;
-  overflow-x: hidden;
 }
 
 body {
@@ -67,9 +66,10 @@ body {
 .container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 0 0 0;
-  flex: 1;
+  margin: 0 auto;
+  /* padding: 100px; */
 }
+
 
 
 h1,

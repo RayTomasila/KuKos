@@ -1,19 +1,18 @@
-<div class="container my-4">
+<div class="container">
   <div class="container-top">
     <p class="page-title">Daftar Kamar</p>
 
     <div>
-      <a href="<?php echo base_url("kamar/tambah")?>" class="btn-bg-green">Tambah Kamar</a>
+      <a href="<?php echo base_url("kamar/tambah") ?>" class="btn-bg-green">Tambah Kamar</a>
     </div>
 
   </div>
-  
+
   <div class="kamar-container mt-4">
     <?php foreach ($kamar as $item): ?>
 
-      <div class="kamar-card" 
-           onclick="window.location.href='<?php echo site_url('kamar/ubah/' . $item['id_kamar']); ?>'">
-           
+      <div class="kamar-card"
+        onclick="window.location.href='<?php echo site_url('kamar/ubah/' . $item['id_kamar']); ?>'">
 
         <div class="container-foto-kamar">
           <img src="<?php echo $this->config->item("url_kamar") . $item['foto_kamar']; ?>" alt="foto_kamar" class="mb-4">
@@ -34,14 +33,15 @@
         <p class="mb-3"><?php echo number_format($item['harga_kamar'], 0, ',', '.'); ?></p>
 
         <p>
-            <span class="<?php 
-                echo ($item['status_kamar'] == 'digunakan') ? 'status-digunakan' : 
-                      ($item['status_kamar'] == 'siap huni' ? 'status-siap-huni' : 
-                      'status-tidak-aktif'); ?>">
-                <?php echo ucfirst($item['status_kamar']); ?>
-            </span>
+          <span class="
+            <?php
+              echo ($item['status_kamar'] == 'digunakan') ? 'status-digunakan' : 
+                   ($item['status_kamar'] == 'siap huni' ? 'status-siap-huni' : 'status-tidak-aktif'); ?>">
+              <?php echo ucfirst($item['status_kamar']); 
+            ?>
+          </span>
         </p>
-        
+
       </div>
     <?php endforeach; ?>
   </div>
