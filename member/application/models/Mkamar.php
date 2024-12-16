@@ -9,13 +9,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }  
 
     public function tampil() {
-      $this->db->select('kamar.*, fasilitas.nama_fasilitas');
+      $this->db->select('fasilitas.nama_fasilitas, kamar.*, kontrak.id_kontrak, penyewa.nama_penyewa');
       $this->db->from('kamar');
-      $this->db->join('fasilitas', 'kamar.id_fasilitas = fasilitas.id_fasilitas', 'left');
-      $this->db->where('kamar.id_member', $this->session->userdata('id_member'));
-      $q = $this->db->get();
-
-      return $q->result_array();
+      $this->db->join('fasilitas', 'fasilitas.id_fasilitas = kamar.id_fasilitas', 'left');
+      $this->db->join('kontrak', 'kamar.id_kamar = kontrak.id_kamar', 'inner');
+      $this->db->join('penyewa', 'kontrak.id_penyewa = penyewa.id_penyewa', 'left');
+      $this->db->where('kamar.id_member', $this->session->userdata('id_member')); 
+      $query = $this->db->get();
+      
+      return $query->result_array();
+      
     }
 
     public function detail($id_kamar) {
