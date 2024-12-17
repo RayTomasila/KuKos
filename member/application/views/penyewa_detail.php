@@ -5,7 +5,7 @@
     
     <?php foreach ($penyewa as $key => $value): ?>
     
-    <a href="<?php echo base_url("penyewa/hapus/". $value['id_penyewa'])?>" class="btn-bg-red"> Hapus Penyewa</a>  
+    <a href="<?php echo base_url("penyewa/hapus/". $value['id_penyewa'])?>" class="btn btn--red"> Hapus Penyewa</a>  
   </div>
 
   <!-- form Ubah Data Penyewa START -->
@@ -36,7 +36,7 @@
         <input type="file" name="foto_ktp" class="form-control custom-input">
       </div>
 
-      <button type="submit" class="btn-bg-blue mt-3">Ubah Data Penyewa</button>
+      <button type="submit" class="btn btn--blue mt-3">Ubah Data Penyewa</button>
 
             
     </form>

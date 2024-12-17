@@ -24,7 +24,7 @@
       <?php echo form_error('foto_ktp', '<small class="text-danger">', '</small>'); ?>
     </div>
       
-    <button type="submit" class="btn-bg-green mt-3">Tambah Penyewa</button>
+    <button type="submit" class="btn btn--green mt-3">Tambah Penyewa</button>
   </form>
 
 </div>

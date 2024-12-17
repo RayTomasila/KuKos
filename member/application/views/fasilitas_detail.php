@@ -5,7 +5,7 @@
 
     <?php foreach ($fasilitas as $key => $value): ?>
 
-      <a href="<?php echo base_url("fasilitas/hapus/". $value['id_fasilitas']); ?>" class="btn-bg-red">Hapus fasilitas</a>  
+      <a href="<?php echo base_url("fasilitas/hapus/". $value['id_fasilitas']); ?>" class="btn btn--red">Hapus fasilitas</a>  
 
   </div>
 
@@ -31,7 +31,7 @@
         <input type="file" name="foto_fasilitas" class="form-control w-25">
       </div>
 
-      <button type="submit" class="btn-bg-blue mt-3">Ubah Data Fasilitas</button>
+      <button type="submit" class="btn btn--blue mt-3">Ubah Data Fasilitas</button>
       
     </form>
     <?php endforeach; ?>

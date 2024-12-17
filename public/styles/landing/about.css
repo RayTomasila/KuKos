@@ -1,0 +1,33 @@
+#about {
+  background-color: #F7FFF2;
+  width: 100%;
+  height: 100%;
+}
+
+.about-container {
+  background: linear-gradient(
+    rgba(84, 220, 0, 0.5), 
+    rgba(242, 242, 59, 0.834)
+    );
+  height: 400px;
+  margin: 100px 0;   
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 50px;
+  box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.272);
+
+}
+
+
+/* Text */
+.word {
+  margin: 0;
+  color: white;
+  font-size: 70px;
+  font-weight: 700;
+  text-shadow: 5px 2px #222324a9, 2px 4px #22232421, 3px 5px #22232491;
+}
+

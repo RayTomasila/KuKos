@@ -25,7 +25,7 @@
         <input type="file" name="foto_fasilitas" id="foto_fasilitas"  class="form-control" required>        
       </div>
 
-      <button type="submit" class="btn-bg-green">Simpan</button>
+      <button type="submit" class="btn btn--green">Simpan</button>
       
     </form>
   </div>

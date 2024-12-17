@@ -41,11 +41,11 @@
 </div>
 
 
-  <div class="form-group">
+  <div class="form-group mb-3">
     <label for="foto_kamar">Foto Kamar</label>
     <input type="file" class="form-control mb-3" name="foto_kamar">
   </div>
 
-  <button type="submit" class="btn-bg-green">Tambah Kamar</button>
+  <button type="submit" class="btn btn--green mt-3">Tambah Kamar</button>
   <?php echo form_close(); ?>
 </div>

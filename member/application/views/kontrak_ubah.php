@@ -57,7 +57,7 @@
     </div>
 
 
-      <button type="submit" class="btn-bg-blue mt-3">Ubah Kontrak</button>
+      <button type="submit" class="btn btn--blue mt-3">Ubah Kontrak</button>
 
     </form>
   </section>
