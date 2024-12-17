@@ -8,6 +8,7 @@
     <!-- css styles -->
       <link rel="stylesheet" href="../public/styles/general.css">
       <link rel="stylesheet" href="../public/styles/dashboard/navbar.css">
+      <link rel="stylesheet" href="../public/styles/dashboard/hero.css">
       <link rel="stylesheet" href="../public/styles/dashboard/beli.css">
       <link rel="stylesheet" href="../public/styles/dashboard/fitur.css">
       <link rel="stylesheet" href="../public/styles/dashboard/footer.css">

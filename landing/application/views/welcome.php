@@ -1,70 +1,27 @@
+<!-- Hero Page -->
+ <section id="beranda">
+  <div class="hero-container">
+    <div class="hero-left-section container">
+      <p class="beranda-title">Solusi manajemen kost yang praktis dan efisien</p>
+      <hr>
+      <p class="beranda-text mt-3">Tingkatkan pengalaman pengelolaan kost Anda dengan fitur canggih yang dirancang untuk menghemat waktu, mengoptimalkan pendapatan, dan memberikan layanan terbaik bagi penghuni. </p>
 
-  <!-- Hero Start -->
-  <section id="hero">
-    <div id="carouselExampleInterval" class="carousel slider" data-bs-ride="carousel" >
-      <div class="carousel-inner">
-
-          <?php foreach ($slider as $key => $value): ?>
-              <div class="carousel-item <?php echo $key == 0 ? "active" : ""; ?>" data-bs-interval="3000">
-                  <img src="<?php echo $this->config->item("url_slider").$value["foto_slider"]; ?>" 
-                  class="d-flex justify-content-center" style="object-fit:contain; height:95vh;">
-                  <div class="carousel-caption d-none d-md-block">
-                      <h2><?php echo $value['caption_slider']; ?></h2>
-                  </div>
-              </div>
-          <?php endforeach; ?>
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-
+      <a href="#langganan"><button class="btn-bg-secondary mt-4">Coba Sekarang !</button></a>
     </div>
-  </section>
-  <!-- Hero End -->
 
- <!-- beli Start -->
-  <section id="beli" class="container">
-    <div class="beli-container" >
+    <div class="hero-right-section">
+      <img src="../public/assets/dashboard/hero-bg.jpg" class="">
+    </div>
+  </div>
+ </section>
+<!-- Hero Page -->
+
+<!-- beli Start -->
+  <section id="beli">
+    <div class="beli-container container" >
 
       <div class="word">KELOLA KOS TANPA REPOT</div>
 
-      <!-- /* From Uiverse.io by cssbuttons-io */  -->
-      <button href="#" class="button" style="--clr: #7808d0">
-        <span class="button__icon-wrapper">
-          <svg
-            viewBox="0 0 14 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="button__icon-svg"
-            width="10"
-          >
-            <path
-              d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-              fill="currentColor"
-            ></path>
-          </svg>
-
-          <svg
-            viewBox="0 0 14 15"
-            fill="none"
-            width="10"
-            xmlns="http://www.w3.org/2000/svg"
-            class="button__icon-svg button__icon-svg--copy"
-          >
-            <path
-              d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-              fill="currentColor"
-            ></path>
-          </svg>
-        </span>
-        Coba Sekarang !
-      </button>
 
     </div>
   </section>
@@ -72,13 +29,10 @@
 
   <!-- Fitur Start -->
    <section id="fitur">
-    <h2>SOLUSI MUDAH MENGELOLA KOS</h2>
-    <hr class="title-underline">
-
     <div class="fitur-container">
       
       <!-- Fitur 1 -->
-      <div class="fitur-content">
+      <div class="fitur-content fitur-content-1">
         <div class="left-section">
           <h3>MUDAH MENGELOLA KAMAR</h3>
           <p>Dengan KuKos, Anda bisa mengelola kamar kos dengan mudah, 
@@ -95,7 +49,7 @@
       <!-- Fitur 1 -->
 
       <!-- Fitur 2 -->
-      <div class="fitur-content">
+      <div class="fitur-content fitur-content-2">
         <div class="left-section-mid">
           <img src="../public/assets/dashboard/fitur-2.png" alt="foto-fitur-2">
         </div>
@@ -110,7 +64,7 @@
       <!-- Fitur 2 -->
 
       <!-- Fitur 3 -->
-      <div class="fitur-content">
+      <div class="fitur-content fitur-content-1">
         <div class="left-section">
           <h3>MUDAH MENGLOLA FASILITAS KAMAR</h3>
           <p>Dengan KuKos, pengelolaan fasilitas kos jadi lebih mudah. 
