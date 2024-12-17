@@ -1,0 +1,90 @@
+#fitur h2 {
+  text-align: center;
+}
+
+hr.title-underline {
+  border: 3px solid rgb(11, 219, 0);
+  width: 200px;
+  margin: 20px auto;
+}
+
+.fitur-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.fitur-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.fitur-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  padding-bottom: 20px;
+  position: relative;
+  line-height: 50px;
+}
+
+.fitur-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 4px;
+  background-color: white; 
+}
+
+.fitur-description {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  text-align: justify;
+}
+
+.left-section,
+.right-section-mid {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 125px;
+  width: 47%;
+  padding-right: 8%;
+}
+
+.right-section,
+.left-section-mid {
+  display: flex;
+  width: 47%;
+}
+
+.fitur-content img {
+  height: 100%;
+  width: 100%;
+}
+
+.fitur-content-1 {
+  background: linear-gradient(
+    rgb(116,182,76), 
+    rgb(99,155,65)
+  );
+}
+
+.fitur-content-2 {
+  background: linear-gradient(
+    rgb(68, 104, 46), 
+    rgb(76, 115, 53)
+  );
+}
+
+.fitur-content-3 {
+  background: linear-gradient(
+    rgb(52, 83, 34), 
+    rgb(46, 76, 29)
+  );
+  padding-bottom: 100px;
+}

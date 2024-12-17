@@ -4,7 +4,7 @@
     <p class="page-title">Kontrak Penyewa</p>
 
     <a href="<?php echo base_url("kontrak/tambah/") ?>"
-      class="btn-bg-green">Tambah Kontrak</a>
+      class="btn btn--green ">Tambah Kontrak</a>
   </div>
 
   <div style="overflow-x: auto;" class="table-responsive">

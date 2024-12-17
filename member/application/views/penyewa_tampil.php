@@ -8,7 +8,7 @@
     </div>
 
     <div>
-      <a href="<?php echo base_url("penyewa/tambah") ?>" class="btn-bg-green">Tambah Penyewa</a>
+      <a href="<?php echo base_url("penyewa/tambah") ?>" class="btn btn--green">Tambah Penyewa</a>
     </div>
   </div>
 

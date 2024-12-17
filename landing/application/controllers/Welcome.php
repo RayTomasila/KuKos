@@ -3,7 +3,6 @@ class Welcome extends CI_Controller {
 
   public function __construct() {
     parent::__construct();
-    $this->load->model('Mslider');
     $this->load->model('Mmember'); 
   }
 
@@ -27,9 +26,8 @@ class Welcome extends CI_Controller {
       }
     }
 
-    $data['slider'] = $this->Mslider->tampil();
     $this->load->view('header');
-    $this->load->view('welcome', $data);
+    $this->load->view('welcome');
     $this->load->view('footer');
   }
 }

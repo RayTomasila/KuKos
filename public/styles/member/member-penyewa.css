@@ -50,6 +50,7 @@
 }
 
 .card-content {
+  background-color: white !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,6 +68,7 @@
 
   transition: box-shadow 0.2s ease;
 }
+
 .card-content:hover {
   transform: scale(1.0);
   box-shadow: 4px 3px 14px rgba(0, 0, 0, 0.269);

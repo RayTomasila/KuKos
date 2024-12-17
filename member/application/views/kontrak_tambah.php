@@ -55,6 +55,6 @@
       </select>
     </div>
 
-      <button type="submit" class="btn-bg-green mt-3">Tambah Kontrak</button>
+      <button type="submit" class="btn btn--green mt-3">Tambah Kontrak</button>
     </form>
 </div>

@@ -4,18 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KuKos</title>
-    
-    <!-- css styles -->
-      <link rel="stylesheet" href="../public/styles/general.css">
-      <link rel="stylesheet" href="../public/styles/dashboard/navbar.css">
-      <link rel="stylesheet" href="../public/styles/dashboard/hero.css">
-      <link rel="stylesheet" href="../public/styles/dashboard/beli.css">
-      <link rel="stylesheet" href="../public/styles/dashboard/fitur.css">
-      <link rel="stylesheet" href="../public/styles/dashboard/footer.css">
-      <link rel="stylesheet" href="../public/styles/dashboard/register.css">
-    <!-- css styles -->
-    
-
+  
     <!-- fonts -->
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,70 +27,58 @@
       <!-- Include select2 CDN -->
     <!-- Bootstrap & JS -->
     
+    <!-- css styles -->
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/general.css') ?>">
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/navbar.css') ?>">
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/hero.css') ?>">
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/about.css') ?>">
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/fitur.css') ?>">
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/footer.css') ?>">
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/register.css') ?>">
+    <!-- css styles -->
+    
+
 
 </head>
 
 <body>
-<!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg py-3">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
-    <!-- Logo Section -->
-    <a href="#hero" class="navbar-brand d-lg-block">Ku<span>Kos</span></a>
-
-    <!-- Navbar Toggler Button for Mobile View -->
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#naff">
+<nav class="navbar navbar-expand-lg py-3 position-fixed top-0 z-index-1030">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a href="#hero" class="navbar-brand">Ku<span>Kos</span></a>
+    
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#naff">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navbar Items (Center Aligned) -->
+    <!-- Links -->
     <div class="collapse navbar-collapse" id="naff">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-          <a href="<?php echo base_url("welcome") ?>" class="nav-link">Beranda</a>
-        </li>
-        <li class="nav-item">
-          <a href="#fitur" class="nav-link">Fitur</a>
-        </li>
-        <li class="nav-item">
-          <a href="#biaya" class="nav-link">Biaya</a>
-        </li>
-        <li class="nav-item">
-          <a href="#panduan" class="nav-link">Panduan</a>
-        </li>
-        <li class="nav-item">
-          <a href="#kontak" class="nav-link">Kontak</a>
-        </li>
+        <li class="nav-item"><a href="#home" class="nav-link">Beranda</a></li>
+        <li class="nav-item"><a href="#fitur" class="nav-link">Fitur</a></li>
+        <li class="nav-item"><a href="#biaya" class="nav-link">Biaya</a></li>
+        <li class="nav-item"><a href="#panduan" class="nav-link">Panduan</a></li>
+        <li class="nav-item"><a href="#kontak" class="nav-link">Kontak</a></li>
       </ul>
 
-      <!-- Right-side items: Login/Register or User Profile -->
+      <!-- User Section -->
       <?php if ($this->session->userdata("id_member")): ?>
         <ul class="navbar-nav">
           <li class="nav-item">
             <a href="<?php echo base_url("akun") ?>" class="nav-link">
-              <?php 
-                $full_name = $this->session->userdata("nama_lengkap_member");
-                $first_name = explode(" ", $full_name)[0];
-                echo $first_name; 
-              ?>
+              <?php echo explode(" ", $this->session->userdata("nama_lengkap_member"))[0]; ?>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="<?php echo base_url("logout") ?>" class="nav-link">Logout</a>
-          </li>
+          <li class="nav-item"><a href="<?php echo base_url("logout") ?>" class="nav-link">Logout</a></li>
         </ul>
-      <?php endif ?>
-
-      <?php if (!$this->session->userdata("id_member")): ?>
+      <?php else: ?>
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#login" class="nav-link">Login</a>
-          </li>
-          <li class="nav-item">
-            <a href="<?php echo base_url("register") ?>" class="nav-link">Register</a>
-          </li>
+          <li class="nav-item"><a href="#" data-bs-toggle="modal" data-bs-target="#login" class="nav-link">Login</a></li>
+          <li class="nav-item"><a href="<?php echo base_url("register") ?>" class="nav-link">Register</a></li>
         </ul>
-      <?php endif ?>
+      <?php endif; ?>
     </div>
   </div>
 </nav>
-<!-- Navbar End -->
+

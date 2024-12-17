@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (statusPembayaran.innerText === 'lunas') {
       statusPembayaran.classList.add('js-card-status-lunas');
     } else if (statusPembayaran.innerText === 'belum bayar') {
-      statusPembayaran.classList.add('js-card-status-lewat');
+      statusPembayaran.classList.add('js-card-status-belum-bayar');
     }
   });
 

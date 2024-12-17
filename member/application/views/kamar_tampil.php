@@ -3,7 +3,7 @@
     <p class="page-title">Daftar Kamar</p>
 
     <div>
-      <a href="<?php echo base_url("kamar/tambah") ?>" class="btn-bg-green">Tambah Kamar</a>
+      <a href="<?php echo base_url("kamar/tambah") ?>" class="btn btn--green">Tambah Kamar</a>
     </div>
 
   </div>

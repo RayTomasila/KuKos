@@ -3,7 +3,7 @@
     <p class="page-title">Informasi Kamar</p>
 
     <div>
-      <a href="<?php echo site_url("kamar/hapus/" . $kamar->id_kamar) ?>" class="btn-bg-red" onclick="return confirm('Apakah Anda yakin ingin menghapus kamar ini?');">Hapus Kamar</a>
+      <a href="<?php echo site_url("kamar/hapus/" . $kamar->id_kamar) ?>" class="btn btn--red" onclick="return confirm('Apakah Anda yakin ingin menghapus kamar ini?');">Hapus Kamar</a>
     </div>
 
   </div>
@@ -42,7 +42,7 @@
         <input type="file" class="form-control mb-3" name="foto_kamar">
     </div>
 
-    <button type="submit" class="btn-bg-blue">Ubah Kamar</button>
+    <button type="submit" class="btn btn--blue">Ubah Kamar</button>
 
     <?php echo form_close(); ?>
 </div>

@@ -1,0 +1,17 @@
+.register-button {
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  font-weight: 500;
+  font-family: 'Poppins';
+}
+
+h2 {
+  font-family: 'Poppins';
+}
+
+.city-dropdown option:focus {
+  outline: none;
+}

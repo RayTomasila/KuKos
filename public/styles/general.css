@@ -1,33 +1,52 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
 
 /* Variables */
 :root {
-  --primary-color: #93d56b;
+  --primary-color: #568c35;
   --secondary-color: #FFFF99;
   --accent-color: #FBFBFB;
-  --background-color: #eaeaea;
-  --text-color: #333333;
-
-  /* shadow */
-  --shadow-1: 3px 3px 9px hsla(240, 14%, 69%, 0.2);
-  --shadow-2: 3px 3px 9px hsla(204, 92%, 59%, 0.3);
-  /* shadow */
+  --background-color: #F7FFF2;
+  --member-background-color: #F7FFF2;
+  --text-color: #707572;
 }
 
-
+/* Global Resets */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: none;
-  text-decoration: none;
 }
 
-li { list-style: none; }
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  padding-bottom: 3%;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
 
 button,
 input {
@@ -36,101 +55,34 @@ input {
   font: inherit;
 }
 
-button:focus{outline: none; }
+button:focus,
+input:focus{outline: none; }
 
 input { width: 100%; }
 
 ion-icon { pointer-events: none; }
 
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+/* Buttons */
+.btn {
+  padding: 10px 20px !important;
+  border-radius: 5px !important;
+  font-weight: 500 !important;
+  color: white !important;
+  text-decoration: none !important;
 }
 
+.btn--green { background-color: var(--primary-color)!important;}
+.btn--red { background-color: rgb(203, 48, 64)!important; }
+.btn--blue { background-color: rgb(63, 97, 234)!important; }
 
-html {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  min-height: fit-content;
-  overflow-x: hidden;
-}
-
-body {
-  font-family: 'Poppins';
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  background-color: #F7FFF2;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 0 0 0;
-  flex: 1;
-}
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-p,
-li,
-ul{
-  margin: 0;
-  font-family: 'Poppins';
-  text-decoration: none;
-}
-
-.btn-bg-green {
-  padding: 10px 20px;
-  background-color: var(--primary-color);
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: 500;
-  color: white;
-}
-
-.btn-bg-red {
-  padding: 10px 30px;
-  background-color: rgb(225, 54, 71);
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: 500;
-  color: white;
-}
-
-.btn-bg-blue {
-  padding: 10px 30px;
-  background-color: rgb(93, 125, 249);
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: 500;
-  color: white;
-}
-
-.btn-primary,
-.btn-danger {
-  width: 80px;
-}
-
+/* Status Cards */
 .js-card-status-lunas {
   background-color: var(--primary-color);
   width: fit-content;
   text-wrap: nowrap;
 }
 
-.js-card-status-dekat {
-  background-color: rgb(255, 217, 0);
-}
-
-.js-card-status-lewat {
+.js-card-status-belum-bayar {
   background-color: rgb(221, 44, 44);
   width: 120px;
   text-wrap: nowrap;

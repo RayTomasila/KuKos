@@ -1,9 +1,9 @@
 .dashboard-container {
-  display: grid; 
-  place-items: center; 
-
-  padding: 10px;
-  box-sizing: border-box;
+  min-height: 80vh;
+  display: flex ; 
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden !important; 
 }
 
 .dashboard-grid-container {
@@ -67,6 +67,7 @@
 @media (max-width: 480px) {
   .dashboard-container {
     padding-top: 20px;
+    min-height: 100vh;
   }
 
   .dashboard-grid-container {

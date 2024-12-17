@@ -1,9 +1,12 @@
-nav {
-  background-color: var(--primary-color);
+nav.navbar {
+  background-color: #568c35;;
   display: flex;
   flex-direction: row;
+  position: sticky;
+  top: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 1030;
+  height: auto;
 }
 
 .navbar .container-fluid {
@@ -20,7 +23,7 @@ nav {
 }
 
 .container-fluid .navbar-brand:hover { 
-  color: var(--accent-color); 
+  color: #ffffff; 
 }
 
 nav .nav-link {
@@ -31,5 +34,5 @@ nav .nav-link {
 
 
 nav .nav-link:hover {
-  color: rgba(38, 38, 38, 0.863);
+  color: #e6e6e6;
 }

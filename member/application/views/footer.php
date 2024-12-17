@@ -1,7 +1,3 @@
-<footer class="bg-light text-center py-3">
-    <div>copyright &copy; 2024. KuKos</div>
-</footer>
-
 <!-- Custom JS -->
 <script src="../public/scripts/member.js"></script>
 
