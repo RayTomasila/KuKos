@@ -114,32 +114,33 @@
   <!-- Fitur End -->
 
   <!-- Footer Start -->
-  <footer id="footer" class="footer">        
-    <section class="top">
-      <div class="left">
-        <a href="#beranda" class="footer-text-logo">Ku<span>Kos</span></a>
-        <p>SOLUSI MUDAH MENGELOLA KOS</p>
-      </div>
+  <footer id="footer" class="footer">       
+    <div class="container">
+      <section class="top">
+        <div class="left">
+          <a href="#beranda" class="footer-text-logo">Ku<span>Kos</span></a>
+          <p>SOLUSI MUDAH MENGELOLA KOS</p>
+        </div>
+        
+        <div class="mid">
+          <a href="#fitur">Fitur</a>
+          <a href="#biaya">Biaya</a>
+          <a href="#panduan">Panduan</a>
+          <a href="#contact">Hubungi Kami</a>
+        </div>
       
-      <div class="mid">
-        <a href="#fitur">Fitur</a>
-        <a href="#biaya">Biaya</a>
-        <a href="#panduan">Panduan</a>
-        <a href="#contact">Hubungi Kami</a>
-      </div>
-    
-      <div class="right">
-        <a>Whatsapp</a>
-        <a href="#">081412412782</a>
-      </div>
-    </section>
+        <div class="right">
+          <a>Whatsapp</a>
+          <a href="#">081412412782</a>
+        </div>
+      </section>
 
-       <section class="footer-bottom">
+      <section class="footer-bottom">
         <p class="copyright">
           &copy; 2024 <a href="#">KuKos</a>. All Rights Reserved
         </p>
       </section>
-     
+    </div> 
   </footer>
   <!-- Footer End -->
 
