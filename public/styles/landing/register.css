@@ -1,17 +1,186 @@
-.register-button {
+.register-container {
+  width: 100%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.register-container h1{
+  color: #656867;
+  font-size: 50px;
+  letter-spacing: 0.8px;
+  font-weight: 800;
+  line-height: 60px;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  background: #fff;
+  padding: 34px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.wrapper h2{
+  position: relative;
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.wrapper h2::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 28px;
+  border-radius: 12px;
+  background: var(--primary-color);
+}
+
+.wrapper form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.wrapper form .input-box {
+  height: 42px;
+  max-width: 100%;
+}
+
+form .input-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 15px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+form .input-box::after {
+  margin-bottom: 20px;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+  border-color: var(--primary-color);
+}
+
+form .policy{
+  display: flex;
+  align-items: center;
+}
+
+form h3{
+  color: #707070;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.button-container {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
 }
 
-label {
+.button-register {
+  max-width: 60%;
+  height: 100% !important;
+  background-color: var(--primary-color);
+}
+
+.button-register input{
+  color: #fff;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
   font-weight: 500;
-  font-family: 'Poppins';
+  height: 80px;
 }
 
-h2 {
-  font-family: 'Poppins';
+form .text h3{
+ color: #333;
+ width: 100%;
+ text-align: center;
 }
 
-.city-dropdown option:focus {
+form .text h3 a{
+  color: #4070f4;
+  text-decoration: none;
+}
+
+form .text h3 a:hover{
+  text-decoration: underline;
+}
+
+/* Select2 (DROPDOWN) Styling */
+/* Style for the Select2 container */
+.select2-container .select2-selection--single {
+  display: flex !important;
+  flex-direction: column;
+  align-items: left !important;
+  justify-content: center !important;
+
+  height: 50px !important;
+  max-width: 100% !important;
+  /* padding: 15px;  */
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
   outline: none;
+}
+
+
+/* Hover and Focus styles for the container */
+.select2-container .select2-selection--single:focus,
+.select2-container .select2-selection--single:valid {
+  border-color: var(--primary-color); 
+}
+
+/* Style for the Select2 dropdown */
+.select2-container .select2-dropdown {
+  border: 1.5px solid #C7BEBE;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Style for the search input inside the dropdown */
+.select2-container .select2-search--dropdown .select2-search__field {
+  height: 40px;
+  padding: 0 15px;
+  font-size: 17px;
+  font-weight: 400;
+  border: 1.5px solid #C7BEBE;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Focus style for the search input */
+.select2-container .select2-search--dropdown .select2-search__field:focus {
+  border-color: var(--primary-color);
 }

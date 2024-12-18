@@ -11,12 +11,7 @@
     <!-- fonts -->
 
 
-    <!-- Bootstrap & JS -->
-      <link rel="stylesheet" 
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" 
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-      <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
       
       <!-- Include select2 CDN -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
@@ -37,13 +32,19 @@
       <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/register.css') ?>">
     <!-- css styles -->
     
+        <!-- Bootstrap & JS -->
+        <link rel="stylesheet" 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" 
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
 
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg py-3 position-fixed top-0 z-index-1030">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
     <!-- Logo -->
     <a href="#hero" class="navbar-brand">Ku<span>Kos</span></a>
     

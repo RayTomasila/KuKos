@@ -1,28 +1,19 @@
 nav.navbar {
   background-color: #568c35;;
-  display: flex;
-  flex-direction: row;
-  position: sticky;
-  top: 0;
   width: 100%;
   z-index: 1030;
-  height: auto;
 }
 
-.navbar .container-fluid {
-  margin: 0 12%;
-}
-
-.container-fluid .navbar-brand {
-  color: var(--accent-color);
+a.navbar-brand {
+  color: white !important;
   font-weight: bolder;
 }
 
-.container-fluid .navbar-brand span {
+.navbar-brand span {
   color: var(--secondary-color);
 }
 
-.container-fluid .navbar-brand:hover { 
+.navbar-brand:hover { 
   color: #ffffff; 
 }
 
