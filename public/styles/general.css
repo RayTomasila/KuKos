@@ -26,10 +26,11 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Poppins' !important;
   background-color: var(--background-color);
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .container-custom {
