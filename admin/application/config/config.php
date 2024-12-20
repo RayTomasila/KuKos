@@ -26,10 +26,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $config['base_url'] = 'http://localhost/kukos/admin/';
 
-$config['assets_slider'] = $_SERVER["DOCUMENT_ROOT"] . "/kukos/public/assets/slider/";
-$config['url_slider'] = 'http://localhost/kukos/public/assets/slider/';
-
-
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -40,7 +36,7 @@ $config['url_slider'] = 'http://localhost/kukos/public/assets/slider/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

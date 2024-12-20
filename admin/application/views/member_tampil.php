@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <h5 class="mb-3">Data Member</h5>
-  <table class="table table-striped table-bordered" id="tabelku">
+  <table class="table table-hover" id="tabelku">
     
     <thead class="thead-dark">
       <tr>
