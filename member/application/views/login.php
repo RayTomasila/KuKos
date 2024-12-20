@@ -15,7 +15,7 @@
                 
                 <form method="post">
                   <div class="d-flex justify-content-center align-items-center">
-                    <h2 class="fw-600">Login</h2>
+                    <h2 class="fw-700" style="font-weight: 600;">Login</h2>
                   </div>
 
                   <div class="form-outlinem mt-4">
@@ -30,7 +30,7 @@
                   </div>
 
                   <div class=" mt-4">
-                    <button type="submit" class="btn-bg-green fs-5">Login</button>
+                    <button type="submit" class="btn btn--green fs-5">Login</button>
                   </div>
 
                   <p class="text-center text-muted mt-5 mb-0">Belum Punya Akun ? <a href="daftar.php"
