@@ -11,13 +11,13 @@
   width: 100%;
   max-width: 100vw;
   height: 100vh;
-  padding-left: 12%;
+  padding-left: 7%;
   overflow: hidden;
 }
 
 .hero-container .hero-left-section {
   box-shadow: 100px 0px 60px #F7FFF2;
-  height: 125%;
+  height: 100%;
   z-index: 2;
   display: flex;
   flex-direction: column;

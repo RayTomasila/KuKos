@@ -48,70 +48,80 @@
 <!-- Hero end -->
 
 <!-- About Start -->
-    <section id="about">
-      <div class="about-container container" >
+    <section id="about" >
+      <div class="container about-container">
+        <div class="section-title">
+          Tentang kami 
+        </div>
 
-        <div class="word">KuKos</div>
+        <div class="about-content container">            
+          <div class="about-img">
+            <img src="../public/assets/landing/kukos-logo.png" class="">
+          </div>
 
+          <div class="word">
+            kami adalah platform manajemen pengelolaan kosan yang dirancang untuk memudahkan para pemilik properti dalam mengelola bisnis kos-kosan mereka. Kukos didirikan oleh PT APRAZ STUDIO, perusahaan teknologi yang berkomitmen menghadirkan solusi digital modern untuk kebutuhan manajemen properti yang lebih efisien mulai dari pengelolaan data penyewa, manajemen pembayaran, hingga pelaporan keuangan.
+          </div>
+        </div>
 
       </div>
     </section>
 <!-- About End -->
 
-  <!-- Fitur Start -->
-   <section id="fitur">
-    <div class="fitur-container">
+<!-- Fitur Start -->
+  <section id="fitur">
+  <div class="fitur-container">
+    
+    <!-- Fitur 1 -->
+    <div class="fitur-content fitur-content-1">
+      <div class="left-section">
+        <p class="fitur-title">Mengelola kamar kini lebih mudah dengan KuKos</p>
+        <p class="fitur-description">Dengan KuKos, Anda bisa mengelola kamar kos dengan mudah, 
+          kapan saja dan di mana saja. 
+          Semua pengaturan dapat dilakukan 
+          langsung dari perangkat Anda, tanpa repot.
+            Praktis dan efisien!</p>
+      </div>
       
-      <!-- Fitur 1 -->
-      <div class="fitur-content fitur-content-1">
-        <div class="left-section">
-          <p class="fitur-title">Mengelola kamar kini lebih mudah dengan KuKos</p>
-          <p class="fitur-description">Dengan KuKos, Anda bisa mengelola kamar kos dengan mudah, 
-            kapan saja dan di mana saja. 
-            Semua pengaturan dapat dilakukan 
-            langsung dari perangkat Anda, tanpa repot.
-             Praktis dan efisien!</p>
-        </div>
-        
-        <div class="right-section">
-          <img src="../public/assets/landing/fitur-1.png" alt="foto-fitur-1">
-        </div>
+      <div class="right-section">
+        <img src="../public/assets/landing/fitur-1.png" alt="foto-fitur-1">
       </div>
-      <!-- Fitur 1 -->
-
-      <!-- Fitur 2 -->
-      <div class="fitur-content fitur-content-2">
-        <div class="left-section-mid">
-          <img src="../public/assets/landing/fitur-2.png" alt="foto-fitur-2">
-        </div>
-        
-        <div class="right-section-mid">
-          <p class="fitur-title">Kelola penyewa kamar mudah dengan KuKos</p>
-          <p class="fitur-description">KuKos memudahkan Anda mengelola data penyewa kos secara terorganisir.
-            Pantau siapa saja penyewa, kapan mereka membayar, atau waktu kontrak berakhir. 
-            Semua ada dalam satu sistem!</p>
-        </div>        
-      </div>
-      <!-- Fitur 2 -->
-
-      <!-- Fitur 3 -->
-      <div class="fitur-content fitur-content-3">
-        <div class="left-section">
-          <p class="fitur-title">Mengelola fasilitas lebih mudah dengan KuKos</p>
-          <p class="fitur-description">Dengan KuKos, pengelolaan fasilitas kos jadi lebih mudah. 
-            Catat fasilitas yang tersedia dan pantau kondisinya dengan cepat. 
-            Tingkatkan kenyamanan penghuni tanpa ribet!</p>
-        </div>
-        
-        <div class="right-section">
-          <img src="../public/assets/landing/fitur-3.png" alt="foto-fitur-3">
-        </div>
-      </div>
-      <!-- Fitur 3 -->
-
     </div>
-   </section>
-  <!-- Fitur End -->
+    <!-- Fitur 1 -->
+
+    <!-- Fitur 2 -->
+    <div class="fitur-content fitur-content-2">
+      <div class="left-section-mid">
+        <img src="../public/assets/landing/fitur-2.png" alt="foto-fitur-2">
+      </div>
+      
+      <div class="right-section-mid">
+        <p class="fitur-title">Kelola penyewa kamar mudah dengan KuKos</p>
+        <p class="fitur-description">KuKos memudahkan Anda mengelola data penyewa kos secara terorganisir.
+          Pantau siapa saja penyewa, kapan mereka membayar, atau waktu kontrak berakhir. 
+          Semua ada dalam satu sistem!</p>
+      </div>        
+    </div>
+    <!-- Fitur 2 -->
+
+    <!-- Fitur 3 -->
+    <div class="fitur-content fitur-content-3">
+      <div class="left-section">
+        <p class="fitur-title">Mengelola fasilitas lebih mudah dengan KuKos</p>
+        <p class="fitur-description">Dengan KuKos, pengelolaan fasilitas kos jadi lebih mudah. 
+          Catat fasilitas yang tersedia dan pantau kondisinya dengan cepat. 
+          Tingkatkan kenyamanan penghuni tanpa ribet!</p>
+      </div>
+      
+      <div class="right-section">
+        <img src="../public/assets/landing/fitur-3.png" alt="foto-fitur-3">
+      </div>
+    </div>
+    <!-- Fitur 3 -->
+
+  </div>
+  </section>
+<!-- Fitur End -->
 
   <!-- Footer Start -->
   <footer id="footer" class="footer">       
