@@ -25,7 +25,7 @@
     <input type="text" class="form-control mb-3" name="harga_kamar" value="<?php echo set_value('harga_kamar'); ?>">
   </div>
 
-  <div class="form-group">
+ <div class="form-group">
     <label for="id_fasilitas">Fasilitas</label><br>
     <?php if (!empty($fasilitas)): ?>
         <?php foreach ($fasilitas as $f): ?>
