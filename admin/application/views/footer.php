@@ -6,7 +6,19 @@
     <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
 
-    <script>new DataTable("#tabelku")</script>
+    <script>
+      $(document).ready(function() {
+        $('#tabelku').DataTable({
+          "order": [[0, 'asc']],
+          "paging": true,
+          "searching": true,
+          "pageLength": 5, 
+          "lengthMenu": [5, 10, 25],
+          "responsive": true,
+        });
+      });
+    </script>
+
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <?php if ($this->session->flashdata('pesan_sukses')): ?>

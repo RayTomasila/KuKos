@@ -11,7 +11,7 @@ class Transaksi extends CI_Controller {
 
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = 'SB-Mid-server-arL8zxiAlvz4_ES4b9FRxGaC';  					
-        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        // Set to Development/Sandbox Environment (default).
         \Midtrans\Config::$clientKey = 'SB-Mid-client-BT-fGv3Nb3Tvb3hG';  
         // Replace with your Midtrans client key
         \Midtrans\Config::$isProduction = false;  
@@ -25,7 +25,7 @@ class Transaksi extends CI_Controller {
     public function index() {
       $id_member = $this->session->userdata('id_member');
       
-      $id_langganan = $this->Mtransaksi->get_langganan_id_by_member($id_member);
+      $id_langganan = $this->Mtransaksi->cek_id_langganan_member($id_member);
       
       if (!$id_langganan) {
           $langganan_data = array(
@@ -47,10 +47,10 @@ class Transaksi extends CI_Controller {
               'tanggal_transaksi' => date('Y-m-d H:i:s'),
           );
   
-          $this->Mtransaksi->insert_transaction($data);
+          $this->Mtransaksi->tambah($data);
   
           $this->session->set_userdata('id_langganan', $id_langganan);
-          $this->session->set_flashdata('pesan_sukses', 'Transaksi Berhasil, Selamat Datang.');
+          // $this->session->set_flashdata('pesan_sukses', 'Transaksi Berhasil, Selamat Datang.');
       }
   
       $order_id = 'ORDER-' . uniqid(); 
@@ -84,10 +84,10 @@ class Transaksi extends CI_Controller {
         
         if (isset($response['transaction_status']) && $response['transaction_status'] == 'settlement') {
             $transaction_id = $response['order_id'];
-            $transaction = $this->Mtransaksi->get_transaction_by_order_id($transaction_id);
+            $transaction = $this->Mtransaksi->id_order_transaksi($transaction_id);
             
             if ($transaction) {
-                $this->Mtransaksi->update_transaction_status($transaction_id, 'lunas');
+                $this->Mtransaksi->update_status_transaksi($transaction_id, 'lunas');
                 echo "Payment successful";
             } else {
                 echo "Transaction not found in the database.";
