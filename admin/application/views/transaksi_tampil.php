@@ -1,25 +1,28 @@
-<div class="container">
+<div class="container px-5 mt-5 table-transaksi">
     <h5>Data transaksi</h5>
-    <table class="table table-bordered" id="tabelku">
+    <table class="table table-hover" id="tabelku">
         <thead>
             <tr>
                 <th>No</th>
-                <th>Tanggal</th>
-                <th>Total</th>
-                <th>Status</th>
-                <th>Aksi</th>
+                <th>kode_transaksi</th>
+                <th>nama_member</th>
+                <th>jumlah_transaksi</th>
+                <th>tanggal_transaksi</th>
+                <th>status_transaksi</th>
+                <th>status_langganan</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($transaksi as $key => $value): ?>
             <tr>
                 <td><?php echo $key+1 ?></td>
-                <td><?php echo $value['tanggal_transaksi']?></td>
-                <td><?php echo number_format($value['total_transaksi'])?></td>
+                <td><?php echo $value['kode_transaksi']?></td>
+                <td><?php echo $value['nama_lengkap_member']?></td>
+                <td><?php echo number_format($value['jumlah_transaksi'])?></td>
+                <td><?php echo date($value['tanggal_transaksi'])?></td>
                 <td><?php echo $value['status_transaksi']?></td>
-                <td>
-                    <a href="<?php echo base_url("transaksi/detail/".$value["id_transaksi"])?>" class="btn btn-info">Detail</a>
-                </td>
+                <td><?php echo $value['status_langganan']?></td>
+
             </tr>
             <?php endforeach;?>
         </tbody>

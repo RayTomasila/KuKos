@@ -50,6 +50,7 @@ class Transaksi extends CI_Controller {
           $this->Mtransaksi->insert_transaction($data);
   
           $this->session->set_userdata('id_langganan', $id_langganan);
+          $this->session->set_flashdata('pesan_sukses', 'Transaksi Berhasil, Selamat Datang.');
       }
   
       $order_id = 'ORDER-' . uniqid(); 
