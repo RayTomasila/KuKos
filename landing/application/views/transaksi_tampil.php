@@ -1,24 +1,23 @@
-<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-BT-fGv3Nb3Tvb3hG"></script>
-<button id="pay-button">Bayar Sekarang</button>
+<div class="container container-custom mt-4">
+<h2>UIny blum ada, ntar dulu</h2>
+    <button id="pay-button" class="btn btn--green mt-3">Bayar</button>
 
-<script>
-    var snapToken = '<?= addslashes($snapToken); ?>';
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-BT-fGv3Nb3Tvb3hG"></script>
+    <script type="text/javascript">
+        document.getElementById('pay-button').onclick = function() {
+            snap.pay("<?php echo $snapToken; ?>", {
+                onSuccess: function(result) {
+                  alert("Payment success!");
+                  window.location.href = "<?php echo base_url('../member/login'); ?>";
+                },
+                onPending: function(result) {
+                  alert("Payment pending!");
+                },
+                onError: function(result) {
+                  alert("Payment failed!");
+                }
+            });
+        };
+    </script>
 
-    document.getElementById('pay-button').addEventListener('click', function () {
-        snap.pay('<?php echo $snapToken ?>' , {
-            onSuccess: function (result) {
-                console.log('Payment success:', result);
-                window.location.href = '<?php echo base_url('transaksi')  ?>';
-            },
-            onPending: function (result) {
-                console.log('Payment pending:', result);
-            },
-            onError: function (result) {
-                console.log('Payment error:', result);
-            },
-            onClose: function () {
-                console.log('Payment popup closed.');
-            }
-        });
-    });
-</script>
+</div>
