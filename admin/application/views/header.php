@@ -8,6 +8,7 @@
 
     <!-- CSS Styles -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/admin/sidebar.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/admin/transaksi.css') ?>">
 
   </head>
   <body>
