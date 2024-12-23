@@ -1,5 +1,5 @@
 <!-- member dashboard start -->
-<div class="container dashboard-container">
+<div class="container dashboard-container container-custom">
 
   <div class="dashboard-grid-container">
 

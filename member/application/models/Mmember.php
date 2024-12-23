@@ -16,9 +16,10 @@
     }
 
     function login($inputan) {
-      $this->db->select('member.*, langganan.status_langganan');
+      $this->db->select('member.*, transaksi.id_transaksi ,langganan.status_langganan');
       $this->db->from('member');
-      $this->db->join('langganan', 'member.id_member = langganan.id_member', 'left'); 
+      $this->db->join('transaksi', 'member.id_member = transaksi.id_member', 'left'); 
+      $this->db->join('langganan', 'transaksi.id_langganan = langganan.id_langganan', 'left'); 
   
       $nomor_telepon_member = $this->db->escape_str($inputan['nomor_telepon_member']);
       $password_member = sha1($this->db->escape_str($inputan['password_member']));

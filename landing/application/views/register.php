@@ -5,7 +5,7 @@
           <div class="input-box">
             <label>Nama Lengkap</label>
             <input type="text" name="nama_lengkap_member" class="form-control"
-              value="<?php echo set_value("nama_lengkap_member") ?>" required>
+              value="<?php echo set_value("nama_lengkap_member") ?>">
             <span class="text-muted"><?php echo form_error("nama_lengkap_member") ?></span>
           </div>
 
@@ -49,11 +49,11 @@
           <div class="button button-register">
             <input type="Submit" value="daftar Sekarang">
           </div>
-        </div>
-
           <div class="text">
             <h3>Sudah Punya Akun?<a href="#" data-bs-toggle="modal" data-bs-target="#login"> Login Sekarang</a></h3>
           </div>
+        </div>
+
         </form>
 
     </div>

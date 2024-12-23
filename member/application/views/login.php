@@ -1,4 +1,4 @@
-<section class="text-center" style="background-color: rgb(246, 249, 246); height:90vh;">
+<section class="text-center" style="background-color: rgb(246, 249, 246); height:95vh; overflow-y:auto">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-10">
