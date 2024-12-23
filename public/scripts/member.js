@@ -52,4 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
     noResultsMessage.style.display = anyVisible ? 'none' : 'block';
   });
 
+  document.querySelectorAll('.text-muted').forEach(element => {
+    if (element.textContent.trim() !== '') {
+      element.style.marginBottom = '40px !important';
+    }
+  });
+
 });

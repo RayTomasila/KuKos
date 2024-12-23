@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="clipboard-write=()" />
     <title>KuKos</title>
   
     <!-- fonts -->
@@ -56,11 +57,11 @@
     <!-- Links -->
     <div class="collapse navbar-collapse" id="naff">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a href="#home" class="nav-link">Beranda</a></li>
-        <li class="nav-item"><a href="#fitur" class="nav-link">Fitur</a></li>
-        <li class="nav-item"><a href="#biaya" class="nav-link">Biaya</a></li>
-        <li class="nav-item"><a href="#panduan" class="nav-link">Panduan</a></li>
-        <li class="nav-item"><a href="#kontak" class="nav-link">Kontak</a></li>
+        <li class="nav-item"><a href="<?php echo base_url('#home') ?>" class="nav-link">Beranda</a></li>
+        <li class="nav-item"><a href="<?php echo base_url('#fitur') ?>" class="nav-link">Fitur</a></li>
+        <li class="nav-item"><a href="<?php echo base_url('#biaya') ?>" class="nav-link">Biaya</a></li>
+        <li class="nav-item"><a href="<?php echo base_url('#panduan') ?>" class="nav-link">Panduan</a></li>
+        <li class="nav-item"><a href="<?php echo base_url('#kontak') ?>" class="nav-link">Kontak</a></li>
       </ul>
 
       <!-- User Section -->

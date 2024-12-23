@@ -25,7 +25,7 @@ class Register extends CI_Controller
     $this->form_validation->set_rules(
       "password_member",
       "Password Member",
-      "required|min_length[8]|callback_validate_password"
+      "required|min_length[6]|callback_validate_password"
     );
 
     // Custom error messages
