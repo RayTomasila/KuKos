@@ -1,70 +1,34 @@
 <?php
-    class Mtransaksi extends CI_Model {
 
-        function tampil() {
-            $q = $this->db->get('transaksi');
-            $d = $q ->result_array();
+class Mtransaksi extends CI_Model {
 
-            return $d;
-        }
-
-        function transaksi_member_jual($id_member){
-            $this->db->where('id_member_jual', $id_member);
-
-            $q = $this->db->get('transaksi');
-            $d = $q ->result_array();
-
-            return $d;
-        }
-
-        function transaksi_member_beli($id_member){
-            $this->db->where('id_member_beli', $id_member);
-
-            $q = $this->db->get('transaksi');
-            $d = $q ->result_array();
-            return $d;
-        }
-        
-        function detail($id_transaksi) {
-            $this->db->where('id_transaksi', $id_transaksi);
-
-            $q = $this->db->get('transaksi');
-            $d = $q->row_array();
+  public function get_langganan_id_by_member($id_member) {
+    $this->db->select('id_langganan');
+    $this->db->from('transaksi');
+    $this->db->where('id_member', $id_member);
+    $query = $this->db->get();
     
-            return $d;
-        }
-    
-        function transaksi_detail($id_transaksi) {
-            $this->db->where('id_transaksi', $id_transaksi);
-            
-            $q = $this->db->get('transaksi_detail');
-            $d = $q->result_array();
-    
-            return $d;
-        }
-
-        function set_lunas($id_transaksi) {
-            $this->db->where('id_transaksi', $id_transaksi);
-            $this->db->set("status_transaksi", "lunas");
-            $this->db->update('transaksi');
-        }
-
-        function kirim_rating($input) {
-
-          $list_id_transaksi_detail = $input['id_transaksi_detail'];
-          $list_jumlah_rating = $input['jumlah_rating'];
-          $list_ulasan_rating = $input['ulasan_rating'];
-        
-          foreach ($list_id_transaksi_detail as $key => $id) {
-            $m = [
-              'jumlah_rating' => $list_jumlah_rating[$key],
-              'ulasan_rating' => $list_ulasan_rating[$key],
-              'waktu_rating' => date("Y-m-d H:i:s")
-            ];
-        
-            $this->db->where('id_transaksi_detail', $id);
-            $this->db->update('transaksi_detail', $m);
-          }
-        }
+    // Check if there is any record
+    if ($query->num_rows() > 0) {
+        return $query->row()->id_langganan;
     }
-?>
+    
+    return null; // Return null if no record found
+}
+
+
+    public function insert_transaction($data) {
+        $this->db->insert('transaksi', $data);
+    }
+
+    public function get_transaction_by_order_id($order_id) {
+        $this->db->where('kode_transaksi', $order_id);
+        $query = $this->db->get('transaksi');
+        return $query->row();
+    }
+
+    public function update_transaction_status($order_id, $status) {
+        $this->db->where('kode_transaksi', $order_id);
+        $this->db->update('transaksi', array('status_transaksi' => $status));
+    }
+}
