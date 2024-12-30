@@ -1,5 +1,5 @@
 <div id="langganan">
-  <div class="container container-custom container-transaksi">
+  <div class="container container-transaksi">
     <div class="langgnan-card-container">
       <div class="langganan-left">
         <div class="langganan-text">
@@ -26,24 +26,32 @@
           <div>          
             <button id="pay-button" class="btn-langganan mt-3"><span>Coba Sekarang !</span></button>
 
-              <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" 
+            <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" 
               data-client-key="SB-Mid-client-BT-fGv3Nb3Tvb3hG"></script>
-              <script type="text/javascript">
-                  document.getElementById('pay-button').onclick = function() {
-                      snap.pay("<?php echo $snapToken; ?>", {
-                          onSuccess: function(result) {
-                            alert("Pembayaran Berhasil");
+            <script type="text/javascript">
+              document.getElementById('pay-button').onclick = function() {
+                  snap.pay("<?php echo $snapToken; ?>", {
+                      onSuccess: function(result) {
+                        swal("Sukses!", "Pembayaran Berhasil.", "success").then(() => {
                             window.location.href = "<?php echo base_url('../member/login'); ?>";
-                          },
-                          onPending: function(result) {
-                            alert("Pembayaran Pending!");
-                          },
-                          onError: function(result) {
-                            alert("Pembayaran Gagal!");
-                          }
-                      });
-                  };
-              </script>
+                        });
+                      },
+                      onPending: function(result) {
+                        swal("Pending!", "Pembayaran Pending! Mohon selesaikan pembayaran.", "warning");
+                      },
+                      onPending: function(result) {
+                        swal("Gagal!", "Pembayaran Gagal! Silahkan Coba Lagi", "error").then(() => {
+                            window.location.href = "<?php echo base_url('transaksi'); ?>";
+                        });
+                      },
+                      onClose: function() {
+                        swal("Dibatalkan!", "Pembayaran dibatalkan oleh pengguna.", "info").then(() => {
+                            window.location.href = "<?php echo base_url('transaksi'); ?>";
+                        });
+                      }
+                  });
+              };
+            </script>
           </div>
         </div>
       </div>

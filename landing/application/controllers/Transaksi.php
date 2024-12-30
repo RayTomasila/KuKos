@@ -79,21 +79,28 @@ class Transaksi extends CI_Controller {
       }
   }
   
-    public function payment_callback() {
-        $response = json_decode(file_get_contents('php://input'), true);
-        
-        if (isset($response['transaction_status']) && $response['transaction_status'] == 'settlement') {
-            $transaction_id = $response['order_id'];
-            $transaction = $this->Mtransaksi->id_order_transaksi($transaction_id);
-            
-            if ($transaction) {
-                $this->Mtransaksi->update_status_transaksi($transaction_id, 'lunas');
-                echo "Payment successful";
-            } else {
-                echo "Transaction not found in the database.";
-            }
-        } else {
-            echo "Payment failed or status not 'settlement'.";
-        }
+  public function payment_callback() {
+    $response = json_decode(file_get_contents('php://input'), true);
+
+    if (isset($response['transaction_status'])) {
+      $transaction_id = $response['order_id'];
+      $transaction = $this->Mtransaksi->id_order_transaksi($transaction_id);
+
+      if ($response['transaction_status'] == 'settlement' && $transaction) {
+          $this->Mtransaksi->update_status_transaksi($transaction_id, 'lunas');
+          $this->session->set_flashdata('pesan_sukses', 'Pembayaran berhasil. Terima kasih!');
+      } elseif ($response['transaction_status'] == 'pending') {
+          $this->session->set_flashdata('pesan_gagal', 'Pembayaran pending. Mohon selesaikan pembayaran.');
+      } elseif ($response['transaction_status'] == 'deny' || $response['transaction_status'] == 'expire' || $response['transaction_status'] == 'cancel') {
+          $this->session->set_flashdata('pesan_gagal', 'Pembayaran gagal atau dibatalkan.');
+      } else {
+          $this->session->set_flashdata('pesan_gagal', 'Terjadi kesalahan pada pembayaran.');
+      }
+    } else {
+        $this->session->set_flashdata('pesan_gagal', 'Respon pembayaran tidak valid.');
     }
+
+    redirect('langganan'); // Arahkan kembali ke halaman langganan
+  }
+
 }

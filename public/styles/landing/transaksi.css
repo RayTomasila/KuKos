@@ -1,17 +1,17 @@
 #langganan {
   min-width: 100vw;
   background-color: var(--background-color);
+  overflow: hidden;
+  height: 100%;
 }
 
 .container-transaksi {
   display: flex;
   flex-direction: column;
-  justify-content: x;
   align-items: center;
   height: 95vh;
   max-height: 100vh;
   overflow: hidden;
-
 }
 
 .container-transaksi h1 {
@@ -39,7 +39,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 10px;
 }
 
 .langganan-left,
@@ -48,7 +48,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 50%;
+  height: 450px;
+  max-height: 450px;
   width: 40%;
   max-width: 50%;
 }
@@ -58,9 +59,9 @@
   height: 400px;
 }
 
-
 .langganan-left .langganan-img img {
   width: 100%;
+  object-fit: fill;
 }
 
 .langganan-card {
