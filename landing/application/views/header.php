@@ -31,6 +31,7 @@
       <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/fitur.css') ?>">
       <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/footer.css') ?>">
       <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/register.css') ?>">
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/transaksi.css') ?>">
     <!-- css styles -->
     
         <!-- Bootstrap & JS -->

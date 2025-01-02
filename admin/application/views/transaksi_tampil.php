@@ -1,15 +1,15 @@
 <div class="container px-5 mt-5 table-transaksi">
-    <h5>Data transaksi</h5>
+    <h2 class="mb-3">Daftar Transaksi</h2>
     <table class="table table-hover" id="tabelku">
         <thead>
             <tr>
                 <th>No</th>
-                <th>kode_transaksi</th>
-                <th>nama_member</th>
-                <th>jumlah_transaksi</th>
-                <th>tanggal_transaksi</th>
-                <th>status_transaksi</th>
-                <th>status_langganan</th>
+                <th>Kode Transaksi</th>
+                <th>Nama Member</th>
+                <th>Jumlah Transaksi</th>
+                <th>Tanggal Transaksi</th>
+                <th>Status Transaksi</th>
+                <th>Status Langganan</th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +19,7 @@
                 <td><?php echo $value['kode_transaksi']?></td>
                 <td><?php echo $value['nama_lengkap_member']?></td>
                 <td><?php echo number_format($value['jumlah_transaksi'])?></td>
-                <td><?php echo date($value['tanggal_transaksi'])?></td>
+                <td><?php echo formatDateIndonesian($value['tanggal_transaksi'])?></td>
                 <td><?php echo $value['status_transaksi']?></td>
                 <td><?php echo $value['status_langganan']?></td>
 

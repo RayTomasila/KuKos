@@ -11,7 +11,7 @@ class Transaksi extends CI_Controller {
 
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = 'SB-Mid-server-arL8zxiAlvz4_ES4b9FRxGaC';  					
-        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        // Set to Development/Sandbox Environment (default).
         \Midtrans\Config::$clientKey = 'SB-Mid-client-BT-fGv3Nb3Tvb3hG';  
         // Replace with your Midtrans client key
         \Midtrans\Config::$isProduction = false;  
@@ -25,7 +25,7 @@ class Transaksi extends CI_Controller {
     public function index() {
       $id_member = $this->session->userdata('id_member');
       
-      $id_langganan = $this->Mtransaksi->get_langganan_id_by_member($id_member);
+      $id_langganan = $this->Mtransaksi->cek_id_langganan_member($id_member);
       
       if (!$id_langganan) {
           $langganan_data = array(
@@ -47,10 +47,10 @@ class Transaksi extends CI_Controller {
               'tanggal_transaksi' => date('Y-m-d H:i:s'),
           );
   
-          $this->Mtransaksi->insert_transaction($data);
+          $this->Mtransaksi->tambah($data);
   
           $this->session->set_userdata('id_langganan', $id_langganan);
-          $this->session->set_flashdata('pesan_sukses', 'Transaksi Berhasil, Selamat Datang.');
+          // $this->session->set_flashdata('pesan_sukses', 'Transaksi Berhasil, Selamat Datang.');
       }
   
       $order_id = 'ORDER-' . uniqid(); 
@@ -79,21 +79,28 @@ class Transaksi extends CI_Controller {
       }
   }
   
-    public function payment_callback() {
-        $response = json_decode(file_get_contents('php://input'), true);
-        
-        if (isset($response['transaction_status']) && $response['transaction_status'] == 'settlement') {
-            $transaction_id = $response['order_id'];
-            $transaction = $this->Mtransaksi->get_transaction_by_order_id($transaction_id);
-            
-            if ($transaction) {
-                $this->Mtransaksi->update_transaction_status($transaction_id, 'lunas');
-                echo "Payment successful";
-            } else {
-                echo "Transaction not found in the database.";
-            }
-        } else {
-            echo "Payment failed or status not 'settlement'.";
-        }
+  public function payment_callback() {
+    $response = json_decode(file_get_contents('php://input'), true);
+
+    if (isset($response['transaction_status'])) {
+      $transaction_id = $response['order_id'];
+      $transaction = $this->Mtransaksi->id_order_transaksi($transaction_id);
+
+      if ($response['transaction_status'] == 'settlement' && $transaction) {
+          $this->Mtransaksi->update_status_transaksi($transaction_id, 'lunas');
+          $this->session->set_flashdata('pesan_sukses', 'Pembayaran berhasil. Terima kasih!');
+      } elseif ($response['transaction_status'] == 'pending') {
+          $this->session->set_flashdata('pesan_gagal', 'Pembayaran pending. Mohon selesaikan pembayaran.');
+      } elseif ($response['transaction_status'] == 'deny' || $response['transaction_status'] == 'expire' || $response['transaction_status'] == 'cancel') {
+          $this->session->set_flashdata('pesan_gagal', 'Pembayaran gagal atau dibatalkan.');
+      } else {
+          $this->session->set_flashdata('pesan_gagal', 'Terjadi kesalahan pada pembayaran.');
+      }
+    } else {
+        $this->session->set_flashdata('pesan_gagal', 'Respon pembayaran tidak valid.');
     }
+
+    redirect('langganan'); // Arahkan kembali ke halaman langganan
+  }
+
 }
