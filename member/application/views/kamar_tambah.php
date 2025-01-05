@@ -1,4 +1,4 @@
-<div class="container my-4">
+<div class="container container-custom">
   <div class="container-top">
     <p class="page-title">Tambah Kamar</p>
   </div>
@@ -8,12 +8,12 @@
 
   <div class="form-group">
     <label for="nomor_kamar">Nomor Kamar</label>
-    <input type="text" class="form-control mb-3" name="nomor_kamar" value="<?php echo set_value('nomor_kamar'); ?>">
+    <input type="text" class="form-control" name="nomor_kamar" placeholder="Masukan Nomor Kamar" value="<?php echo set_value('nomor_kamar'); ?>">
   </div>
 
   <div class="form-group">
     <label for="status_kamar">Status Kamar</label>
-    <select class="form-control mb-3" name="status_kamar">
+    <select class="form-control form-select" name="status_kamar">
       <option value="siap huni">Siap Huni</option>
       <option value="digunakan">Digunakan</option>
       <option value="digunakan">Tidak Aktif</option>
@@ -22,10 +22,10 @@
 
   <div class="form-group">
     <label for="harga_kamar">Harga Kamar</label>
-    <input type="text" class="form-control mb-3" name="harga_kamar" value="<?php echo set_value('harga_kamar'); ?>">
+    <input type="number" class="form-control" name="harga_kamar" placeholder="Masukan Harga Kamar"  value="<?php echo set_value('harga_kamar'); ?>">
   </div>
 
-  <div class="form-group">
+  <div class="">
     <label for="id_fasilitas">Fasilitas</label><br>
     <?php if (!empty($fasilitas)): ?>
         <?php foreach ($fasilitas as $f): ?>
@@ -41,11 +41,11 @@
 </div>
 
 
-  <div class="form-group mb-3">
+  <div class="form-group">
     <label for="foto_kamar">Foto Kamar</label>
-    <input type="file" class="form-control mb-3" name="foto_kamar">
+    <input type="file" class="form-control" name="foto_kamar">
   </div>
 
-  <button type="submit" class="btn btn--green mt-3">Tambah Kamar</button>
+  <button type="submit" class="btn btn--green mt-3">Simpan</button>
   <?php echo form_close(); ?>
 </div>

@@ -1,4 +1,4 @@
-<div class="container container-custom">
+<div class="container container-content">
   <div class="container-top">
     <p class="page-title">Daftar Penyewa</p>
 
@@ -8,7 +8,7 @@
     </div>
 
     <div>
-      <a href="<?php echo base_url("penyewa/tambah") ?>" class="btn btn--green">Tambah Penyewa</a>
+      <a href="<?php echo base_url("penyewa/tambah") ?>" class="btn btn--green btn-tambah">Tambah Penyewa</a>
     </div>
   </div>
 

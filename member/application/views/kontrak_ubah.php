@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container container-custom">
   <div class="container-top">
     <p class="page-title">Ubah Kontrak</p>
   </div>

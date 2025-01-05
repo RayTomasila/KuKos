@@ -1,4 +1,4 @@
-<div class="container mb-5">
+<div class="container container-custom container-custom">
 <div class="container-top">
     <p class="page-title">Tambah Fasilitas</p>
   </div>
@@ -10,17 +10,17 @@
 
     <form method="POST" enctype="multipart/form-data">
         
-      <div class="mb-3">
+      <div class="form-group">
         <label for="nama_fasilitas">Nama Fasilitas</label>
         <input type="text" name="nama_fasilitas" id="nama_fasilitas" class="form-control" required>     
       </div>
       
-      <div class="mb-3 text-area-fasilitas">
+      <div class="form-group text-area-fasilitas">
         <label for="deskripsi">Deskripsi</label>
         <textarea type="textarea" name="deskripsi" id="deskripsi" rows="5" required></textarea>
       </div>
 
-      <div class="mb-3">
+      <div class="form-group">
         <label for="foto_fasilitas">Foto Fasilitas</label>
         <input type="file" name="foto_fasilitas" id="foto_fasilitas"  class="form-control" required>        
       </div>
