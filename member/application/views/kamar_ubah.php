@@ -1,9 +1,9 @@
-<div class="container my-4">
+<div class="container container-custom">
   <div class="container-top">
     <p class="page-title">Informasi Kamar</p>
 
     <div>
-      <a href="<?php echo site_url("kamar/hapus/" . $kamar->id_kamar) ?>" class="btn btn--red" onclick="return confirm('Apakah Anda yakin ingin menghapus kamar ini?');">Hapus Kamar</a>
+      <a href="<?php echo site_url("kamar/hapus/" . $kamar->id_kamar) ?>" class="btn btn--red btn-hapus-top" onclick="return confirm('Apakah Anda yakin ingin menghapus kamar ini?');">Hapus Kamar</a>
     </div>
 
   </div>
@@ -17,11 +17,11 @@
     </div>
 
     <div class="form-group">
-        <label for="status_kamar">Status Kamar</label>
-        <select class="form-control mb-3" name="status_kamar">
-            <option value="siap huni" <?php echo $kamar->status_kamar == 'siap huni' ? 'selected' : ''; ?>>Siap Huni</option>
-            <option value="digunakan" <?php echo $kamar->status_kamar == 'digunakan' ? 'selected' : ''; ?>>Digunakan</option>
-        </select>
+      <label for="status_kamar">Status Kamar</label>
+      <select class="form-control form-select mb-3" name="status_kamar">
+        <option value="siap huni">Siap Huni</option>
+        <option value="digunakan">Digunakan</option>
+      </select>
     </div>
 
     <div class="form-group">
@@ -42,7 +42,10 @@
         <input type="file" class="form-control mb-3" name="foto_kamar">
     </div>
 
-    <button type="submit" class="btn btn--blue">Ubah Kamar</button>
+    <div class="button-ubah-hapus mt-3">
+      <button type="submit" class="btn btn--green">Simpan</button>
+      <a href="<?php echo base_url("kamar/hapus/" . $kamar->id_kamar); ?>" class="btn btn--red btn-hapus-bottom">Hapus</a>
+    </div>
 
     <?php echo form_close(); ?>
 </div>

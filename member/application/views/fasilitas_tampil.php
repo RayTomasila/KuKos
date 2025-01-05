@@ -3,7 +3,7 @@
     <p class="page-title">Daftar Fasilitas</p>
 
     <div>
-      <a href="<?php echo base_url("fasilitas/tambah")?>" class="btn btn--green">Tambah Fasilitas</a>
+      <a href="<?php echo base_url("fasilitas/tambah")?>" class="btn btn--green btn-tambah">Tambah Fasilitas</a>
     </div>
   </div>
 

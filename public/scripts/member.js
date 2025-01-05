@@ -1,4 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('resize', function () {
+    const buttonsTambah = document.querySelectorAll('.btn-tambah');
+    const buttonsHapusTop = document.querySelectorAll('.btn-hapus-top');
+    const buttonsHapusBottom = document.querySelectorAll('.btn-hapus-bottom');
+  
+    buttonsTambah.forEach(buttonTambah => {
+      if (window.innerWidth <= 420) {
+        buttonTambah.innerHTML = '';
+        buttonTambah.classList.remove('btn--green');
+        buttonTambah.classList.add('btn--green--tambah');
+      } else {
+        buttonTambah.classList.remove('btn--green--tambah');
+        buttonTambah.classList.add('btn--green');
+      }
+    });
+  
+    buttonsHapusTop.forEach(button => {
+      button.style.display = window.innerWidth <= 420 ? 'none' : 'block';
+    });
+  
+    buttonsHapusBottom.forEach(button => {
+      button.style.display = window.innerWidth <= 420 ? 'block' : 'none';
+    });
+  
+  window.dispatchEvent(new Event('resize'));
+});
 
   let statusPembayaranElements = document.querySelectorAll('.js-card-status-pembayaran');
 
@@ -9,25 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
       statusPembayaran.classList.add('js-card-status-belum-bayar');
     }
   });
-
-  const nomorKamarSelect = document.getElementById('nomor_kamar');
-
-  if (nomorKamarSelect) {
-    nomorKamarSelect.addEventListener('change', function () {
-      const selectedOption = this.options[this.selectedIndex];
-      const harga = selectedOption.getAttribute('data-harga');
-
-      if (harga) {
-        const hargaNumber = parseFloat(harga);
-
-
-        if (!isNaN(hargaNumber)) {
-          const formattedHarga = new Intl.NumberFormat('id-ID').format(hargaNumber);
-          document.getElementById('jumlah_pembayaran').value = formattedHarga;
-        }
-      }
-    });
-  }
 
   // Cari Penyewa
   const searchInput = document.querySelector('.search-form input');
@@ -57,5 +64,24 @@ document.addEventListener('DOMContentLoaded', () => {
       element.style.marginBottom = '40px !important';
     }
   });
-
+  
 });
+
+function previewImage() {
+  const fileInput = document.getElementById('foto-to-display');
+  const preview = document.getElementById('image-preview');
+  const displayDiv = document.querySelector('.display-uploaded-foto');
+  
+  const file = fileInput.files[0];
+  
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+      preview.src = e.target.result; 
+      displayDiv.style.display = 'block'; 
+    };
+
+    reader.readAsDataURL(file); 
+  }
+}

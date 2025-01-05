@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container container-custom">
   <div class="container-top">
     <p class="page-title">Tambah Kontrak</p>
   </div>
   
   <form method="post" enctype="multipart/form-data">
       
-      <div class="mb-3">
+      <div class="form-group">
         <label>Penyewa</label>
         <select class="form-control form-select" name="id_penyewa">
             <option value="">Pilih Penyewa</option>
@@ -19,7 +19,7 @@
         </select>
       </div>
 
-      <div class="mb-3">
+      <div class="form-group">
         <label>Kamar</label>
         <select class="form-control form-select" name="id_kamar" id="nomor_kamar">
           <option value="">Pilih Kamar</option>
@@ -36,17 +36,17 @@
         </select>
       </div>
 
-      <div class="mb-3">
+      <div class="form-group">
         <label>Tanggal Masuk</label>
         <input type="date" name="tanggal_mulai" class="form-control">
       </div>
             
-      <div class="mb-3">
+      <div class="form-group">
         <label>Tanggal Keluar</label>
         <input type="date" name="tanggal_selesai" class="form-control">
       </div>
 
-      <div class="mb-3">
+      <div class="form-group">
       <label>Status Pembayaran</label>
       <select class="form-control form-select" name="status_pembayaran">
           <?php foreach ($statusOptions as $option): ?>

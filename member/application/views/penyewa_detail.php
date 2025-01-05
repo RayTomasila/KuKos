@@ -1,44 +1,51 @@
-<div class="container">
+<div class="container container-custom">
 
   <div class="container-top">
     <p class="page-title">Informasi Penyewa</p>
     
     <?php foreach ($penyewa as $key => $value): ?>
     
-    <a href="<?php echo base_url("penyewa/hapus/". $value['id_penyewa'])?>" class="btn btn--red"> Hapus Penyewa</a>  
+    <a href="<?php echo base_url("penyewa/hapus/". $value['id_penyewa'])?>" class="btn btn--red btn-hapus-top"> Hapus Penyewa</a>  
   </div>
 
   <!-- form Ubah Data Penyewa START -->
   <section>
     <form method="post" enctype="multipart/form-data">
-      <div class="mb-3">
+      <div class="form-group mb-3">
         <label>Nama</label>
         <input type="text" name="nama_penyewa" value="<?php echo $value['nama_penyewa'] ?>" class="form-control">
       </div>
 
-      <div class="mb-3">
+      <div class="form-group mb-3">
         <label>Nomor Telepon</label>
         <input type="text" name="nomor_telepon" value="<?php echo $value['nomor_telepon'] ?>" class="form-control">
       </div>
 
-      <div class="dropdown mb-3">
-        <label class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="ktp-dropdown mb-3">
+        <input type="checkbox" id="foto-toggle">
+        <label for="foto-toggle" class="dropdown-label">
           Berkas
+          <span class="arrow"></span>
         </label>
-        <div class="dropdown-menu static-dropdown mb-5" aria-labelledby="dropdownMenuButton">
-          <img src="<?php echo $this->config->item('url_penyewa') . $value['foto_ktp']; ?>" width="300" class="img-fluid">
+        <div class="foto-dropdown-content mb-5">
+          <img src="<?php echo $this->config->item('url_penyewa') . $value['foto_ktp']; ?>" alt="Uploaded Berkas">
         </div>
       </div>
 
 
-      <div class="mb-3">
+      <div class="form-group">
         <label>Ganti Foto Berkas</label>
-        <input type="file" name="foto_ktp" class="form-control custom-input">
+        <input type="file" name="foto_ktp" class="form-control custom-input" id="foto-to-display" onchange="previewImage()">
       </div>
 
-      <button type="submit" class="btn btn--blue mt-3">Ubah Data Penyewa</button>
+      <div class="display-uploaded-foto">
+        <img id="image-preview" src="" alt="Uploaded Image"/>
+      </div>
 
-            
+      <div class="button-ubah-hapus">
+        <button type="submit" class="btn btn--green">Simpan</button>
+        <a href="<?php echo base_url("penyewa/hapus/" . $value['id_penyewa']); ?>" class="btn btn--red btn-hapus-bottom">Hapus</a>
+      </div>
     </form>
     <?php endforeach;?>
   </section>

@@ -33,10 +33,6 @@ body {
   min-height: 100vh;
 }
 
-.container-custom {
-  padding-bottom: 3%;
-}
-
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -67,18 +63,6 @@ input { width: 100%; }
 
 ion-icon { pointer-events: none; }
 
-/* Buttons */
-.btn {
-  padding: 10px 20px !important;
-  border-radius: 5px !important;
-  font-weight: 500 !important;
-  color: white !important;
-  text-decoration: none !important;
-}
-
-.btn--green { background-color: var(--primary-color)!important;}
-.btn--red { background-color: rgb(203, 48, 64)!important; }
-.btn--blue { background-color: rgb(63, 97, 234)!important; }
 
 /* Status Cards */
 .js-card-status-lunas {

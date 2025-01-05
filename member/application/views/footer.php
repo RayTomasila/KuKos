@@ -1,7 +1,5 @@
 <!-- Custom JS -->
-<script src="../public/scripts/member.js"></script>
-
-
+<script src="<?php echo base_url('../public/scripts/member.js') ?>"></script>
 
 <!-- DataTable Initialization -->
 <script>

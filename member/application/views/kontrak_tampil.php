@@ -1,4 +1,4 @@
-<div class="container container-custom">
+<div class="container dashboard-custom">
 
   <div class="container-top">
     <p class="page-title">Kontrak Penyewa</p>
