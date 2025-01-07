@@ -21,14 +21,21 @@
 
     }
 
-    public function index() {      
+    public function index() {
       $data['kontrak'] = $this->Mkontrak->tampil();
-
+      $data['penyewaKontrak'] = $this->Mkontrak->count_penyewa();
+      $data['kamarKontrak'] = $this->Mkontrak->count_kamar();
+      
+      $data['pembayaran_lunas_bulan_ini'] = $this->Mkontrak->count_pembayaran_lunas_bulan_ini();
+      $data['pembayaran_belum_lunas_bulan_ini'] = $this->Mkontrak->count_pembayaran_belum_lunas_bulan_ini(); 
+      $data['total_pembayaran_bulan_ini'] = $this->Mkontrak->count_total_pembayaran_bulan_ini(); 
+      $data['incomeData'] = $this->Mkontrak->count_pembayaran_6_bulan_terakhir();  
+    
       $this->load->view('header');
       $this->load->view('kontrak_tampil', $data);
       $this->load->view('footer');
     }
-
+    
     public function tambah() {      
       $data['penyewa'] = $this->Mpenyewa->tampil();
       $data['kamar'] = $this->Mkamar->tampil();

@@ -1,6 +1,13 @@
-<div class="container">
+<div class="container ">
   <div class="container-top">
-    <p class="page-title">Daftar Fasilitas</p>
+    <div class="container-top-left">
+      <div class="back-button">
+        <a href="<?php echo base_url("dashboard")?>"> 
+          <img src="<?php echo base_url('../public/assets/member/dashboard/arrow-left.svg" alt="arrow back')?>">
+        </a> 
+      </div>
+      <p class="page-title">Fasilitas Kamar</p>
+    </div>
 
     <div>
       <a href="<?php echo base_url("fasilitas/tambah")?>" class="btn btn--green btn-tambah">Tambah Fasilitas</a>

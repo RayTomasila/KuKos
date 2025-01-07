@@ -29,8 +29,7 @@
     }
 
     public function detail($id_penyewa) {
-      $data['penyewa'] = $this->Mpenyewa->detail($id_penyewa);      
-      $data['kamar'] = $this->Mkamar->tampil();
+      $data['penyewa'] = $this->Mpenyewa->detail($id_penyewa);
   
       $inputan = $this->input->post();
   

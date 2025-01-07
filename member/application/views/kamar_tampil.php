@@ -1,6 +1,13 @@
 <div class="container container-content">
-  <div class="container-top container-kamar">
-    <p class="page-title">Daftar Kamar</p>
+  <div class="container-top">
+    <div class="container-top-left">
+      <div class="back-button">
+        <a href="<?php echo base_url("kamar")?>"> 
+          <img src="<?php echo base_url('../public/assets/member/dashboard/arrow-left.svg" alt="arrow back')?>">
+        </a> 
+      </div>
+      <p class="page-title">Tambah Kamar</p>
+    </div>
 
     <div>
       <a href="<?php echo base_url("kamar/tambah") ?>" class="btn btn--green btn-tambah">Tambah kamar</a>
@@ -26,9 +33,24 @@
         </div>
 
         <div class="kamar-card-items">
-          <img src="../public/assets/member/kamar/logo-fasilitas-kamar.png" alt="">
-          <p><?php echo $item['nama_fasilitas'] ?? 'Tidak ada fasilitas'; ?></p>
+          <img src="<?php echo base_url('../public/assets/member/kamar/logo-fasilitas-kamar.png'); ?>" alt="">
+          <?php 
+          if (!empty($item['fasilitas_list'])): 
+            $fasilitas = explode(',  ', $item['fasilitas_list']); 
+            $count = 0;
+            foreach ($fasilitas as $f): 
+              if ($count >= 2) break; 
+              ?>
+              <p><?php echo $f; ?></p>...     
+              <?php
+              $count++;
+            endforeach;
+          else: ?>
+            <p>Tidak ada fasilitas</p>
+          <?php endif; ?>
         </div>
+
+
 
         <p class="mb-3"><?php echo number_format($item['harga_kamar'], 0, ',', '.'); ?></p>
 

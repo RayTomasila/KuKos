@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-  window.addEventListener('resize', function () {
-    const buttonsTambah = document.querySelectorAll('.btn-tambah');
-    const buttonsHapusTop = document.querySelectorAll('.btn-hapus-top');
-    const buttonsHapusBottom = document.querySelectorAll('.btn-hapus-bottom');
-  
+  const buttonsTambah = document.querySelectorAll('.btn-tambah');
+  const buttonsHapusTop = document.querySelectorAll('.btn-hapus-top');
+  const buttonsHapusBottom = document.querySelectorAll('.btn-hapus-bottom');
+
+  const updateButtonStyles = () => {
+    const isSmallScreen = window.innerWidth <= 420;
+
+    // Update buttonsTambah
     buttonsTambah.forEach(buttonTambah => {
-      if (window.innerWidth <= 420) {
+      if (isSmallScreen) {
         buttonTambah.innerHTML = '';
         buttonTambah.classList.remove('btn--green');
         buttonTambah.classList.add('btn--green--tambah');
@@ -16,14 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     buttonsHapusTop.forEach(button => {
-      button.style.display = window.innerWidth <= 420 ? 'none' : 'block';
+      button.style.display = isSmallScreen ? 'none' : 'block';
     });
-  
+
     buttonsHapusBottom.forEach(button => {
-      button.style.display = window.innerWidth <= 420 ? 'block' : 'none';
+      button.style.display = isSmallScreen ? 'block' : 'none';
     });
-  
-  window.dispatchEvent(new Event('resize'));
+  };
+
+  updateButtonStyles();
+  window.addEventListener('resize', updateButtonStyles);
 });
 
   let statusPembayaranElements = document.querySelectorAll('.js-card-status-pembayaran');
@@ -65,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-});
 
 function previewImage() {
   const fileInput = document.getElementById('foto-to-display');

@@ -1,6 +1,13 @@
 <div class="container container-custom">
   <div class="container-top">
-    <p class="page-title">Tambah Kontrak</p>
+    <div class="container-top-left">
+      <div class="back-button">
+        <a href="<?php echo base_url("kontrak")?>"> 
+          <img src="<?php echo base_url('../public/assets/member/dashboard/arrow-left.svg" alt="arrow back')?>">
+        </a> 
+      </div>
+      <p class="page-title">Tambah Kontrak</p>
+    </div>
   </div>
   
   <form method="post" enctype="multipart/form-data">
@@ -25,7 +32,7 @@
           <option value="">Pilih Kamar</option>
           <?php foreach ($kamar as $key => $value) : ?>           
 
-              <option value="<?php echo $value['id_kamar'] ?>" 
+              <option value="<?php echo $value['id_kamar']?>" 
 
                 data-harga="<?php echo $value['harga_kamar'] ?>">
                 <?php echo $value['nomor_kamar'] ?> - <?php echo number_format($value['harga_kamar'], 0, ',', '.') ?>
@@ -55,6 +62,6 @@
       </select>
     </div>
 
-      <button type="submit" class="btn btn--green mt-3">Tambah Kontrak</button>
+      <button type="submit" class="btn btn--green">Simpan</button>
     </form>
 </div>

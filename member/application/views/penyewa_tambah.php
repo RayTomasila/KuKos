@@ -1,7 +1,13 @@
 <div class="container container-custom">
-
   <div class="container-top">
-    <p class="page-title">Tambah Penyewa</p>
+    <div class="container-top-left">
+      <div class="back-button">
+        <a href="<?php echo base_url("penyewa")?>"> 
+          <img src="<?php echo base_url('../public/assets/member/dashboard/arrow-left.svg" alt="arrow back')?>">
+        </a> 
+      </div>
+      <p class="page-title">Tambah Penyewa</p>
+    </div>
   </div>
 
   <form method="post" enctype="multipart/form-data">
@@ -18,7 +24,7 @@
       <?php echo form_error('nomor_telepon'); ?>
     </div>
             
-    <div class="form-group">
+    <div class="form-group py-2">
       <label for="foto_ktp">Berkas</label>
       <input type="file" name="foto_ktp" class="form-control" id="foto-to-display" onchange="previewImage()" <?php echo form_error('foto_ktp'); ?> >
     </div>

@@ -53,3 +53,55 @@
   border-radius: 5px;
   font-weight: 600;
 }
+
+
+/* Pemasukan */
+.container-pemasukan {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.pemasukan-top {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: 100%;
+}
+
+.pemasukan-top-left{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 30px;
+}
+
+.pemasukan-top-right {
+  width: 50%;
+}
+
+.laporan-card-top,
+.laporan-card-bottom{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.laporan-text-top {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.laporan-text-mid {
+  font-size: 24px;
+  font-weight: 600;
+  color: #515452;
+}
+
+#grafik-pembayaran-bulan-ini {
+  align-self: center;
+}

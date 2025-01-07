@@ -11,9 +11,18 @@
       "pageLength": 5, 
       "lengthMenu": [5, 10, 25],
       "responsive": true,
+      "language": {
+        "sLengthMenu": "Jumlah Baris _MENU_",
+        "sSearch": "Cari Kontrak",
+        "sInfo": "Menampilkan _START_ hingga _END_ dari _TOTAL_ entri",
+        "sInfoEmpty": "Menampilkan 0 hingga 0 dari 0 entri",
+        "sInfoFiltered": "(disaring dari _MAX_ total entri)",
+        "sZeroRecords": "Tidak ada data yang sesuai",
+      }
     });
   });
 </script>
+
 
 <!-- SweetAlert JS (Only once) -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

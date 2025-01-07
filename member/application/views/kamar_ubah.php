@@ -1,6 +1,13 @@
 <div class="container container-custom">
   <div class="container-top">
-    <p class="page-title">Informasi Kamar</p>
+    <div class="container-top-left">
+      <div class="back-button">
+        <a href="<?php echo base_url("kamar")?>"> 
+          <img src="<?php echo base_url('../public/assets/member/dashboard/arrow-left.svg" alt="arrow back')?>">
+        </a> 
+      </div>
+      <p class="page-title">Informasi Kamar</p>
+    </div>
 
     <div>
       <a href="<?php echo site_url("kamar/hapus/" . $kamar->id_kamar) ?>" class="btn btn--red btn-hapus-top" onclick="return confirm('Apakah Anda yakin ingin menghapus kamar ini?');">Hapus Kamar</a>
@@ -13,12 +20,12 @@
 
     <div class="form-group">
         <label for="nomor_kamar">Nomor Kamar</label>
-        <input type="text" class="form-control mb-3" name="nomor_kamar" value="<?php echo set_value('nomor_kamar', $kamar->nomor_kamar); ?>">
+        <input type="text" class="form-control" name="nomor_kamar" value="<?php echo set_value('nomor_kamar', $kamar->nomor_kamar); ?>">
     </div>
 
     <div class="form-group">
       <label for="status_kamar">Status Kamar</label>
-      <select class="form-control form-select mb-3" name="status_kamar">
+      <select class="form-control form-select" name="status_kamar">
         <option value="siap huni">Siap Huni</option>
         <option value="digunakan">Digunakan</option>
       </select>
@@ -26,23 +33,36 @@
 
     <div class="form-group">
         <label for="harga_kamar">Harga Kamar</label>
-        <input type="text" class="form-control mb-3" name="harga_kamar" value="<?php echo set_value('harga_kamar', $kamar->harga_kamar); ?>">
+        <input type="text" class="form-control" name="harga_kamar" value="<?php echo set_value('harga_kamar', $kamar->harga_kamar); ?>">
     </div>
 
-    <div class="form-group">
-        <label for="id_fasilitas">ID Fasilitas</label>
-        <input type="text" class="form-control mb-3" name="id_fasilitas" value="<?php echo set_value('id_fasilitas', $kamar->id_fasilitas); ?>">
+
+    <div class="checkbox-tambah-fasilitas">
+      <label for="fasilitas">Fasilitas Kamar</label><br>
+      <?php foreach ($all_fasilitas as $fasilitas): ?>
+        <div class="mb-1">
+          <input 
+            type="checkbox" 
+            class="form-check-input" 
+            name="fasilitas[]" 
+            value="<?php echo $fasilitas['id_fasilitas']; ?>" 
+            <?php echo in_array($fasilitas['id_fasilitas'], $selected_fasilitas) ? 'checked' : ''; ?>
+          >
+          <label><?php echo $fasilitas['nama_fasilitas']; ?></label>
+        </div>
+      <?php endforeach; ?>
     </div>
 
-    <div class="form-group">
-        <label for="foto_kamar">Foto Lama</label><br>
-        <?php if ($kamar->foto_kamar): ?>
-            <img src="<?php echo $this->config->item("url_penyewa"). $kamar->foto_kamar; ?>" alt="Foto Kamar" class="img-thumbnail mb-2" width="200">
-        <?php endif; ?>
-        <input type="file" class="form-control mb-3" name="foto_kamar">
+    <div class="form-group py-2">
+        <label for="foto_kamar">Foto kamar</label><br>
+        <div class="display-foto-kamar mb-3">
+          <img src="<?php echo $this->config->item("url_kamar"). $kamar->foto_kamar ?>" alt="Foto Kamar">
+        </div>
+
+        <input type="file" class="form-control" name="foto_kamar">
     </div>
 
-    <div class="button-ubah-hapus mt-3">
+    <div class="button-ubah-hapus">
       <button type="submit" class="btn btn--green">Simpan</button>
       <a href="<?php echo base_url("kamar/hapus/" . $kamar->id_kamar); ?>" class="btn btn--red btn-hapus-bottom">Hapus</a>
     </div>
