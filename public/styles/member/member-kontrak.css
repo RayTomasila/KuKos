@@ -1,11 +1,17 @@
 #tabelku.dataTable {
   width: 100%;
-  min-width: 800px;
+  min-width: auto;
   max-width: fit-content;
   table-layout: auto;
   overflow: hidden;
   font-family: 'Poppins';
-  border-radius: 20px;
+  border-radius: 12px;
+}
+
+.col-12 {
+  overflow-x: scroll;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #tabelku th, #tabelku td {
@@ -17,7 +23,7 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 
@@ -25,11 +31,11 @@
   color: black;
 }
 
-
 #tabelku th {
   background-color: var(--secondary-color);
+  font-weight: 500;
+  font-size: 17px;
 }
-
 
 .table-buttons {
   width: fit-content;
@@ -52,4 +58,111 @@
   color: white;
   border-radius: 5px;
   font-weight: 600;
+}
+
+/* Pemasukan */
+.container-pemasukan {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow: hidden;
+}
+
+.pemasukan-top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+  max-width: 100%;
+  justify-content: space-between;
+}
+
+.pemasukan-top-left {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 30px;
+}
+
+.pemasukan-top-right {
+  width: 700px;
+  height: 400px;
+  overflow: hidden;
+}
+
+#grafik-pembayaran-bulan-ini {
+  display: flex;
+  flex-grow: 1;
+  border-radius: 12px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.laporan-card-top,
+.laporan-card-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.laporan-card-bottom {
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+}
+
+#bar-chart {
+  max-width: 100%;
+  max-height: 600px;
+
+  border-radius: 12px;
+}
+
+.laporan-text-top {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.laporan-text-mid {
+  font-size: 24px;
+  font-weight: 600;
+  color: #515452;
+  font-family: 'Poppins';
+}
+
+
+/* Table */
+.dt-search label {
+  visibility: hidden;
+}
+
+.dt-length,
+.dt-search {
+  position: relative;
+  max-width: 100%;
+}
+
+.dt-length ::after,
+.dt-search::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
+}
+/* Table */
+
+
+@media screen and (max-width:420px) {
+  .pemasukan-top-right {
+    width: 100%;
+    height: 100%;
+  }
 }

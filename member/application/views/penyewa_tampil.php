@@ -1,7 +1,14 @@
 <div class="container container-content">
   <div class="container-top">
-    <p class="page-title">Daftar Penyewa</p>
-
+    <div class="container-top-left">
+      <div class="back-button">
+        <a href="<?php echo base_url("dashboard")?>"> 
+          <img src="<?php echo base_url('../public/assets/member/dashboard/arrow-left.svg" alt="arrow back')?>">
+        </a> 
+      </div>
+      <p class="page-title">Daftar Penyewa</p>
+    </div>
+      
     <div class="search-form">
       <img src="../public/assets/member/penyewa/penyewa-search.png" alt="search logo">
       <input type="text" placeholder="Cari Penyewa..."></input>
@@ -12,7 +19,7 @@
     </div>
   </div>
 
-  <div class="card-container">
+  <div class="card-container js-card-container">
     <?php foreach ($penyewa as $key => $value): ?>
       <div
         class="card-content"

@@ -1,12 +1,19 @@
 <div class="container container-custom">
   <div class="container-top">
-    <p class="page-title">Ubah Kontrak</p>
+    <div class="container-top-left">
+      <div class="back-button">
+        <a href="<?php echo base_url("kontrak")?>"> 
+          <img src="<?php echo base_url('../public/assets/member/dashboard/arrow-left.svg" alt="arrow back')?>">
+        </a> 
+      </div>
+      <p class="page-title">Informasi Kontrak</p>
+    </div>
   </div>
 
   <section>
     <form method="post" enctype="multipart/form-data">
       
-      <div class="mb-3">
+      <div class="form-group mb-2">
         <label>Nama Penyewa</label>
         <select class="form-control form-select" name="id_penyewa" id="nama_penyewa">
           <option value="<?php echo $kontrak['id_penyewa']; ?>"><?php echo $kontrak['nama_penyewa']; ?></option>
@@ -20,14 +27,14 @@
         </select>
       </div>
 
-      <div class="mb-3">
+      <div class="form-group mb-2">
         <label>Kamar</label>
         <select class="form-control form-select" name="id_kamar" id="nomor_kamar">
-          <option value="<?php echo $kontrak['id_kamar']; ?>"><?php echo $kontrak['nomor_kamar']; ?> - <?php echo number_format($kontrak['harga_kamar'], 0, ',', '.'); ?></option>
+          <option value="<?php echo $kontrak['id_kamar']; ?>">Kamar <?php echo $kontrak['nomor_kamar']; ?> - <?php echo number_format($kontrak['harga_kamar'], 0, ',', '.'); ?></option>
 
           <?php foreach ($kamar as $k): ?>
             <?php if ($k['id_kamar'] != $kontrak['id_kamar']): ?> 
-              <option value="<?php echo $k['id_kamar']; ?>" data-harga="<?php echo $k['harga_kamar']; ?>">
+              <option value="<?php echo $k['id_kamar']; ?>" data-harga="<?php echo $k['harga_kamar']; ?>">Kamar
                 <?php echo $k['nomor_kamar']; ?> - <?php echo number_format($k['harga_kamar'], 0, ',', '.'); ?>
               </option>
             <?php endif; ?>
@@ -36,18 +43,17 @@
         </select>
       </div>
 
-
-      <div class="mb-3">
+      <div class="form-group mb-2">
         <label>Tanggal Masuk</label>
-        <input type="date" name="tanggal_mulai" value="<?php echo $kontrak['tanggal_mulai'] ?>" class="form-control">
+        <input type="text" name="tanggal_mulai" id="tanggal_mulai" value="<?php echo formatDateIndonesian($kontrak['tanggal_mulai']) ?>" class="form-control">
       </div>
 
-      <div class="mb-3">
+      <div class="form-group mb-2">
         <label>Tanggal Keluar</label>
-        <input type="date" name="tanggal_selesai" value="<?php echo $kontrak['tanggal_selesai'] ?>" class="form-control">
+        <input type="text" name="tanggal_selesai" id="tanggal_selesai" value="<?php echo formatDateIndonesian($kontrak['tanggal_selesai']) ?>" class="form-control">
       </div>
 
-     <div class="mb-3">
+     <div class="form-group mb-2">
       <label>Status Pembayaran</label>
       <select class="form-control form-select" name="status_pembayaran">
           <?php foreach ($statusOptions as $option): ?>
@@ -57,7 +63,7 @@
     </div>
 
 
-      <button type="submit" class="btn btn--blue mt-3">Ubah Kontrak</button>
+      <button type="submit" class="btn btn--green">Simpan</button>
 
     </form>
   </section>

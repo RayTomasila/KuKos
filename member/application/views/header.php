@@ -43,7 +43,12 @@
   <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
   <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
 
-  
+  <!-- FlatPicker for date -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+
 </head>
 
 <body>

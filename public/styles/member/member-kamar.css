@@ -1,29 +1,27 @@
 .kamar-container {
   display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));  
   gap: 20px;
   height: 100%;
   margin-bottom: 5%;
   max-width: 100%;
-  margin: 0 auto 5% auto; 
-  padding: 0
+  padding: 0;
 }
 
 .kamar-card {
   width: 100%;
-  max-width: 100%;
   height: auto;
   max-height: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 13px;
 
   border: 1px solid #ccc;
   border-radius: 26px;
   padding: 20px 20px 29px;
   background-color: #fff;
   text-align: left;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -32,9 +30,13 @@
   padding: 0;
 }
 
+.kamar-card h4 {
+  color: #585757;
+  font-weight: 600;
+}
+
 .kamar-card:hover {
-  transform: scale(1.0);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 9px rgba(60, 60, 60, 0.243);
 }
 
 .container-foto-kamar {
@@ -47,7 +49,8 @@
 .container-foto-kamar img {
   width: 100%;
   height: 100%;
-  border-radius: 26px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 2px rgba(65, 65, 65, 0.381);
 }
 
 .kamar-card span {
@@ -59,7 +62,6 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  /* margin-bottom: 12px; */
   align-items: center;
 }
 
@@ -67,6 +69,26 @@
   height: 28px;
   margin-right: 15px;
 }
+
+.display-foto-kamar {
+  border: 2px solid var(--text-color);
+  width: 200px;
+  height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+.display-foto-kamar img {
+  /* object-fit: fill; */
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px !important;
+}
+
 
 .status-digunakan {
   background-color: var(--primary-color);
@@ -89,17 +111,14 @@
   font-weight: 500;
 }
 
-@media screen and (min-width:1000px) {
-  .container-foto-kamar {
-    height: 250px;
-    max-height: 250px;
-    width: 100%;
-    max-width: 100%;
-  }
-}
-  
-@media screen and (min-width:1000px) {
+@media screen and (max-width: 420px) {
   .kamar-container {
-    margin: 0 auto 2% auto; 
+    grid-template-columns: 1fr;
+  }
+
+  .kamar-card {
+    max-width: none;
   }
 }
+
+
