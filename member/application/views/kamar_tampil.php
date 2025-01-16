@@ -6,7 +6,7 @@
           <img src="<?php echo base_url('../public/assets/member/dashboard/arrow-left.svg" alt="arrow back')?>">
         </a> 
       </div>
-      <p class="page-title">Tambah Kamar</p>
+      <p class="page-title">Daftar Kamar</p>
     </div>
 
     <div>

@@ -35,11 +35,9 @@
   
       $tanggal_mulai = new DateTime($inputan['tanggal_mulai']);
       $tanggal_selesai = new DateTime($inputan['tanggal_selesai']);
-      $lama_kontrak = $tanggal_mulai->diff($tanggal_selesai)->m; 
+      $interval = $tanggal_mulai->diff($tanggal_selesai);
   
-      if ($lama_kontrak == 0) {
-          $lama_kontrak = 1; 
-      }
+      $lama_kontrak = $interval->y * 12 + $interval->m + ($interval->d > 0 ? 1 : 0);
   
       $inputan['jumlah_pembayaran'] = $kamar->harga_kamar * $lama_kontrak;
   
@@ -49,61 +47,60 @@
       $this->db->where('id_kamar', $inputan['id_kamar']);
       $this->db->where('id_member', $this->session->userdata("id_member"));
       $this->db->update('kamar');
-  }
-
-
-  function ubah($inputan, $id_kontrak) {
-    $this->db->where('id_kontrak', $id_kontrak);
-    $this->db->where('id_member', $this->session->userdata("id_member"));
-
-    $kontrakLama = $this->db->get('kontrak')->row_array();
-
-    if ($kontrakLama['id_kamar'] != $inputan['id_kamar']) {
-        $this->db->set('status_kamar', 'siap huni');
-        $this->db->where('id_kamar', $kontrakLama['id_kamar']);
-        $this->db->where('id_member', $this->session->userdata("id_member"));
-        $this->db->update('kamar');
     }
+  
 
-    $this->db->where('id_kamar', $inputan['id_kamar']);
-    $query = $this->db->get('kamar');
-    $kamar = $query->row();
-
-    $tanggal_mulai = new DateTime($inputan['tanggal_mulai']);
-    $tanggal_selesai = new DateTime($inputan['tanggal_selesai']);
-    $lama_kontrak = $tanggal_mulai->diff($tanggal_selesai)->m;
-
-    if ($lama_kontrak == 0) {
-        $lama_kontrak = 1;  
+    function ubah($inputan, $id_kontrak) {
+      $this->db->where('id_kontrak', $id_kontrak);
+      $this->db->where('id_member', $this->session->userdata("id_member"));
+  
+      $kontrakLama = $this->db->get('kontrak')->row_array();
+  
+      if ($kontrakLama['id_kamar'] != $inputan['id_kamar']) {
+          $this->db->set('status_kamar', 'siap huni');
+          $this->db->where('id_kamar', $kontrakLama['id_kamar']);
+          $this->db->where('id_member', $this->session->userdata("id_member"));
+          $this->db->update('kamar');
+      }
+  
+      $this->db->where('id_kamar', $inputan['id_kamar']);
+      $query = $this->db->get('kamar');
+      $kamar = $query->row();
+  
+      $tanggal_mulai = new DateTime($inputan['tanggal_mulai']);
+      $tanggal_selesai = new DateTime($inputan['tanggal_selesai']);
+      $lama_kontrak = $tanggal_mulai->diff($tanggal_selesai)->m;
+  
+      if ($lama_kontrak == 0) {
+          $lama_kontrak = 1;  
+      }
+      $inputan['jumlah_pembayaran'] = $kamar->harga_kamar * $lama_kontrak;
+  
+      $this->db->where('id_kontrak', $id_kontrak);
+      $this->db->where('id_member', $this->session->userdata("id_member"));
+      $this->db->update('kontrak', $inputan);
+  
+      $this->db->set('status_kamar', 'digunakan');
+      $this->db->where('id_kamar', $inputan['id_kamar']);
+      $this->db->where('id_member', $this->session->userdata("id_member"));
+      $this->db->update('kamar');
     }
-    $inputan['jumlah_pembayaran'] = $kamar->harga_kamar * $lama_kontrak;
-
-    $this->db->where('id_kontrak', $id_kontrak);
-    $this->db->where('id_member', $this->session->userdata("id_member"));
-    $this->db->update('kontrak', $inputan);
-
-    $this->db->set('status_kamar', 'digunakan');
-    $this->db->where('id_kamar', $inputan['id_kamar']);
-    $this->db->where('id_member', $this->session->userdata("id_member"));
-    $this->db->update('kamar');
-}
-
-
+  
     function hapus($id_kontrak) {
       $this->db->where('id_kontrak', $id_kontrak);
       $this->db->where('id_member', $this->session->userdata("id_member"));
-  
+
       $kontrak = $this->db->get('kontrak')->row_array();
-  
+
       $this->db->where('id_kontrak', $id_kontrak);
       $this->db->where('id_member', $this->session->userdata("id_member"));
       $this->db->delete('kontrak');
-  
+
       $this->db->set('status_kamar', 'siap huni');
       $this->db->where('id_kamar', $kontrak['id_kamar']);
       $this->db->where('id_member', $this->session->userdata("id_member"));
       $this->db->update('kamar');
-   }
+    }
   
 
     public function getEnumValues($table, $column) {

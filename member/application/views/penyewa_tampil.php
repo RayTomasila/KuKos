@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div class="card-container">
+  <div class="card-container js-card-container">
     <?php foreach ($penyewa as $key => $value): ?>
       <div
         class="card-content"

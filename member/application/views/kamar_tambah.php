@@ -2,7 +2,7 @@
   <div class="container-top">
     <div class="container-top-left">
       <div class="back-button">
-        <a href="<?php echo base_url("kamar")?>"> 
+        <a href="<?php echo site_url("kamar")?>"> 
           <img src="<?php echo base_url('../public/assets/member/dashboard/arrow-left.svg" alt="arrow back')?>"> 
         </a> 
       </div>
@@ -12,7 +12,9 @@
 
   <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
   <?php echo form_open_multipart('kamar/tambah'); ?>
-
+    <?php if (isset($error_upload)): ?>
+      <div class="alert alert-danger"><?php echo $error_upload; ?></div>
+    <?php endif; ?>
 
   <div class="checkbox-tambah-fasilitas">
     <div class="form-check">

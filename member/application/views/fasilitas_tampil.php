@@ -2,7 +2,7 @@
   <div class="container-top">
     <div class="container-top-left">
       <div class="back-button">
-        <a href="<?php echo base_url("dashboard")?>"> 
+        <a href="<?php echo site_url("dashboard")?>"> 
           <img src="<?php echo base_url('../public/assets/member/dashboard/arrow-left.svg" alt="arrow back')?>">
         </a> 
       </div>

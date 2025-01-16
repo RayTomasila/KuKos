@@ -30,11 +30,11 @@
       <div class="form-group mb-2">
         <label>Kamar</label>
         <select class="form-control form-select" name="id_kamar" id="nomor_kamar">
-          <option value="<?php echo $kontrak['id_kamar']; ?>"><?php echo $kontrak['nomor_kamar']; ?> - <?php echo number_format($kontrak['harga_kamar'], 0, ',', '.'); ?></option>
+          <option value="<?php echo $kontrak['id_kamar']; ?>">Kamar <?php echo $kontrak['nomor_kamar']; ?> - <?php echo number_format($kontrak['harga_kamar'], 0, ',', '.'); ?></option>
 
           <?php foreach ($kamar as $k): ?>
             <?php if ($k['id_kamar'] != $kontrak['id_kamar']): ?> 
-              <option value="<?php echo $k['id_kamar']; ?>" data-harga="<?php echo $k['harga_kamar']; ?>">
+              <option value="<?php echo $k['id_kamar']; ?>" data-harga="<?php echo $k['harga_kamar']; ?>">Kamar
                 <?php echo $k['nomor_kamar']; ?> - <?php echo number_format($k['harga_kamar'], 0, ',', '.'); ?>
               </option>
             <?php endif; ?>
@@ -43,15 +43,14 @@
         </select>
       </div>
 
-
       <div class="form-group mb-2">
         <label>Tanggal Masuk</label>
-        <input type="date" name="tanggal_mulai" value="<?php echo $kontrak['tanggal_mulai'] ?>" class="form-control">
+        <input type="text" name="tanggal_mulai" id="tanggal_mulai" value="<?php echo formatDateIndonesian($kontrak['tanggal_mulai']) ?>" class="form-control">
       </div>
 
       <div class="form-group mb-2">
         <label>Tanggal Keluar</label>
-        <input type="date" name="tanggal_selesai" value="<?php echo $kontrak['tanggal_selesai'] ?>" class="form-control">
+        <input type="text" name="tanggal_selesai" id="tanggal_selesai" value="<?php echo formatDateIndonesian($kontrak['tanggal_selesai']) ?>" class="form-control">
       </div>
 
      <div class="form-group mb-2">

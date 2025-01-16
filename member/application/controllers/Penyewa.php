@@ -61,30 +61,41 @@
 
     public function tambah() {
       $this->form_validation->set_rules('nama_penyewa', 'Nama Penyewa', 'required', [
-          'required' => '%s wajib diisi.'
+        'required' => 'Nama Penyewa Wajib Diisi.'
       ]);
-  
+      $this->form_validation->set_rules('nomor_telepon', 'Nomor Telepon', 'required', [
+        'required' => 'Nomor Telepon Wajib Diisi.'
+      ]);
+    
       if ($this->form_validation->run() == FALSE) {
-          $this->load->view('header');
-          $this->load->view('penyewa_tambah');
-          $this->load->view('footer');
-      } else {
+        $this->load->view('header');
+        $this->load->view('penyewa_tambah');
+        $this->load->view('footer');
+        } else {
           $inputan = $this->input->post();
-  
+      
           $config['upload_path'] = $this->config->item("assets_penyewa");
           $config['allowed_types'] = 'jpeg|jpg|png';
           $this->load->library('upload', $config);
-  
-          if ($this->upload->do_upload('foto_ktp')) {
-              $upload_data = $this->upload->data();
-              $inputan['foto_ktp'] = $upload_data['file_name'];
-          }
-  
-          $this->Mpenyewa->tambah($inputan);
-          $this->session->set_flashdata('pesan_sukses', 'Penyewa berhasil ditambahkan.');
-          redirect('penyewa', 'refresh');
+    
+        if (!$this->upload->do_upload('foto_ktp')) {        
+          $data['error_upload'] = 'Foto Harus JPG, JPEG, Atau PNG';          
+        
+          $this->load->view('header');
+          $this->load->view('penyewa_tambah', $data);
+          $this->load->view('footer');
+          return;
+        }
+    
+        $upload_data = $this->upload->data();
+        $inputan['foto_ktp'] = $upload_data['file_name'];
+    
+        $this->Mpenyewa->tambah($inputan);
+        $this->session->set_flashdata('pesan_sukses', 'Penyewa berhasil ditambahkan.');
+        redirect('penyewa', 'refresh');
       }
     }
+    
 
     public function hapus($id_penyewa) {
       $this->Mpenyewa->hapus($id_penyewa);

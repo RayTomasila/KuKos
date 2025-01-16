@@ -18,6 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         $this->load->model('Mkamar');
         $this->load->model('Mfasilitas');
         $this->load->model('Mkontrak');
+        $this->load->library('form_validation');
       }
 
       public function index() {
@@ -28,10 +29,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
       }
 
       public function tambah() {
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('status_kamar', 'Status Kamar', 'required');
-        $this->form_validation->set_rules('harga_kamar', 'Harga Kamar', 'required|numeric');
-    
+        $this->form_validation->set_rules(
+            'harga_kamar', 
+            'Harga Kamar', 
+            'required|numeric', 
+            [
+                'required' => 'Harga Kamar Wajib Diisi.',
+                'numeric' => 'Harga Kamar Harus Berupa Angka.'
+            ]
+        );
+        
         if ($this->form_validation->run() == FALSE) {
             $id_member = $this->session->userdata('id_member');
             $data['fasilitas'] = $this->Mfasilitas->tampil($id_member);
@@ -39,59 +46,69 @@ defined('BASEPATH') or exit('No direct script access allowed');
             $this->load->view('kamar_tambah', $data);
             $this->load->view('footer');
         } else {
+            $foto_kamar = '';
             $config['upload_path'] = $this->config->item('assets_kamar');
             $config['allowed_types'] = 'jpg|jpeg|png';
             $config['max_size'] = 2048;
+    
             $this->load->library('upload', $config);
     
-            if (!$this->upload->do_upload('foto_kamar')) {
-                $this->session->set_flashdata('pesan_gagal', $this->upload->display_errors());
-                redirect('kamar/tambah', 'refresh');
-            } else {
-                $upload_data = $this->upload->data();
-                $foto_kamar = $upload_data['file_name'];
-    
-                $status_kamar = $this->input->post('status_kamar');
-                $harga_kamar = $this->input->post('harga_kamar');
-                $id_member = $this->session->userdata('id_member');
-    
-                $jumlah_kamar = $this->input->post('jumlah_kamar');
-    
-                $last_nomor_kamar = $this->Mkamar->get_last_nomor_kamar($id_member);
-    
-                $nomor_kamar = $last_nomor_kamar + 1;
-    
-                for ($i = 0; $i < $jumlah_kamar; $i++) {
-                    $data = [
-                        'nomor_kamar' => $nomor_kamar++,  
-                        'status_kamar' => $status_kamar,
-                        'harga_kamar' => $harga_kamar,
-                        'foto_kamar' => $foto_kamar,
-                        'id_member' => $id_member,
-                    ];
-    
-                    $fasilitas = $this->input->post('id_fasilitas');
-                    $this->Mkamar->tambah_kamar($data, $fasilitas);
+            if (!empty($_FILES['foto_kamar']['name'])) {
+                if (!$this->upload->do_upload('foto_kamar')) {
+                    $data['error_upload'] = 'Foto Harus JPG, JPEG, Atau PNG'; 
+                    $id_member = $this->session->userdata('id_member');
+                    $data['fasilitas'] = $this->Mfasilitas->tampil($id_member);
+                    $this->load->view('header');
+                    $this->load->view('kamar_tambah', $data);
+                    $this->load->view('footer');
+                    return;
+                } else {
+                    $upload_data = $this->upload->data();
+                    $foto_kamar = $upload_data['file_name'];
                 }
-                
-                $this->session->set_flashdata('pesan_sukses', 'Kamar berhasil ditambahkan.');
-                redirect('kamar', 'refresh');
             }
+    
+            $status_kamar = $this->input->post('status_kamar');
+            $harga_kamar = $this->input->post('harga_kamar');
+            $id_member = $this->session->userdata('id_member');
+            $jumlah_kamar = $this->input->post('jumlah_kamar');
+            $last_nomor_kamar = $this->Mkamar->get_last_nomor_kamar($id_member);
+            $nomor_kamar = $last_nomor_kamar + 1;
+    
+            for ($i = 0; $i < $jumlah_kamar; $i++) {
+                $data = [
+                    'nomor_kamar' => $nomor_kamar++,  
+                    'status_kamar' => $status_kamar,
+                    'harga_kamar' => $harga_kamar,
+                    'foto_kamar' => $foto_kamar,
+                    'id_member' => $id_member,
+                ];
+    
+                $fasilitas = $this->input->post('id_fasilitas');
+                $this->Mkamar->tambah_kamar($data, $fasilitas);
+            }
+    
+            $this->session->set_flashdata('pesan_sukses', 'Kamar berhasil ditambahkan.');
+            redirect('kamar', 'refresh');
         }
-    }
+      }
+    
     
     
       public function ubah($id_kamar) {
-        if ($this->session->userdata("status_langganan") !== 'aktif') {
-            $this->session->set_flashdata('pesan_gagal', 'Langganan Anda tidak aktif.');
-            redirect('kamar', 'refresh');
-        }
-    
-        $this->load->library('form_validation');
         $this->form_validation->set_rules('nomor_kamar', 'Nomor Kamar', 'required');
         $this->form_validation->set_rules('status_kamar', 'Status Kamar', 'required');
-        $this->form_validation->set_rules('harga_kamar', 'Harga Kamar', 'required|numeric');
         $this->form_validation->set_rules('fasilitas[]', 'Fasilitas Kamar', 'required');
+
+        $this->form_validation->set_rules(
+          'harga_kamar', 
+          'Harga Kamar', 
+          'required|number', 
+          [
+              'required' => 'Harga Kamar Wajib Diisi.',
+              'number' => 'Harga Kamar Harus Berupa Angka.'
+          ]
+        );
     
         $data['kamar'] = $this->Mkamar->detail($id_kamar);
         $data['selected_fasilitas'] = $this->Mkamar->get_fasilitas_by_kamar($id_kamar);

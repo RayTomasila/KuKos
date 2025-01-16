@@ -11,7 +11,7 @@
 
     <?php if (isset($penyewa) && count($penyewa) > 0): ?>
       <?php $value = $penyewa[0]; ?>
-      <a href="<?php echo base_url("penyewa/hapus/" . $value['penyewa_id']) ?>" class="btn btn--red btn-hapus-top"> Hapus Penyewa</a>
+      <a href="#" class="btn btn--red btn-hapus-top btn-hapus" data-href="<?php echo site_url("penyewa/hapus/" . $value['penyewa_id']); ?>">Hapus Penyewa</a>
     <?php endif; ?>
 
   </div>
@@ -54,7 +54,7 @@
 
         <div class="button-ubah-hapus">
           <button type="submit" class="btn btn--green">Simpan</button>
-          <a href="<?php echo base_url("penyewa/hapus/" . $value['id_penyewa']); ?>" class="btn btn--red btn-hapus-bottom">Hapus</a>
+          <a href="<?php echo base_url("penyewa/hapus/" . $value['id_penyewa']); ?>" class="btn btn--red btn-hapus btn-hapus-bottom">Hapus</a>
         </div>
       <?php endif; ?>
     </form>

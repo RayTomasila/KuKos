@@ -10,17 +10,18 @@
     </div>
 
     <div>
-      <a href="<?php echo site_url("kamar/hapus/" . $kamar->id_kamar) ?>" class="btn btn--red btn-hapus-top" onclick="return confirm('Apakah Anda yakin ingin menghapus kamar ini?');">Hapus Kamar</a>
+      <a href="#" class="btn btn--red btn-hapus btn-hapus-top" data-href="<?php echo site_url("kamar/hapus/" . $kamar->id_kamar); ?>">Hapus Kamar</a>
     </div>
-
   </div>
   
     <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
     <?php echo form_open_multipart('kamar/ubah/' . $kamar->id_kamar); ?>
 
     <div class="form-group">
-        <label for="nomor_kamar">Nomor Kamar</label>
-        <input type="text" class="form-control" name="nomor_kamar" value="<?php echo set_value('nomor_kamar', $kamar->nomor_kamar); ?>">
+      <label for="nomor_kamar">Nomor Kamar</label>
+      <input type="text" class="form-control" name="nomor_kamar" 
+      value="<?php echo set_value('nomor_kamar', $kamar->nomor_kamar); ?>" 
+      readonly>
     </div>
 
     <div class="form-group">
@@ -33,7 +34,7 @@
 
     <div class="form-group">
         <label for="harga_kamar">Harga Kamar</label>
-        <input type="text" class="form-control" name="harga_kamar" value="<?php echo set_value('harga_kamar', $kamar->harga_kamar); ?>">
+        <input type="number" class="form-control" name="harga_kamar" value="<?php echo set_value('harga_kamar', $kamar->harga_kamar); ?>">
     </div>
 
 
@@ -64,7 +65,7 @@
 
     <div class="button-ubah-hapus">
       <button type="submit" class="btn btn--green">Simpan</button>
-      <a href="<?php echo base_url("kamar/hapus/" . $kamar->id_kamar); ?>" class="btn btn--red btn-hapus-bottom">Hapus</a>
+      <a href="#" class="btn btn--red btn-hapus btn-hapus-bottom" data-href="<?php echo site_url("kamar/hapus/" . $kamar->id_kamar); ?>">Hapus</a>
     </div>
 
     <?php echo form_close(); ?>
