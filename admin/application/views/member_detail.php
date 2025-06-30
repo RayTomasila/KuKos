@@ -5,7 +5,7 @@
             <table class="table table-bordered">
 
                 <tr>
-                    <td>Email </td>
+                    <td>Username </td>
                     <td><?php echo $member['nama_lengkap_member'] ?></td>
                 </tr>
                 <tr>

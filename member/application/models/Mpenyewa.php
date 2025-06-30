@@ -11,8 +11,7 @@
       $query = $this->db->get();
       return $query->result_array();
     }
-    
-  
+
     public function detail($id_penyewa) {
       $this->db->select('penyewa.id_penyewa as penyewa_id, penyewa.*, kontrak.*, kamar.*');
       $this->db->from('penyewa');
@@ -26,11 +25,8 @@
   
       $query = $this->db->get();
       return $query->result_array();
-  }
-  
-    
-    
-  
+    }
+
     function tambah($inputan) {
       $inputan['id_member'] = $this->session->userdata("id_member");
       $this->db->insert('penyewa', $inputan);

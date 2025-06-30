@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Member Dashboard</title>
 
+  <!-- Web's Logo -->
+  <link rel="icon" type="image/x-icon" href="../public/assets/kukos.png" alt="Logo KuKos">
+  <!-- Web's Logo -->
+
   <!-- CSS Styles -->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/general.css') ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/member/member-navbar.css') ?>">

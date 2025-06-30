@@ -6,40 +6,43 @@
     <meta http-equiv="Permissions-Policy" content="clipboard-write=()" />
     <title>KuKos</title>
   
+    <!-- Web's Logo -->
+    <link rel="icon" type="image/x-icon" href="../public/assets/kukos.png" alt="Logo KuKos">
+    <!-- Web's Logo -->
+
     <!-- fonts -->
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- fonts -->
 
 
+    <!-- Include select2 CDN -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+      crossorigin="anonymous"></script>
+      <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+      <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <!-- Include select2 CDN -->
 
-      
-      <!-- Include select2 CDN -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
-        crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-      <!-- Include select2 CDN -->
-    <!-- Bootstrap & JS -->
+
+    <!-- Bootstrap & JS -->    
+      <!-- css styles -->
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/general.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/navbar.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/hero.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/about.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/fitur.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/footer.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/register.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/transaksi.css') ?>">
+      <!-- css styles -->
     
-    <!-- css styles -->
-      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/general.css') ?>">
-      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/navbar.css') ?>">
-      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/hero.css') ?>">
-      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/about.css') ?>">
-      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/fitur.css') ?>">
-      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/footer.css') ?>">
-      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/register.css') ?>">
-      <link rel="stylesheet" type="text/css" href="<?php echo base_url('../public/styles/landing/transaksi.css') ?>">
-    <!-- css styles -->
-    
-        <!-- Bootstrap & JS -->
-        <link rel="stylesheet" 
+      <link rel="stylesheet" 
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
       <link rel="stylesheet" 
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
       <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <!-- Bootstrap & JS -->
 
 
 </head>
