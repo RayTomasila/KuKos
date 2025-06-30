@@ -100,15 +100,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
         $this->form_validation->set_rules('status_kamar', 'Status Kamar', 'required');
         $this->form_validation->set_rules('fasilitas[]', 'Fasilitas Kamar', 'required');
 
-        $this->form_validation->set_rules(
-          'harga_kamar', 
-          'Harga Kamar', 
-          'required|number', 
-          [
-              'required' => 'Harga Kamar Wajib Diisi.',
-              'number' => 'Harga Kamar Harus Berupa Angka.'
-          ]
-        );
+        // $this->form_validation->set_rules(
+        //   'harga_kamar', 
+        //   'Harga Kamar', 
+        //   'required|number', 
+        //   [
+        //       'required' => 'Harga Kamar Wajib Diisi.',
+        //       'number' => 'Harga Kamar Harus Berupa Angka.'
+        //   ]
+        // );
     
         $data['kamar'] = $this->Mkamar->detail($id_kamar);
         $data['selected_fasilitas'] = $this->Mkamar->get_fasilitas_by_kamar($id_kamar);

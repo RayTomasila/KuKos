@@ -13,7 +13,8 @@ tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
 
           <div class="mb-3">
             <label>Nomor Telepon</label>
-            <input type="text" name="nomor_telepon_member" class="form-control" value="<?php echo set_value("nomor_telepon_member") ?>">
+            <input type="text" name="nomor_telepon_member" class="form-control" 
+            value="<?php echo set_value("nomor_telepon_member") ?>">
             <span class="text-danger"><?php echo form_error("nomor_telepon_member") ?></span>
           </div>
 
@@ -37,7 +38,10 @@ tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
 
   <!-- Bootstrap CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+  </script>
 
   <!-- Include JQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
